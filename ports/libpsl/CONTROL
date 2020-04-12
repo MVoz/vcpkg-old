@@ -1,0 +1,4 @@
+Source: libpsl
+Version: 0.21.0
+Description: A library to handle Public Suffix Lists
+#Build-Depends: icu

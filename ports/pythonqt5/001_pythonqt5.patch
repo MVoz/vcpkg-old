@@ -1,0 +1,67 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 657a4b2..86d37bc 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -251,6 +251,10 @@ set(headers
+     generated_cpp${generated_cpp_suffix}/PythonQt_QtBindings.h
+ )
+ 
++set(headers_gui
++    src/gui/PythonQtScriptingConsole.h
++)
++
+ #-----------------------------------------------------------------------------
+ # Headers that should run through moc
+ 
+@@ -330,6 +334,9 @@ install(TARGETS PythonQt
+         LIBRARY DESTINATION ${PythonQt_INSTALL_LIBRARY_DIR}
+         ARCHIVE DESTINATION ${PythonQt_INSTALL_ARCHIVE_DIR})
+ install(FILES ${headers} DESTINATION ${PythonQt_INSTALL_INCLUDE_DIR})
++install(FILES ${headers_gui} DESTINATION ${PythonQt_INSTALL_INCLUDE_DIR}/gui)
++
++add_subdirectory(extensions)
+ 
+ #-----------------------------------------------------------------------------
+ # Testing
+diff --git a/src/PythonQtClassInfo.cpp b/src/PythonQtClassInfo.cpp
+index aa929c5..943926d 100644
+--- a/src/PythonQtClassInfo.cpp
++++ b/src/PythonQtClassInfo.cpp
+@@ -288,7 +288,8 @@ bool PythonQtClassInfo::lookForEnumAndCache(const QMetaObject* meta, const char*
+           PythonQtMemberInfo newInfo(enumValuePtr);
+           _cachedMembers.insert(memberName, newInfo);
+   #ifdef PYTHONQT_DEBUG
+-          std::cout << "caching enum " << memberName << " on " << meta->className()->constData() << std::endl;
++//          std::cout << "caching enum " << memberName << " on " << meta->className()->constData() << std::endl;
++		  std::cout << "caching enum " << memberName << " on " << meta->className() << std::endl;
+   #endif
+           found = true;
+           break;
+diff --git a/src/PythonQtMethodInfo.cpp b/src/PythonQtMethodInfo.cpp
+index 5010d16..d2136bd 100644
+--- a/src/PythonQtMethodInfo.cpp
++++ b/src/PythonQtMethodInfo.cpp
+@@ -52,7 +52,8 @@ bool PythonQtSlotInfo::_globalShouldAllowThreads = false;
+ PythonQtMethodInfo::PythonQtMethodInfo(const QMetaMethod& meta, PythonQtClassInfo* classInfo)
+ {
+ #ifdef PYTHONQT_DEBUG
+-  QByteArray sig = PythonQtUtils::signature(meta));
++//  QByteArray sig = PythonQtUtils::signature(meta));
++  QByteArray sig = PythonQtUtils::signature(meta);
+   sig = sig.mid(sig.indexOf('('));
+   QByteArray fullSig = QByteArray(meta.typeName()) + " " + sig;
+   std::cout << "caching " << fullSig.data() << std::endl;
+diff --git a/src/PythonQtSlot.cpp b/src/PythonQtSlot.cpp
+index 5a99101..0699e51 100644
+--- a/src/PythonQtSlot.cpp
++++ b/src/PythonQtSlot.cpp
+@@ -426,7 +426,8 @@ PyObject *PythonQtSlotFunction_CallImpl(PythonQtClassInfo* classInfo, QObject* o
+       if (info->parameterCount()-1-(skipFirst?1:0) == argc) {
+         PyErr_Clear();
+   #ifdef PYTHONQT_DEBUG
+-        std::cout << "called " << info->metaMethod()->typeName() << " " << info->signature().constData() << std::endl;
++//        std::cout << "called " << info->metaMethod()->typeName() << " " << info->signature().constData() << std::endl;
++		std::cout << "called " << info->metaMethod()->typeName() << " " << info->signature().constData() << std::endl;
+   #endif
+         ok = PythonQtCallSlot(classInfo, objectToCall, args, false, info, firstArg, &r, directReturnValuePointer, passThisOwnershipToCPP);
+         if (!ok && !PyErr_Occurred()) {

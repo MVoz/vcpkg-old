@@ -1,0 +1,1705 @@
+diff --git a/_msvc/_example_alpha/_example_alpha.vcxproj b/_msvc/_example_alpha/_example_alpha.vcxproj
+index fffd0c6..bdde6f0 100644
+--- a/_msvc/_example_alpha/_example_alpha.vcxproj
++++ b/_msvc/_example_alpha/_example_alpha.vcxproj
+@@ -43,52 +43,44 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+@@ -151,11 +143,11 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+@@ -163,12 +155,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+@@ -176,12 +168,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+@@ -189,11 +181,11 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+@@ -203,13 +195,13 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+@@ -219,14 +211,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+@@ -236,14 +228,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+@@ -253,13 +245,13 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemGroup>
+diff --git a/_msvc/_example_api/_example_api.vcxproj b/_msvc/_example_api/_example_api.vcxproj
+index 6e953ef..6591e24 100644
+--- a/_msvc/_example_api/_example_api.vcxproj
++++ b/_msvc/_example_api/_example_api.vcxproj
+@@ -46,52 +46,44 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+@@ -154,11 +146,11 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+@@ -166,12 +158,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+@@ -179,12 +171,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+@@ -192,11 +184,11 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+@@ -206,13 +198,13 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+@@ -222,14 +214,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+@@ -239,14 +231,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+@@ -256,13 +248,13 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+diff --git a/_msvc/_example_api_c/_example_api_c.vcxproj b/_msvc/_example_api_c/_example_api_c.vcxproj
+index b29f04c..45e51cf 100644
+--- a/_msvc/_example_api_c/_example_api_c.vcxproj
++++ b/_msvc/_example_api_c/_example_api_c.vcxproj
+@@ -46,52 +46,44 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+@@ -154,12 +146,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+@@ -167,12 +159,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+@@ -180,12 +172,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+@@ -193,12 +185,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+@@ -208,14 +200,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+@@ -225,14 +217,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+@@ -242,14 +234,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+@@ -259,14 +251,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+diff --git a/_msvc/_example_hdr/_example_hdr.vcxproj b/_msvc/_example_hdr/_example_hdr.vcxproj
+index 11fb61d..f5bdefd 100644
+--- a/_msvc/_example_hdr/_example_hdr.vcxproj
++++ b/_msvc/_example_hdr/_example_hdr.vcxproj
+@@ -43,52 +43,44 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+@@ -151,11 +143,11 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+@@ -163,12 +155,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+@@ -176,12 +168,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+@@ -189,11 +181,11 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+@@ -203,13 +195,13 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+@@ -219,14 +211,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+@@ -236,14 +228,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+@@ -253,13 +245,13 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemGroup>
+diff --git a/_msvc/_example_interlace/_example_interlace.vcxproj b/_msvc/_example_interlace/_example_interlace.vcxproj
+index f4f009a..67cf531 100644
+--- a/_msvc/_example_interlace/_example_interlace.vcxproj
++++ b/_msvc/_example_interlace/_example_interlace.vcxproj
+@@ -46,52 +46,44 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+@@ -154,11 +146,11 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+@@ -166,12 +158,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+@@ -179,12 +171,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+@@ -192,11 +184,11 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+@@ -206,13 +198,13 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+@@ -222,14 +214,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+@@ -239,14 +231,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+@@ -256,13 +248,13 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+diff --git a/_msvc/_example_tile/_example_tile.vcxproj b/_msvc/_example_tile/_example_tile.vcxproj
+index 1330d10..57c5ec6 100644
+--- a/_msvc/_example_tile/_example_tile.vcxproj
++++ b/_msvc/_example_tile/_example_tile.vcxproj
+@@ -44,52 +44,44 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+@@ -154,13 +146,13 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+@@ -168,11 +160,11 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+@@ -180,12 +172,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+@@ -193,12 +185,12 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+@@ -206,11 +198,11 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+@@ -220,13 +212,13 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+@@ -236,14 +228,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+@@ -253,14 +245,14 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg\api;$(ProjectDir)..\..\src\testcommon;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>TestCommon.lib;z_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>TestCommon.lib;zimg_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemGroup>
+diff --git a/_msvc/dll/dll.vcxproj b/_msvc/dll/dll.vcxproj
+index 02507bc..31ffbd4 100644
+--- a/_msvc/dll/dll.vcxproj
++++ b/_msvc/dll/dll.vcxproj
+@@ -49,52 +49,44 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+@@ -129,83 +121,88 @@
+   </ImportGroup>
+   <PropertyGroup Label="UserMacros" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>z.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>zimg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <ImportLibrary>$(OutDir)$(TargetName)_imp.lib</ImportLibrary>
+       <ModuleDefinitionFile>$(ProjectDir)..\zimg.def</ModuleDefinitionFile>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>z.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>zimg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <ImportLibrary>$(OutDir)$(TargetName)_imp.lib</ImportLibrary>
+       <ModuleDefinitionFile>$(ProjectDir)..\zimg.def</ModuleDefinitionFile>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>z.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>zimg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <ImportLibrary>$(OutDir)$(TargetName)_imp.lib</ImportLibrary>
+       <ModuleDefinitionFile>$(ProjectDir)..\zimg.def</ModuleDefinitionFile>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>z.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>zimg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <ImportLibrary>$(OutDir)$(TargetName)_imp.lib</ImportLibrary>
+       <ModuleDefinitionFile>$(ProjectDir)..\zimg.def</ModuleDefinitionFile>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+@@ -216,13 +213,14 @@
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>z.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>zimg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <ImportLibrary>$(OutDir)$(TargetName)_imp.lib</ImportLibrary>
+       <ModuleDefinitionFile>$(ProjectDir)..\zimg.def</ModuleDefinitionFile>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+@@ -233,13 +231,14 @@
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>z.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>zimg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <ImportLibrary>$(OutDir)$(TargetName)_imp.lib</ImportLibrary>
+       <ModuleDefinitionFile>$(ProjectDir)..\zimg.def</ModuleDefinitionFile>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+@@ -250,13 +249,14 @@
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>z.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>zimg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <ImportLibrary>$(OutDir)$(TargetName)_imp.lib</ImportLibrary>
+       <ModuleDefinitionFile>$(ProjectDir)..\zimg.def</ModuleDefinitionFile>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+@@ -267,7 +267,7 @@
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>z.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>zimg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <ImportLibrary>$(OutDir)$(TargetName)_imp.lib</ImportLibrary>
+       <ModuleDefinitionFile>$(ProjectDir)..\zimg.def</ModuleDefinitionFile>
+     </Link>
+diff --git a/_msvc/testcommon/testcommon.vcxproj b/_msvc/testcommon/testcommon.vcxproj
+index fec1fb6..e783c8a 100644
+--- a/_msvc/testcommon/testcommon.vcxproj
++++ b/_msvc/testcommon/testcommon.vcxproj
+@@ -43,52 +43,44 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+@@ -125,6 +117,7 @@
+   <PropertyGroup />
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+@@ -138,6 +131,7 @@
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+@@ -151,6 +145,7 @@
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+@@ -164,6 +159,7 @@
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+@@ -177,6 +173,7 @@
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+@@ -193,6 +190,7 @@
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+@@ -209,6 +207,7 @@
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+@@ -225,6 +224,7 @@
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+     <ClCompile>
++      <AdditionalIncludeDirectories>$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+diff --git a/_msvc/unit_test/unit_test.vcxproj b/_msvc/unit_test/unit_test.vcxproj
+index c54a540..4fa7b96 100644
+--- a/_msvc/unit_test/unit_test.vcxproj
++++ b/_msvc/unit_test/unit_test.vcxproj
+@@ -115,26 +115,22 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+@@ -162,14 +158,14 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(ProjectDir)..\..\test;$(ProjectDir)..\..\test\extra;$(ProjectDir)..\..\test\extra\googletest\googletest\include</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(ProjectDir)..\..\test;$(ProjectDir)..\..\test\extra;$(ProjectDir)..\..\test\extra\googletest\googletest\include;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;ZIMG_X86;ZIMG_X86_AVX512;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <MinimalRebuild>false</MinimalRebuild>
+     </ClCompile>
+     <Link>
+-      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\test\extra\googletest\googletest\msvc_build\$(Configuration)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>gtest.lib;z.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\test\extra\googletest\googletest\msvc_build\$(Configuration);$(VcpkgRoot)debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalDependencies>gtestd.lib;zimg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+@@ -177,14 +173,14 @@
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(ProjectDir)..\..\test;$(ProjectDir)..\..\test\extra;$(ProjectDir)..\..\test\extra\googletest\googletest\include</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(ProjectDir)..\..\test;$(ProjectDir)..\..\test\extra;$(ProjectDir)..\..\test\extra\googletest\googletest\include$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories);$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;ZIMG_X86;ZIMG_X86_AVX512;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <MinimalRebuild>false</MinimalRebuild>
+     </ClCompile>
+     <Link>
+-      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\test\extra\googletest\googletest\msvc_build\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>gtest.lib;z.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\test\extra\googletest\googletest\msvc_build\$(Platform)\$(Configuration);$(VcpkgRoot)debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalDependencies>gtestd.lib;zimg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+@@ -194,15 +190,15 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(ProjectDir)..\..\test;$(ProjectDir)..\..\test\extra;$(ProjectDir)..\..\test\extra\googletest\googletest\include</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(ProjectDir)..\..\test;$(ProjectDir)..\..\test\extra;$(ProjectDir)..\..\test\extra\googletest\googletest\include;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;ZIMG_X86;ZIMG_X86_AVX512;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+-      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\test\extra\googletest\googletest\msvc_build\$(Configuration)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>gtest.lib;z.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\test\extra\googletest\googletest\msvc_build\$(Configuration);$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalDependencies>gtest.lib;zimg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+@@ -212,15 +208,15 @@
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <SDLCheck>true</SDLCheck>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(ProjectDir)..\..\test;$(ProjectDir)..\..\test\extra;$(ProjectDir)..\..\test\extra\googletest\googletest\include</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(ProjectDir)..\..\test;$(ProjectDir)..\..\test\extra;$(ProjectDir)..\..\test\extra\googletest\googletest\include$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories);$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;ZIMG_X86;ZIMG_X86_AVX512;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+     </ClCompile>
+     <Link>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+       <OptimizeReferences>true</OptimizeReferences>
+-      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\test\extra\googletest\googletest\msvc_build\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>gtest.lib;z.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)..\test\extra\googletest\googletest\msvc_build\$(Platform)\$(Configuration);$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalDependencies>gtest.lib;zimg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+diff --git a/_msvc/zimg.def b/_msvc/zimg.def
+index e1b9443..1aef9bc 100644
+--- a/_msvc/zimg.def
++++ b/_msvc/zimg.def
+@@ -1,4 +1,4 @@
+-LIBRARY z
++LIBRARY zimg
+ EXPORTS
+ 	zimg_get_version_info
+ 	zimg_get_api_version
+diff --git a/_msvc/zimg/zimg.vcxproj b/_msvc/zimg/zimg.vcxproj
+index c71b8b8..9e5ff4b 100644
+--- a/_msvc/zimg/zimg.vcxproj
++++ b/_msvc/zimg/zimg.vcxproj
+@@ -43,52 +43,44 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>true</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseDebugLibraries>false</UseDebugLibraries>
+-    <PlatformToolset>v142</PlatformToolset>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
+     <CharacterSet>Unicode</CharacterSet>
+   </PropertyGroup>
+@@ -123,34 +115,34 @@
+   </ImportGroup>
+   <PropertyGroup Label="UserMacros" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+-    <TargetName>z</TargetName>
++    <TargetName>zimg</TargetName>
+   </PropertyGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+     <ClCompile>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;ZIMG_X86;ZIMG_X86_AVX512;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <SDLCheck>true</SDLCheck>
+@@ -166,7 +158,7 @@
+     <ClCompile>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <SDLCheck>true</SDLCheck>
+@@ -182,7 +174,7 @@
+     <ClCompile>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <SDLCheck>true</SDLCheck>
+@@ -198,7 +190,7 @@
+     <ClCompile>
+       <WarningLevel>Level3</WarningLevel>
+       <Optimization>Disabled</Optimization>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;ZIMG_X86;ZIMG_X86_AVX512;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <SDLCheck>true</SDLCheck>
+@@ -216,7 +208,7 @@
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;ZIMG_X86;ZIMG_X86_AVX512;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <BufferSecurityCheck>false</BufferSecurityCheck>
+@@ -235,7 +227,7 @@
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <BufferSecurityCheck>false</BufferSecurityCheck>
+@@ -254,7 +246,7 @@
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <BufferSecurityCheck>false</BufferSecurityCheck>
+@@ -273,7 +265,7 @@
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src\zimg;$(VcpkgRoot)$(VcpkgTriplet)\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;ZIMG_X86;ZIMG_X86_AVX512;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <BufferSecurityCheck>false</BufferSecurityCheck>

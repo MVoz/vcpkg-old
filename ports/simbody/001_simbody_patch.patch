@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 6658dc1..b05a5e8 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -526,8 +526,6 @@ endif()
+ set(BUILD_USING_OTHER_LAPACK "" CACHE STRING
+  "If you have your own Lapack and Blas, put libraries here, separated by semicolons (full paths or paths that are on the (DY)LD_LIBRARY_PATH (UNIX) or PATH (Windows)). See LAPACK_BEING_USED to see what's actually being used.")
+ if(WIN32)
+-    set(LAPACK_PLATFORM_DEFAULT lapack;blas)
+-else()
+     find_package(BLAS)
+     find_package(LAPACK)
+     if(BLAS_FOUND AND LAPACK_FOUND)

@@ -1,0 +1,4 @@
+Source: pygobject
+Version: 3.32.1
+Description: PyGObject is a Python package which provides bindings for GObject based libraries such as GTK, GStreamer, WebKitGTK, GLib, GIO and many more.
+Build-Depends: pkgconf, python3, pycairo

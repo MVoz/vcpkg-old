@@ -1,0 +1,150 @@
+diff --git a/projects/vs14/mfx.vcxproj b/projects/vs14/mfx.vcxproj
+index 5e1f82a..443b419 100644
+--- a/projects/vs14/mfx.vcxproj
++++ b/projects/vs14/mfx.vcxproj
+@@ -125,57 +125,57 @@
+   <PropertyGroup Label="UserMacros" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+     <TargetName>lib$(ProjectName)d</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>true</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+     <TargetName>lib$(ProjectName)d</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>true</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+     <TargetName>lib$(ProjectName)</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>false</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+     <TargetName>lib$(ProjectName)</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>false</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
+     <TargetName>$(ProjectName)d</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>true</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
+     <TargetName>$(ProjectName)d</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>true</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
+     <TargetName>$(ProjectName)</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>false</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
+     <TargetName>$(ProjectName)</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>false</LinkIncremental>
+   </PropertyGroup>
+@@ -188,7 +188,7 @@
+       <ExceptionHandling>Async</ExceptionHandling>
+       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;MFX_VA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Lib>
+       <TargetMachine>MachineX86</TargetMachine>
+@@ -244,7 +244,7 @@ ENDLOCAL
+       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+       <ExceptionHandling>Async</ExceptionHandling>
+       <PreprocessorDefinitions>_DEBUG;_LIB;MFX_VA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+     </ClCompile>
+     <Lib>
+@@ -304,7 +304,7 @@ ENDLOCAL
+       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;MFX_VA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+@@ -366,7 +366,7 @@ ENDLOCAL
+       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+       <PreprocessorDefinitions>NDEBUG;_LIB;MFX_VA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+@@ -422,7 +422,7 @@ ENDLOCAL
+       <Optimization>Disabled</Optimization>
+       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+       <ExceptionHandling>Async</ExceptionHandling>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;MFX_VA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+@@ -483,7 +483,7 @@ ENDLOCAL
+       <Optimization>Disabled</Optimization>
+       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+       <ExceptionHandling>Async</ExceptionHandling>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;MFX_VA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+@@ -548,7 +548,7 @@ ENDLOCAL
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MFX_VA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>
+@@ -616,7 +616,7 @@ ENDLOCAL
+       <Optimization>MaxSpeed</Optimization>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+-      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir)..\include;$(ProjectDir)..\..\include;$(ProjectDir)..\..\src;$(OutDir)..\..\include;$(INTELMEDIASDKROOT)\include;$(INTELMEDIASDKROOT)\include\shared;$(INTELMEDIASDKROOT)\include\um;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;WIN32;MFX_VA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+     </ClCompile>

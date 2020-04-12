@@ -1,0 +1,529 @@
+diff --git a/SMP/libgcrypt.vcxproj b/SMP/libgcrypt.vcxproj
+index 086ad87..17b609d 100644
+--- a/SMP/libgcrypt.vcxproj
++++ b/SMP/libgcrypt.vcxproj
+@@ -1,4 +1,4 @@
+-﻿<?xml version="1.0" encoding="utf-8"?>
++<?xml version="1.0" encoding="utf-8"?>
+ <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="DebugDLLWinRT|Win32">
+@@ -633,14 +633,14 @@
+   </ImportGroup>
+   <PropertyGroup Label="UserMacros" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libgcryptd</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugWinRT|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libgcryptd_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+@@ -649,26 +649,26 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libgcryptd</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugWinRT|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libgcryptd_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>gcryptd</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLWinRT|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>gcryptd_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+@@ -677,26 +677,26 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>gcryptd</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLWinRT|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>gcryptd_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libgcrypt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWinRT|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libgcrypt_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+@@ -705,40 +705,40 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libgcrypt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWinRT|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libgcrypt_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>gcrypt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLStaticDeps|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>gcrypt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRT|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>gcrypt_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRTStaticDeps|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>gcrypt_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+@@ -747,28 +747,28 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>gcrypt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLStaticDeps|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>gcrypt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRT|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>gcrypt_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRTStaticDeps|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>gcrypt_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+@@ -778,7 +778,7 @@
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0502;HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__i386__;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -788,7 +788,7 @@
+       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
+       <TargetMachine>MachineX86</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalDependencies>libgpg-errord.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <AdditionalOptions>/IGNORE:4006,4221,4264  %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+@@ -843,7 +843,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__i386__;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -856,7 +856,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
+       <TargetMachine>MachineX86</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalDependencies>libgpg-errord_winrt.lib;vccorlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <AdditionalOptions>/IGNORE:4006,4221,4264  %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+@@ -911,7 +911,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0601;HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__x86_64__;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -921,7 +921,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
+       <TargetMachine>MachineX64</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalDependencies>libgpg-errord.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <AdditionalOptions>/IGNORE:4006,4221,4264  %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+@@ -976,7 +976,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__x86_64__;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -989,7 +989,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
+       <TargetMachine>MachineX64</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalDependencies>libgpg-errord_winrt.lib;vccorlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <AdditionalOptions>/IGNORE:4006,4221,4264  %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+@@ -1044,7 +1044,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0502;HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__i386__;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <BufferSecurityCheck>true</BufferSecurityCheck>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+@@ -1058,7 +1058,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <ImportLibrary>$(OutDir)\lib\x86\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>..\src\libgcrypt.def</ModuleDefinitionFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+@@ -1116,7 +1116,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__i386__;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <BufferSecurityCheck>true</BufferSecurityCheck>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+@@ -1133,7 +1133,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <ImportLibrary>$(OutDir)\lib\x86\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>..\src\libgcrypt.def</ModuleDefinitionFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '10.0'">10.0</MinimumRequiredVersion>
+@@ -1193,7 +1193,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0601;HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__x86_64__;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -1206,7 +1206,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <ImportLibrary>$(OutDir)\lib\x64\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>..\src\libgcrypt.def</ModuleDefinitionFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>6.1</MinimumRequiredVersion>
+       <AdditionalDependencies>gpg-errord.lib;%(AdditionalDependencies)</AdditionalDependencies>
+@@ -1263,7 +1263,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__x86_64__;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -1279,7 +1279,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <ImportLibrary>$(OutDir)\lib\x64\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>..\src\libgcrypt.def</ModuleDefinitionFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '10.0'">10.0</MinimumRequiredVersion>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '8.1'">8.1</MinimumRequiredVersion>
+@@ -1345,7 +1345,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0502;HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__i386__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -1355,7 +1355,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
+       <TargetMachine>MachineX86</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalDependencies>libgpg-error.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <AdditionalOptions>/IGNORE:4006,4221,4264  %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+@@ -1417,7 +1417,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__i386__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -1430,7 +1430,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
+       <TargetMachine>MachineX86</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalDependencies>libgpg-error_winrt.lib;vccorlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <AdditionalOptions>/IGNORE:4006,4221,4264  %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+@@ -1492,7 +1492,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0601;HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__x86_64__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -1502,7 +1502,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
+       <TargetMachine>MachineX64</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalDependencies>libgpg-error.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <AdditionalOptions>/IGNORE:4006,4221,4264  %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+@@ -1564,7 +1564,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__x86_64__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -1577,7 +1577,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
+       <TargetMachine>MachineX64</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalDependencies>libgpg-error_winrt.lib;vccorlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <AdditionalOptions>/IGNORE:4006,4221,4264  %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+@@ -1639,7 +1639,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0502;HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__i386__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+       <DisableSpecificWarnings>4146;4018;4028;4244;4267;4715;4334;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -1653,7 +1653,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <ImportLibrary>$(OutDir)\lib\x86\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>..\src\libgcrypt.def</ModuleDefinitionFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+@@ -1718,7 +1718,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0502;HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__i386__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+       <DisableSpecificWarnings>4146;4018;4028;4244;4267;4715;4334;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -1732,7 +1732,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <ImportLibrary>$(OutDir)\lib\x86\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>..\src\libgcrypt.def</ModuleDefinitionFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+@@ -1797,7 +1797,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__i386__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+       <CompileAsWinRT>false</CompileAsWinRT>
+@@ -1814,7 +1814,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <ImportLibrary>$(OutDir)\lib\x86\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>..\src\libgcrypt.def</ModuleDefinitionFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '10.0'">10.0</MinimumRequiredVersion>
+@@ -1881,7 +1881,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__i386__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+       <CompileAsWinRT>false</CompileAsWinRT>
+@@ -1898,7 +1898,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <ImportLibrary>$(OutDir)\lib\x86\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>..\src\libgcrypt.def</ModuleDefinitionFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '10.0'">10.0</MinimumRequiredVersion>
+@@ -1965,7 +1965,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0601;HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__x86_64__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+       <DisableSpecificWarnings>4146;4018;4028;4244;4267;4715;4334;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -1979,7 +1979,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <ImportLibrary>$(OutDir)\lib\x64\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>..\src\libgcrypt.def</ModuleDefinitionFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>6.1</MinimumRequiredVersion>
+       <AdditionalDependencies>gpg-error.lib;%(AdditionalDependencies)</AdditionalDependencies>
+@@ -2043,7 +2043,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0601;HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__x86_64__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+       <DisableSpecificWarnings>4146;4018;4028;4244;4267;4715;4334;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -2057,7 +2057,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <ImportLibrary>$(OutDir)\lib\x64\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>..\src\libgcrypt.def</ModuleDefinitionFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>6.1</MinimumRequiredVersion>
+       <AdditionalDependencies>libgpg-error.lib;%(AdditionalDependencies)</AdditionalDependencies>
+@@ -2121,7 +2121,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__x86_64__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+       <CompileAsWinRT>false</CompileAsWinRT>
+@@ -2138,7 +2138,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <ImportLibrary>$(OutDir)\lib\x64\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>..\src\libgcrypt.def</ModuleDefinitionFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '10.0'">10.0</MinimumRequiredVersion>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '8.1'">8.1</MinimumRequiredVersion>
+@@ -2204,7 +2204,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;__builtin_bswap32=_byteswap_ulong;__builtin_bswap64=_byteswap_uint64;asm=__asm__;__x86_64__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;$(OutDir)\include;..\src;.\mpi;..\mpi;.\cipher;..\random;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+       <CompileAsWinRT>false</CompileAsWinRT>
+@@ -2221,7 +2221,7 @@ del /f /q $(OutDir)\licenses\libgcrypt.txt
+       <ImportLibrary>$(OutDir)\lib\x64\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>..\src\libgcrypt.def</ModuleDefinitionFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '10.0'">10.0</MinimumRequiredVersion>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '8.1'">8.1</MinimumRequiredVersion>

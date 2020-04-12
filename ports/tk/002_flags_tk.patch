@@ -1,0 +1,22 @@
+diff --git a/win/rules.vc b/win/rules.vc
+index 799a5d0..ce9e4b6 100644
+--- a/win/rules.vc
++++ b/win/rules.vc
+@@ -858,7 +858,7 @@ TCL_COMPILE_DEBUG   = 0
+ 
+ # Defaults - Permit deprecated functions and warning level 3
+ TCL_NO_DEPRECATED	    = 0
+-WARNINGS		    = -W3
++WARNINGS		    = -W4
+ 
+ !if "$(CHECKS)" != "" && ![nmakehlp -f "$(CHECKS)" "none"]
+ 
+@@ -1385,7 +1385,7 @@ carch =
+ 
+ !if $(DEBUG)
+ # Turn warnings into errors
+-cwarn = $(cwarn) -WX
++cwarn = $(cwarn) -WX-
+ !endif
+ 
+ INCLUDES = $(TCL_INCLUDES) $(TK_INCLUDES) $(PRJ_INCLUDES)

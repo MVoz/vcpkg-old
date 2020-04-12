@@ -1,0 +1,6 @@
+Source: jancy
+Version: 
+#Homepage: 
+Description: 
+Build-Depends: axl, graco, luadoxyxml, llvm
+#Feature: 

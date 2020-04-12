@@ -1,0 +1,49 @@
+diff --git a/CMake/folly-deps.cmake b/CMake/folly-deps.cmake
+index e0bbcbb3..beccdea6 100644
+--- a/CMake/folly-deps.cmake
++++ b/CMake/folly-deps.cmake
+<<<<<<< HEAD
+<<<<<<< HEAD
+@@ -20,9 +20,9 @@ find_package(Boost 1.51.0 MODULE
+=======
+@@ -20,9 +20,8 @@ find_package(Boost 1.51.0 MODULE
+>>>>>>> fixing and updating folly for fizz regression.
+=======
+@@ -20,9 +20,9 @@ find_package(Boost 1.51.0 MODULE
+>>>>>>> smaller fixes to folly
+ list(APPEND FOLLY_LINK_LIBRARIES ${Boost_LIBRARIES})
+ list(APPEND FOLLY_INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIRS})
+ 
+-find_package(DoubleConversion MODULE REQUIRED)
+-list(APPEND FOLLY_LINK_LIBRARIES ${DOUBLE_CONVERSION_LIBRARY})
+-list(APPEND FOLLY_INCLUDE_DIRECTORIES ${DOUBLE_CONVERSION_INCLUDE_DIR})
++find_package(double-conversion CONFIG REQUIRED)
++list(APPEND FOLLY_LINK_LIBRARIES double-conversion::double-conversion)
+<<<<<<< HEAD
+<<<<<<< HEAD
++set(FOLLY_HAVE_DOUBLE_CONVERSION ON)
+ 
+ set(FOLLY_HAVE_LIBGFLAGS OFF)
+ find_package(gflags CONFIG REQUIRED)
+=======
+=======
++set(FOLLY_HAVE_DOUBLE_CONVERSION ON)
+>>>>>>> smaller fixes to folly
+ 
+ set(FOLLY_HAVE_LIBGFLAGS OFF)
+ find_package(gflags CONFIG REQUIRED)
+<<<<<<< HEAD
+@@ -43,8 +42,8 @@ list(APPEND FOLLY_INCLUDE_DIRECTORIES ${LIBEVENT_INCLUDE_DIR})
+ find_package(OpenSSL MODULE REQUIRED)
+ list(APPEND FOLLY_LINK_LIBRARIES ${OPENSSL_LIBRARIES})
+ list(APPEND FOLLY_INCLUDE_DIRECTORIES ${OPENSSL_INCLUDE_DIR})
+-list(APPEND CMAKE_REQUIRED_LIBRARIES ${OPENSSL_LIBRARIES})
+-list(APPEND CMAKE_REQUIRED_INCLUDES ${OPENSSL_INCLUDE_DIR})
++#list(APPEND CMAKE_REQUIRED_LIBRARIES ${OPENSSL_LIBRARIES})
++#list(APPEND CMAKE_REQUIRED_INCLUDES ${OPENSSL_INCLUDE_DIR})
+ check_function_exists(ASN1_TIME_diff FOLLY_HAVE_OPENSSL_ASN1_TIME_DIFF)
+ 
+ find_package(ZLIB MODULE)
+>>>>>>> fixing and updating folly for fizz regression.
+=======
+>>>>>>> removed unnecessary patch from folly

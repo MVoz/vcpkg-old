@@ -1,0 +1,222 @@
+diff --git a/projects/vs14/cddb.vcxproj b/projects/vs14/cddb.vcxproj
+index 8ab31fd..d6d5ec8 100644
+--- a/projects/vs14/cddb.vcxproj
++++ b/projects/vs14/cddb.vcxproj
+@@ -124,57 +124,57 @@
+   <PropertyGroup Label="UserMacros" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+     <TargetName>lib$(ProjectName)d</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>true</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+     <TargetName>lib$(ProjectName)d</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>true</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+     <TargetName>lib$(ProjectName)</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>false</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+     <TargetName>lib$(ProjectName)</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>false</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
+     <TargetName>$(ProjectName)d</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>true</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
+     <TargetName>$(ProjectName)d</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>true</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
+     <TargetName>$(ProjectName)</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>false</LinkIncremental>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
+     <TargetName>$(ProjectName)</TargetName>
+-    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\..\build\msvc\lib\$(PlatformTarget)\</OutDir>
+-    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\..\build\msvc\bin\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='StaticLibrary'">$(ProjectDir)..\..\..\msvc\lib\$(PlatformTarget)\</OutDir>
++    <OutDir Condition="'$(ConfigurationType)'=='DynamicLibrary'">$(ProjectDir)..\..\..\msvc\bin\$(PlatformTarget)\</OutDir>
+     <IntDir>$(OutDir)..\..\obj\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</IntDir>
+     <LinkIncremental>false</LinkIncremental>
+   </PropertyGroup>
+@@ -184,7 +184,7 @@
+       <Optimization>Disabled</Optimization>
+       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;_BSD_SOCKLEN_T_=int;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0502;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ExceptionHandling>false</ExceptionHandling>
+       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+       <ForcedIncludeFiles>compat.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+@@ -197,7 +197,7 @@
+       <TargetMachine>MachineX86</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+       <AdditionalDependencies>libregexd.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;$(VcpkgRoot)\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+     <Bscmake>
+@@ -249,7 +249,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;_BSD_SOCKLEN_T_=int;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0600;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ExceptionHandling>false</ExceptionHandling>
+       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+       <ForcedIncludeFiles>compat.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+@@ -260,7 +260,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <TargetMachine>MachineX64</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+       <AdditionalDependencies>libregexd.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;$(VcpkgRoot)\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+     <Bscmake>
+@@ -312,7 +312,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <Optimization>Disabled</Optimization>
+       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;_BSD_SOCKLEN_T_=int;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0502;_USRDLL;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <BufferSecurityCheck>true</BufferSecurityCheck>
+       <ExceptionHandling>false</ExceptionHandling>
+       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+@@ -329,7 +329,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>cddb.def</ModuleDefinitionFile>
+       <AdditionalDependencies>regexd.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;$(VcpkgRoot)\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+     </Link>
+@@ -382,7 +382,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;_BSD_SOCKLEN_T_=int;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0600;_USRDLL;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ExceptionHandling>false</ExceptionHandling>
+       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+       <ForcedIncludeFiles>compat.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+@@ -396,7 +396,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>cddb.def</ModuleDefinitionFile>
+       <AdditionalDependencies>regexd.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;$(VcpkgRoot)\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+     </Link>
+     <Bscmake>
+@@ -458,7 +458,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <FloatingPointModel>Fast</FloatingPointModel>
+       <FloatingPointExceptions>false</FloatingPointExceptions>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;_BSD_SOCKLEN_T_=int;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0502;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ExceptionHandling>false</ExceptionHandling>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+@@ -470,7 +470,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <TargetMachine>MachineX86</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+       <AdditionalDependencies>libregex.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+     <Bscmake>
+@@ -532,7 +532,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <FloatingPointModel>Fast</FloatingPointModel>
+       <FloatingPointExceptions>false</FloatingPointExceptions>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;_BSD_SOCKLEN_T_=int;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0600;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ExceptionHandling>false</ExceptionHandling>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+@@ -544,7 +544,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <TargetMachine>MachineX64</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+       <AdditionalDependencies>libregex.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+     <Bscmake>
+@@ -606,7 +606,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <FloatingPointModel>Fast</FloatingPointModel>
+       <FloatingPointExceptions>false</FloatingPointExceptions>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;_BSD_SOCKLEN_T_=int;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0502;_USRDLL;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ExceptionHandling>false</ExceptionHandling>
+       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+       <ForcedIncludeFiles>compat.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+@@ -622,7 +622,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>cddb.def</ModuleDefinitionFile>
+       <AdditionalDependencies>regex.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+     </Link>
+     <Bscmake>
+@@ -684,7 +684,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <FloatingPointModel>Fast</FloatingPointModel>
+       <FloatingPointExceptions>false</FloatingPointExceptions>
+       <PreprocessorDefinitions>HAVE_CONFIG_H;_BSD_SOCKLEN_T_=int;WIN32_LEAN_AND_MEAN;WIN32;_WIN32_WINNT=0x0600;_USRDLL;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\include\;$(OutDir)..\..\include;$(OutDir)..\..\include\regex;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ExceptionHandling>false</ExceptionHandling>
+       <ProgramDataBaseFileName>$(OutDir)..\..\lib\$(PlatformTarget)\$(TargetName).pdb</ProgramDataBaseFileName>
+       <ForcedIncludeFiles>compat.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+@@ -700,7 +700,7 @@ IF EXIST "$(ProjectDir)..\..\include\cddb\version.h" (
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>cddb.def</ModuleDefinitionFile>
+       <AdditionalDependencies>regex.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)..\..\lib\$(PlatformTarget)\;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+     </Link>
+     <Bscmake>
+       <PreserveSbr>true</PreserveSbr>

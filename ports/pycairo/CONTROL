@@ -1,0 +1,5 @@
+Source: pycairo
+Version: 1.18.1
+Description: Pycairo is a Python module providing bindings for the cairo graphics library. 
+Build-Depends: pkgconf, python3, cairo
+

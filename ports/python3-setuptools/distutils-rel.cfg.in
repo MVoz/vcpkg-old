@@ -1,0 +1,55 @@
+[global]
+verbose=1
+
+[build]
+#compiler=intelem ##icl-64
+#compiler=mingw32
+compiler=msvc
+force=1
+
+[build_ext]
+#compiler=intelem ##icl-64
+#compiler=mingw32
+compiler=msvc
+include-dirs=${CURRENT_INSTALLED_DIR}/python3/include;${CURRENT_INSTALLED_DIR}/include${VCPKG_PYTHON_INCLUDE_DIRS}
+library-dirs=${CURRENT_INSTALLED_DIR}/python3/libs;${CURRENT_INSTALLED_DIR}/lib${VCPKG_PYTHON_LIBS}
+
+[build_clib]
+## icl 64
+#compiler=intelem
+#compiler=mingw32
+compiler=msvc
+
+#[config]
+
+[Paths]
+
+[Common]
+
+[install]
+prefix=${CURRENT_PACKAGES_DIR}
+
+[ALL]
+include-dirs=${CURRENT_INSTALLED_DIR}/python3/include;${CURRENT_INSTALLED_DIR}/include${VCPKG_PYTHON_INCLUDE_DIRS}
+library-dirs=${CURRENT_INSTALLED_DIR}/python3/libs;${CURRENT_INSTALLED_DIR}/lib${VCPKG_PYTHON_LIBS}
+
+[mkl]
+#runtime-library-dirs=C:/Program Files (x86)/IntelSWTools/compilers_and_libraries/windows/redist/intel64_win/mkl
+include_dirs=C:/Program Files (x86)/IntelSWTools/compilers_and_libraries/windows/mkl/include
+library_dirs=C:/Program Files (x86)/IntelSWTools/compilers_and_libraries/windows/mkl/lib/intel64;C:/Program Files (x86)/IntelSWTools/compilers_and_libraries/windows/compiler/lib/intel64
+libraries=mkl_rt,mkl_lapack95_lp64,mkl_blas95_lp64,mkl_intel_lp64,mkl_intel_thread,mkl_core,libiomp5md
+
+[blas_mkl]
+libraries=mkl_rt,mkl_lapack95_lp64,mkl_blas95_lp64,mkl_intel_lp64,mkl_intel_thread,mkl_core,libiomp5md
+include_dirs=C:/Program Files (x86)/IntelSWTools/compilers_and_libraries/windows/mkl/include
+library_dirs=C:/Program Files (x86)/IntelSWTools/compilers_and_libraries/windows/mkl/lib/intel64;C:/Program Files (x86)/IntelSWTools/compilers_and_libraries/windows/compiler/lib/intel64
+
+[lapack_mkl]
+libraries=mkl_rt,mkl_lapack95_lp64,mkl_blas95_lp64,mkl_intel_lp64,mkl_intel_thread,mkl_core,libiomp5md
+include_dirs=C:/Program Files (x86)/IntelSWTools/compilers_and_libraries/windows/mkl/include
+library_dirs=C:/Program Files (x86)/IntelSWTools/compilers_and_libraries/windows/mkl/lib/intel64;C:/Program Files (x86)/IntelSWTools/compilers_and_libraries/windows/compiler/lib/intel64
+
+[openblas]
+libraries=openblas
+library_dirs=${CURRENT_INSTALLED_DIR}/lib${VCPKG_PYTHON_LIBS}
+include_dirs=${CURRENT_INSTALLED_DIR}/include${VCPKG_PYTHON_INCLUDE_DIRS}

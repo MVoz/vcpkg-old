@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+Source: coinutils
+Version: 2.10.14-1
+Description: CoinUtils (Coin-or Utilities) is an open-source collection of classes and functions that are generally useful to more than one COIN-OR project
+=======
+Source: coinutils
+Version: 2.10.14-1
+Description: CoinUtils (Coin-or Utilities) is an open-source collection of classes and functions that are generally useful to more than one COIN-OR project
+>>>>>>> bumping all the control files

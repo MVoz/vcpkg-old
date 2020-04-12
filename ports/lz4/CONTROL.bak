@@ -1,0 +1,22 @@
+Source: lz4
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+Version: 1.9.0
+=======
+Version: 1.8.3-2
+>>>>>>> removing extra d from lz4. Probably should probably also remove all unnecessary patches concerning it (unnecessary code).
+=======
+Version: 1.8.3-2
+=======
+Version: 1.9.0
+>>>>>>> [many ports] Updates 2019.04.19 (#6155)
+>>>>>>> [many ports] Updates 2019.04.19 (#6155)
+=======
+Version: 1.9.0
+>>>>>>> bug
+=======
+Version: 1.9.1
+>>>>>>> Update CONTROL
+Description: Lossless compression algorithm, providing compression speed at 400 MB/s per core.

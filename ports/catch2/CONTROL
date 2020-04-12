@@ -1,0 +1,8 @@
+Source: catch2
+<<<<<<< HEAD
+Version: 2.7.2
+=======
+Version: 2.7.1
+>>>>>>> [many ports] Updates 2019.04.19 (#6155)
+Description: A modern, header-only test framework for unit testing.
+  Issues, PRs and changelogs can be found at https://github.com/catchorg/Catch2

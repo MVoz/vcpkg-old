@@ -1,0 +1,4 @@
+Source: libgcrypt
+Version: 1.8.4-1
+Description: LibGCrypt is a general purpose cryptographic library based on the code from GnuPG. http://www.gnu.org/software/libgcrypt/
+Build-Depends: libgpg-error

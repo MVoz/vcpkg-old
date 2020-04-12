@@ -1,0 +1,541 @@
+diff --git a/SMP/libcdio.vcxproj b/SMP/libcdio.vcxproj
+index 5316696..c37c283 100644
+--- a/SMP/libcdio.vcxproj
++++ b/SMP/libcdio.vcxproj
+@@ -1,4 +1,4 @@
+-﻿<?xml version="1.0" encoding="utf-8"?>
++<?xml version="1.0" encoding="utf-8"?>
+ <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="DebugDLLWinRT|Win32">
+@@ -531,14 +531,14 @@
+   </ImportGroup>
+   <PropertyGroup Label="UserMacros" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libcdiod</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugWinRT|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libcdiod_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+@@ -547,26 +547,26 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libcdiod</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugWinRT|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libcdiod_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>cdiod</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLWinRT|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>cdiod_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+@@ -575,26 +575,26 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>cdiod</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLWinRT|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>cdiod_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libcdio</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWinRT|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libcdio_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+@@ -603,40 +603,40 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libcdio</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWinRT|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libcdio_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>cdio</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLStaticDeps|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>cdio</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRT|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>cdio_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRTStaticDeps|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>cdio_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+@@ -645,28 +645,28 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>cdio</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLStaticDeps|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>cdio</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRT|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>cdio_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRTStaticDeps|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>cdio_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+@@ -676,7 +676,7 @@
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>inline=__inline;_WIN32_WINNT=0x0502;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -686,8 +686,8 @@
+       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
+       <TargetMachine>MachineX86</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+-      <AdditionalDependencies>winmm.lib;libiconvd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalDependencies>winmm.lib;iconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+     <PostBuildEvent>
+@@ -735,7 +735,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>inline=__inline;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -748,7 +748,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <TargetMachine>MachineX86</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+       <AdditionalDependencies>libiconvd_winrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+     <PostBuildEvent>
+@@ -796,7 +796,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>inline=__inline;_WIN32_WINNT=0x0601;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -806,8 +806,8 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
+       <TargetMachine>MachineX64</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+-      <AdditionalDependencies>winmm.lib;libiconvd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalDependencies>winmm.lib;iconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+     <PostBuildEvent>
+@@ -855,7 +855,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>inline=__inline;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -868,7 +868,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <TargetMachine>MachineX64</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+       <AdditionalDependencies>libiconvd_winrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+     <PostBuildEvent>
+@@ -916,7 +916,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>inline=__inline;_WIN32_WINNT=0x0502;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_USRDLL;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <BufferSecurityCheck>true</BufferSecurityCheck>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+@@ -931,7 +931,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>libcdio.def</ModuleDefinitionFile>
+       <AdditionalDependencies>winmm.lib;iconvd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+@@ -981,7 +981,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>inline=__inline;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_USRDLL;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <BufferSecurityCheck>true</BufferSecurityCheck>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+@@ -998,7 +998,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>libcdio.def</ModuleDefinitionFile>
+       <AdditionalDependencies>iconvd_winrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '10.0'">10.0</MinimumRequiredVersion>
+@@ -1050,7 +1050,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>inline=__inline;_WIN32_WINNT=0x0601;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_USRDLL;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -1064,7 +1064,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>libcdio.def</ModuleDefinitionFile>
+       <AdditionalDependencies>winmm.lib;iconvd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>6.1</MinimumRequiredVersion>
+     </Link>
+@@ -1113,7 +1113,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>inline=__inline;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_USRDLL;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -1129,7 +1129,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>libcdio.def</ModuleDefinitionFile>
+       <AdditionalDependencies>iconvd_winrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '10.0'">10.0</MinimumRequiredVersion>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '8.1'">8.1</MinimumRequiredVersion>
+@@ -1187,7 +1187,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>inline=__inline;_WIN32_WINNT=0x0502;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -1197,8 +1197,8 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
+       <TargetMachine>MachineX86</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+-      <AdditionalDependencies>winmm.lib;libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalDependencies>winmm.lib;iconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+     <PostBuildEvent>
+@@ -1253,7 +1253,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>inline=__inline;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -1266,7 +1266,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <TargetMachine>MachineX86</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+       <AdditionalDependencies>libiconv_winrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+     <PostBuildEvent>
+@@ -1321,7 +1321,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>inline=__inline;_WIN32_WINNT=0x0601;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -1331,8 +1331,8 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
+       <TargetMachine>MachineX64</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+-      <AdditionalDependencies>winmm.lib;libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalDependencies>winmm.lib;iconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+     <PostBuildEvent>
+@@ -1387,7 +1387,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>inline=__inline;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -1400,7 +1400,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <TargetMachine>MachineX64</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+       <AdditionalDependencies>libiconv_winrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+     <PostBuildEvent>
+@@ -1455,7 +1455,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>inline=__inline;_WIN32_WINNT=0x0502;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_USRDLL;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+       <DisableSpecificWarnings>4005;4018;4333;4244;4267;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -1470,7 +1470,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>libcdio.def</ModuleDefinitionFile>
+       <AdditionalDependencies>winmm.lib;iconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+@@ -1527,7 +1527,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>inline=__inline;_WIN32_WINNT=0x0502;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_USRDLL;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+       <DisableSpecificWarnings>4005;4018;4333;4244;4267;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -1541,8 +1541,8 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <ImportLibrary>$(OutDir)\lib\x86\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>libcdio.def</ModuleDefinitionFile>
+-      <AdditionalDependencies>winmm.lib;libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalDependencies>winmm.lib;iconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+@@ -1599,7 +1599,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>inline=__inline;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_USRDLL;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+       <CompileAsWinRT>false</CompileAsWinRT>
+@@ -1616,7 +1616,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>libcdio.def</ModuleDefinitionFile>
+       <AdditionalDependencies>iconv_winrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '10.0'">10.0</MinimumRequiredVersion>
+@@ -1675,7 +1675,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>inline=__inline;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_USRDLL;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+       <CompileAsWinRT>false</CompileAsWinRT>
+@@ -1692,7 +1692,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>libcdio.def</ModuleDefinitionFile>
+       <AdditionalDependencies>libiconv_winrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <LargeAddressAware>true</LargeAddressAware>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '10.0'">10.0</MinimumRequiredVersion>
+@@ -1751,7 +1751,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>inline=__inline;_WIN32_WINNT=0x0601;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_USRDLL;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+       <DisableSpecificWarnings>4005;4018;4333;4244;4267;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -1766,7 +1766,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>libcdio.def</ModuleDefinitionFile>
+       <AdditionalDependencies>winmm.lib;iconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>6.1</MinimumRequiredVersion>
+     </Link>
+@@ -1822,7 +1822,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>inline=__inline;_WIN32_WINNT=0x0601;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_USRDLL;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+       <DisableSpecificWarnings>4005;4018;4333;4244;4267;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -1836,8 +1836,8 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <ImportLibrary>$(OutDir)\lib\x64\$(TargetName).lib</ImportLibrary>
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>libcdio.def</ModuleDefinitionFile>
+-      <AdditionalDependencies>winmm.lib;libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalDependencies>winmm.lib;iconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>6.1</MinimumRequiredVersion>
+     </Link>
+@@ -1893,7 +1893,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>inline=__inline;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_USRDLL;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+       <CompileAsWinRT>false</CompileAsWinRT>
+@@ -1910,7 +1910,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>libcdio.def</ModuleDefinitionFile>
+       <AdditionalDependencies>iconv_winrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '10.0'">10.0</MinimumRequiredVersion>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '8.1'">8.1</MinimumRequiredVersion>
+@@ -1968,7 +1968,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>inline=__inline;HAVE_CONFIG_H;WIN32;__PRETTY_FUNCTION__=__FUNCTION__;_USRDLL;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\include;..\lib\driver;..\lib\iso9660;..\lib\udf;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+       <CompileAsWinRT>false</CompileAsWinRT>
+@@ -1985,7 +1985,7 @@ del /f /q $(OutDir)\licenses\libcdio.txt
+       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+       <ModuleDefinitionFile>libcdio.def</ModuleDefinitionFile>
+       <AdditionalDependencies>libiconv_winrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;$(VcpkgRoot)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '10.0'">10.0</MinimumRequiredVersion>
+       <MinimumRequiredVersion Condition="'$(ApplicationTypeRevision)' == '8.1'">8.1</MinimumRequiredVersion>

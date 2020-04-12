@@ -1,0 +1,14 @@
+# See: man pkg-config
+prefix=..
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+bindir=${prefix}/python3
+
+Name: Python
+Description: Python library
+Requires: 
+Version: 3.7
+Libs.private:  -lversion -lshlwapi
+Libs: -L${libdir} -lpython37
+Cflags: -I${includedir}/python3.7

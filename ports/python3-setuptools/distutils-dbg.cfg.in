@@ -1,0 +1,10 @@
+[build]
+debug=1
+
+[build_ext]
+debug=1
+include-dirs=${CURRENT_INSTALLED_DIR}/python3/include;${CURRENT_INSTALLED_DIR}/include${VCPKG_PYTHON_INCLUDE_DIRS}
+library-dirs=${CURRENT_INSTALLED_DIR}/debug/python3/libs;${CURRENT_INSTALLED_DIR}/debug/lib${VCPKG_PYTHON_DEBUG_LIBS}
+
+[build_clib]
+debug=1

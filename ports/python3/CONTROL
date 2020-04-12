@@ -1,0 +1,58 @@
+Source: python3
+Version: 3.7.3-4
+Description: The Python programming language as an embeddable library
+
+Feature: executable
+Description: Build executables for `PythonInterop` in CMake
+
+Feature: _bz2
+Description: build python module "_bz2"
+
+Feature: _sqlite3
+Description: build python module "_sqlite3"
+
+Feature: _lzma
+Description: build python module "_lzma"
+
+Feature: _ssl
+Description: build python module "_ssl"
+# Build-Depends: openssl
+
+Feature: _socket
+Description: build python module "_socket"
+
+Feature: _hashlib
+Description: build python module "_hashlib"
+
+Feature: _queue
+Description: build python module "_queue"
+
+Feature: _overlapped
+Description: build python module "_overlapped"
+
+Feature: _multiprocessing
+Description: build python module "_multiprocessing"
+
+Feature: _ctypes
+Description: build python module "_ctypes"
+
+Feature: _asyncio
+Description: build python module "_asyncio"
+
+Feature: _decimal
+Description: build python module "_decimal"
+
+Feature: _elementtree
+Description: build python module "_elementtree"
+
+Feature: pyexpat
+Description: build python module "pyexpat"
+
+Feature: select
+Description: build python module "select"
+
+Feature: unicodedata
+Description: build python module "unicodedata"
+
+Feature: winsound
+Description: build python module "winsound"

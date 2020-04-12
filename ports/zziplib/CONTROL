@@ -1,0 +1,8 @@
+Source: zziplib
+<<<<<<< HEAD
+Version: 0.13.69-2
+=======
+Version: 0.13.69-1
+>>>>>>> [ceres,jxrlib,zziplib] Fixes for non-windows (#6188)
+Build-Depends: zlib
+Description: library providing read access on ZIP-archives

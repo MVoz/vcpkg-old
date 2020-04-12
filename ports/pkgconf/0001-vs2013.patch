@@ -1,0 +1,31 @@
+diff --git a/libpkgconf/bsdstubs.c b/libpkgconf/bsdstubs.c
+index 2c000ac..5848468 100644
+--- a/libpkgconf/bsdstubs.c
++++ b/libpkgconf/bsdstubs.c
+@@ -22,6 +22,7 @@
+ #include <string.h>
+ 
+ #include <libpkgconf/bsdstubs.h>
++#include <libpkgconf/libpkgconf.h>
+ #include <libpkgconf/config.h>
+ 
+ #ifndef HAVE_STRLCPY
+diff --git a/libpkgconf/libpkgconf.h b/libpkgconf/libpkgconf.h
+index 3e8db08..259d43c 100644
+--- a/libpkgconf/libpkgconf.h
++++ b/libpkgconf/libpkgconf.h
+@@ -20,6 +20,14 @@
+ #include <stdarg.h>
+ #include <stddef.h>
+ #include <stdbool.h>
++
++/* Macro for building with vs2013 */
++#if defined _MSC_VER && _MSC_VER <= 1800
++#define inline		__inline
++#define snprintf	_snprintf
++#define __func__	__FUNCTION__
++#endif
++
+ #include <libpkgconf/libpkgconf-api.h>
+ #include <libpkgconf/iter.h>
+ #include <libpkgconf/bsdstubs.h>

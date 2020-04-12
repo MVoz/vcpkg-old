@@ -1,0 +1,6 @@
+Source: liborc
+Version: 0.4.29
+Homepage: https://gitlab.freedesktop.org/gstreamer/orc
+Description: ORC - The Oil Runtime Compiler
+#Build-Depends: 
+#Feature: 

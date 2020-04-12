@@ -1,0 +1,275 @@
+diff --git a/SMP/libilbc.vcxproj b/SMP/libilbc.vcxproj
+index e61b447..9864f5e 100644
+--- a/SMP/libilbc.vcxproj
++++ b/SMP/libilbc.vcxproj
+@@ -545,14 +545,14 @@
+   </ImportGroup>
+   <PropertyGroup Label="UserMacros" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libilbcd</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugWinRT|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libilbcd_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+@@ -561,26 +561,26 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libilbcd</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugWinRT|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libilbcd_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>ilbcd</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLWinRT|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>ilbcd_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+@@ -589,26 +589,26 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>ilbcd</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLWinRT|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>ilbcd_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libilbc</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWinRT|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libilbc_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+@@ -617,26 +617,26 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libilbc</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWinRT|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>libilbc_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>ilbc</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRT|Win32'">
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>ilbc_winrt</TargetName>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+@@ -645,14 +645,14 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>ilbc</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLWinRT|x64'">
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <TargetName>ilbc_winrt</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+     <MSBuildWarningsAsMessages>MSB8012</MSBuildWarningsAsMessages>
+   </PropertyGroup>
+@@ -662,7 +662,7 @@
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0502;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -706,7 +706,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -752,7 +752,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0601;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -796,7 +796,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -842,7 +842,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0502;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <BufferSecurityCheck>true</BufferSecurityCheck>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+@@ -892,7 +892,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <BufferSecurityCheck>true</BufferSecurityCheck>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+@@ -946,7 +946,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0601;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -995,7 +995,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <Optimization>Disabled</Optimization>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+       <PreprocessorDefinitions>_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -1055,7 +1055,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0502;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -1106,7 +1106,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -1159,7 +1159,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0601;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+@@ -1210,7 +1210,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+@@ -1263,7 +1263,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0502;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+       <DisableSpecificWarnings>4068;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -1320,7 +1320,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+       <CompileAsWinRT>false</CompileAsWinRT>
+@@ -1381,7 +1381,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>_WIN32_WINNT=0x0601;NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <TreatSpecificWarningsAsErrors>4113;%(TreatSpecificWarningsAsErrors)</TreatSpecificWarningsAsErrors>
+       <DisableSpecificWarnings>4068;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -1438,7 +1438,7 @@ del /f /q $(OutDir)\licenses\libilbc.txt
+       <OmitFramePointers>true</OmitFramePointers>
+       <StringPooling>true</StringPooling>
+       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\ilbc;..\ilbc\interface;..\signal_processing\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+       <CompileAsWinRT>false</CompileAsWinRT>

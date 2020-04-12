@@ -1,0 +1,7 @@
+Source: forest
+<<<<<<< HEAD
+Version: 11.0.1
+=======
+Version: 11.0.0
+>>>>>>> [many ports] Updates 2019.04.19 (#6155)
+Description: Template library of tree data structures

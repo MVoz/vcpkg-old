@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+Source: qt5-modularscripts
+Version: 2019-04-30
+Description: Vcpkg helpers to package qt5 modules
+=======
+Source: qt5-modularscripts
+Version: 2019-04-30
+Description: Vcpkg helpers to package qt5 modules
+>>>>>>> [qt5] Fix scripts on debug/release-only builds (#6259)

@@ -1,0 +1,4 @@
+Source: proxy-libintl
+Version: 0.1
+Description: Proxy for a dynamically loaded optional libintl
+

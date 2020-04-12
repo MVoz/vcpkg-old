@@ -1,0 +1,60 @@
+diff --git a/generic/tkText.c b/generic/tkText.c
+index 4c536a2..f9fccf9 100644
+--- a/generic/tkText.c
++++ b/generic/tkText.c
+@@ -16,6 +16,9 @@
+ 
+ #include "default.h"
+ #include "tkInt.h"
++#ifdef _MSC_VER
++#include <windows.h>
++#endif
+ #include "tkUndo.h"
+ 
+ #if defined(MAC_OSX_TK)
+diff --git a/generic/ttk/ttkTheme.c b/generic/ttk/ttkTheme.c
+index 2f95962..f249edb 100644
+--- a/generic/ttk/ttkTheme.c
++++ b/generic/ttk/ttkTheme.c
+@@ -12,8 +12,13 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
++#ifndef _MSC_VER
+ #include <tk.h>
++#endif
+ #include <tkInt.h>
++#ifdef _MSC_VER
++#include <windows.h>
++#endif
+ #include "ttkThemeInt.h"
+ 
+ #define PKG_ASSOC_KEY "Ttk"
+diff --git a/win/tkWinPort.h b/win/tkWinPort.h
+index 965dbc5..5b6bb42 100644
+--- a/win/tkWinPort.h
++++ b/win/tkWinPort.h
+@@ -21,6 +21,7 @@
+  *---------------------------------------------------------------------------
+  */
+ 
++#include <windows.h>
+ #include <wchar.h>
+ #include <io.h>
+ #include <stdlib.h>
+diff --git a/win/winMain.c b/win/winMain.c
+index 62bcbd8..12840b7 100644
+--- a/win/winMain.c
++++ b/win/winMain.c
+@@ -12,10 +12,10 @@
+  * this file, and for a DISCLAIMER OF ALL WARRANTIES.
+  */
+ 
+-#include "tk.h"
+ #define WIN32_LEAN_AND_MEAN
+ #include <windows.h>
+ #undef WIN32_LEAN_AND_MEAN
++#include "tk.h"
+ #include <locale.h>
+ #include <stdlib.h>
+ #include <tchar.h>

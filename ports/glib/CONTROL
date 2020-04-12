@@ -1,0 +1,5 @@
+Source: glib
+Version: 2.60.1
+Build-Depends: pkgconf
+# iconv, libpcre, libffi, zlib, libelf, gettext, dbus-1
+Description: GLib is the low-level core library that forms the basis for projects such as GTK+ and GNOME

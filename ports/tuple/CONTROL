@@ -1,0 +1,3 @@
+Source: tuple
+Version: 1.0.0
+Description: The Art of C++ / Tuple is a C++11 header-only proof-of-concept implementation of std::tuple.

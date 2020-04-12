@@ -1,0 +1,14 @@
+<<<<<<< HEAD
+Source: double-conversion
+Version: 3.1.0-1
+Version: 3.1.0-1
+Description: Efficient binary-decimal and decimal-binary conversion routines for IEEE doubles.
+=======
+Source: double-conversion
+Version: 3.1.0-2
+Description: Efficient binary-decimal and decimal-binary conversion routines for IEEE doubles.
+<<<<<<< HEAD
+>>>>>>> bumping all the control files
+=======
+
+>>>>>>> Update CONTROL

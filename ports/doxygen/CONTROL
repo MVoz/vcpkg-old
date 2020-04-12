@@ -1,0 +1,4 @@
+Source: doxygen
+Version: 
+Description: 
+#Build-Depends: sqlite3, xapian, libxml2

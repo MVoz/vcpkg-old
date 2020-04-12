@@ -1,0 +1,3 @@
+Source: json-glib
+Version: 1.5.1
+Description: JSON-GLib implements a full suite of JSON-related tools using GLib and GObject.

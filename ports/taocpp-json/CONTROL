@@ -1,0 +1,7 @@
+Source: taocpp-json
+<<<<<<< HEAD
+Version: 2019-05-08
+=======
+Version: 2019-04-29-1
+>>>>>>> [taocpp-json] Add new port (#6253)
+Description: C++ header-only JSON library

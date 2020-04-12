@@ -1,0 +1,7 @@
+Source: cimg
+<<<<<<< HEAD
+Version: 2.6.1
+=======
+Version: 2.5.7
+>>>>>>> [many ports] Updates 2019.04.19 (#6155)
+Description: The CImg Library is a small, open-source, and modern C++ toolkit for image processing

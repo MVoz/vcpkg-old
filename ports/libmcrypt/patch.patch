@@ -1,0 +1,142 @@
+diff --git a/win32/vc14/libmcrypt.vcxproj b/win32/vc14/libmcrypt.vcxproj
+index 3f21331..89478b4 100644
+--- a/win32/vc14/libmcrypt.vcxproj
++++ b/win32/vc14/libmcrypt.vcxproj
+@@ -130,10 +130,10 @@
+   </PropertyGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+     <CustomBuildStep>
+-      <Message>Creating static library libmcrypt_a_debug.lib...</Message>
+-      <Command>lib /nologo /out:libmcrypt\libmcrypt_a_debug.lib libmcrypt\*.obj
++      <Message>Creating static library libmcrypt_debug.lib...</Message>
++      <Command>lib /nologo /out:libmcrypt\libmcrypt_debug.lib libmcrypt\*.obj
+ </Command>
+-      <Outputs>libmcrypt\libmcrypt_a_debug.lib;%(Outputs)</Outputs>
++      <Outputs>libmcrypt\libmcrypt_debug.lib;%(Outputs)</Outputs>
+     </CustomBuildStep>
+     <Midl>
+       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+@@ -165,7 +165,7 @@
+       <Culture>0x0809</Culture>
+     </ResourceCompile>
+     <Link>
+-      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;dirent_a_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <OutputFile>.\libmcrypt/libmcrypt.dll</OutputFile>
+       <SuppressStartupBanner>true</SuppressStartupBanner>
+       <AdditionalLibraryDirectories>..\..\..\deps\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+@@ -184,10 +184,10 @@
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+     <CustomBuildStep>
+-      <Message>Creating static library libmcrypt_a_debug.lib...</Message>
+-      <Command>lib /nologo /out:libmcrypt\libmcrypt_a_debug.lib libmcrypt\*.obj
++      <Message>Creating static library libmcrypt_debug.lib...</Message>
++      <Command>lib /nologo /out:libmcrypt\libmcrypt_debug.lib libmcrypt\*.obj
+ </Command>
+-      <Outputs>libmcrypt\libmcrypt_a_debug.lib;%(Outputs)</Outputs>
++      <Outputs>libmcrypt\libmcrypt_debug.lib;%(Outputs)</Outputs>
+     </CustomBuildStep>
+     <Midl>
+       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+@@ -219,7 +219,7 @@
+       <Culture>0x0809</Culture>
+     </ResourceCompile>
+     <Link>
+-      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;dirent_a_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <OutputFile>.\libmcrypt/libmcrypt_debug.dll</OutputFile>
+       <SuppressStartupBanner>true</SuppressStartupBanner>
+       <AdditionalLibraryDirectories>..\..\..\deps\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+@@ -238,10 +238,10 @@
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release dll|Win32'">
+     <CustomBuildStep>
+-      <Message>Creating static library libmcrypt_a.lib...</Message>
+-      <Command>lib /nologo /out:libmcrypt\libmcrypt_a.lib libmcrypt\*.obj
++      <Message>Creating static library libmcrypt.lib...</Message>
++      <Command>lib /nologo /out:libmcrypt\libmcrypt.lib libmcrypt\*.obj
+ </Command>
+-      <Outputs>libmcrypt\libmcrypt_a.lib;%(Outputs)</Outputs>
++      <Outputs>libmcrypt\libmcrypt.lib;%(Outputs)</Outputs>
+     </CustomBuildStep>
+     <Midl>
+       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+@@ -272,7 +272,7 @@
+       <Culture>0x0809</Culture>
+     </ResourceCompile>
+     <Link>
+-      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;dirent_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <OutputFile>.\libmcrypt/libmcrypt.dll</OutputFile>
+       <SuppressStartupBanner>true</SuppressStartupBanner>
+       <AdditionalLibraryDirectories>..\..\..\deps\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+@@ -290,10 +290,10 @@
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release lib|Win32'">
+     <CustomBuildStep>
+-      <Message>Creating static library libmcrypt_a.lib...</Message>
+-      <Command>lib /nologo /out:libmcrypt\libmcrypt_a.lib libmcrypt\*.obj
++      <Message>Creating static library libmcrypt.lib...</Message>
++      <Command>lib /nologo /out:libmcrypt\libmcrypt.lib libmcrypt\*.obj
+ </Command>
+-      <Outputs>libmcrypt\libmcrypt_a.lib;%(Outputs)</Outputs>
++      <Outputs>libmcrypt\libmcrypt.lib;%(Outputs)</Outputs>
+     </CustomBuildStep>
+     <Midl>
+       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+@@ -325,7 +325,7 @@
+       <Culture>0x0809</Culture>
+     </ResourceCompile>
+     <Link>
+-      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;dirent_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <OutputFile>.\libmcrypt/libmcrypt.dll</OutputFile>
+       <SuppressStartupBanner>true</SuppressStartupBanner>
+       <AdditionalLibraryDirectories>..\..\..\deps\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+@@ -348,10 +348,10 @@
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release dll|x64'">
+     <CustomBuildStep>
+-      <Message>Creating static library libmcrypt_a.lib...</Message>
+-      <Command>lib /nologo /out:libmcrypt\libmcrypt_a.lib libmcrypt\*.obj
++      <Message>Creating static library libmcrypt.lib...</Message>
++      <Command>lib /nologo /out:libmcrypt\libmcrypt.lib libmcrypt\*.obj
+ </Command>
+-      <Outputs>libmcrypt\libmcrypt_a.lib;%(Outputs)</Outputs>
++      <Outputs>libmcrypt\libmcrypt.lib;%(Outputs)</Outputs>
+     </CustomBuildStep>
+     <Midl>
+       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+@@ -382,7 +382,7 @@
+       <Culture>0x0809</Culture>
+     </ResourceCompile>
+     <Link>
+-      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;dirent_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <OutputFile>.\libmcrypt/libmcrypt.dll</OutputFile>
+       <SuppressStartupBanner>true</SuppressStartupBanner>
+       <AdditionalLibraryDirectories>..\..\..\deps\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+@@ -401,10 +401,10 @@
+   </ItemDefinitionGroup>
+   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release lib|x64'">
+     <CustomBuildStep>
+-      <Message>Creating static library libmcrypt_a.lib...</Message>
+-      <Command>lib /nologo /out:libmcrypt\libmcrypt_a.lib libmcrypt\*.obj
++      <Message>Creating static library libmcrypt.lib...</Message>
++      <Command>lib /nologo /out:libmcrypt\libmcrypt.lib libmcrypt\*.obj
+ </Command>
+-      <Outputs>libmcrypt\libmcrypt_a.lib;%(Outputs)</Outputs>
++      <Outputs>libmcrypt\libmcrypt.lib;%(Outputs)</Outputs>
+     </CustomBuildStep>
+     <Midl>
+       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+@@ -436,7 +436,7 @@
+       <Culture>0x0809</Culture>
+     </ResourceCompile>
+     <Link>
+-      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;dirent_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <OutputFile>.\libmcrypt/libmcrypt.dll</OutputFile>
+       <SuppressStartupBanner>true</SuppressStartupBanner>
+       <AdditionalLibraryDirectories>..\..\..\deps\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>

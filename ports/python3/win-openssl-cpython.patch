@@ -1,0 +1,114 @@
+diff --git a/PCbuild/_hashlib.vcxproj b/PCbuild/_hashlib.vcxproj
+index d6d8802..3aff97e 100644
+--- a/PCbuild/_hashlib.vcxproj
++++ b/PCbuild/_hashlib.vcxproj
+@@ -62,7 +62,7 @@ ﻿<?xml version="1.0" encoding="utf-8"?>
+   </PropertyGroup>
+   <ItemDefinitionGroup>
+     <Link>
+-      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalDependencies>ws2_32.lib;crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemGroup>
+diff --git a/PCbuild/_ssl.vcxproj b/PCbuild/_ssl.vcxproj
+index aaf95a3..88f9380 100644
+--- a/PCbuild/_ssl.vcxproj
++++ b/PCbuild/_ssl.vcxproj
+@@ -61,8 +61,12 @@ ﻿<?xml version="1.0" encoding="utf-8"?>
+     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+   </PropertyGroup>
+   <ItemDefinitionGroup>
++    <ClCompile>
++      <AdditionalIncludeDirectories>$(opensslOutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++    </ClCompile>
+     <Link>
+-      <AdditionalDependencies>ws2_32.lib;crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalLibraryDirectories>$(opensslOutDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalDependencies>ws2_32.lib;crypt32.lib;%(opensslLibDir);%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <ItemGroup>
+diff --git a/PCbuild/openssl.props b/PCbuild/openssl.props
+index 8c78cd4..55a0010 100644
+--- a/PCbuild/openssl.props
++++ b/PCbuild/openssl.props
+@@ -5,8 +5,8 @@
+       <AdditionalIncludeDirectories>$(opensslIncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+-      <AdditionalLibraryDirectories>$(opensslOutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>ws2_32.lib;libcrypto.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
++      <AdditionalLibraryDirectories>$(opensslOutDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalDependencies>ws2_32.lib;crypt32.lib;libcrypto.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+   </ItemDefinitionGroup>
+   <PropertyGroup>
+@@ -14,10 +14,10 @@
+     <_DLLSuffix Condition="$(Platform) == 'x64'">$(_DLLSuffix)-x64</_DLLSuffix>
+   </PropertyGroup>
+   <ItemGroup>
+-    <_SSLDLL Include="$(opensslOutDir)\libcrypto$(_DLLSuffix).dll" />
+-    <_SSLDLL Include="$(opensslOutDir)\libcrypto$(_DLLSuffix).pdb" />
+-    <_SSLDLL Include="$(opensslOutDir)\libssl$(_DLLSuffix).dll" />
+-    <_SSLDLL Include="$(opensslOutDir)\libssl$(_DLLSuffix).pdb" />
++    <_SSLDLL Include="$(opensslOutDir)\bin\libcrypto$(_DLLSuffix).dll" />
++    <_SSLDLL Include="$(opensslOutDir)\bin\libcrypto$(_DLLSuffix).pdb" />
++    <_SSLDLL Include="$(opensslOutDir)\bin\libssl$(_DLLSuffix).dll" />
++    <_SSLDLL Include="$(opensslOutDir)\bin\libssl$(_DLLSuffix).pdb" />
+   </ItemGroup>
+   <Target Name="_CopySSLDLL" Inputs="@(_SSLDLL)" Outputs="@(_SSLDLL->'$(OutDir)%(Filename)%(Extension)')" AfterTargets="Build">
+     <Copy SourceFiles="@(_SSLDLL)" DestinationFolder="$(OutDir)" />
+diff --git a/PCbuild/openssl.vcxproj b/PCbuild/openssl.vcxproj
+index 1a36d08..0daa7a2 100644
+--- a/PCbuild/openssl.vcxproj
++++ b/PCbuild/openssl.vcxproj
+@@ -101,14 +101,14 @@ nmake
+       <_Include Include="$(IntDir)\include\openssl\*.h" />
+     </ItemGroup>
+     <MakeDir Directories="$(opensslOutDir)\include\openssl" />
+-    <Copy SourceFiles="@(_Built)" DestinationFolder="$(opensslOutDir)" />
+-    <Copy SourceFiles="@(_AppLink)" DestinationFolder="$(opensslOutDir)\include" />
++    <Copy SourceFiles="@(_Built)" DestinationFolder="$(opensslOutDir)\bin" />
++    <Copy SourceFiles="@(_AppLink)" DestinationFolder="$(opensslOutDir)\include\openssl" />
+     <Copy SourceFiles="@(_Include)" DestinationFolder="$(opensslOutDir)\include\openssl" />
+   </Target>
+ 
+   <Target Name="SignFiles" AfterTargets="Build" Condition="$(_SignCommand) != ''">
+     <ItemGroup>
+-      <FilesToSign Include="$(opensslOutDir)\lib*.dll" />
++      <FilesToSign Include="$(opensslOutDir)\bin\lib*.dll" />
+     </ItemGroup>
+     <Exec Command="$(_SignCommand) %(FilesToSign.FullPath)" ContinueOnError="true" />
+   </Target>
+diff --git a/PCbuild/pyproject.props b/PCbuild/pyproject.props
+index 2019ca8..73b1ef5 100644
+--- a/PCbuild/pyproject.props
++++ b/PCbuild/pyproject.props
+@@ -94,9 +94,9 @@ ﻿<?xml version="1.0" encoding="utf-8"?>
+           Inputs="$(PySourcePath)Include\patchlevel.h"
+           Outputs="$(IntDir)pythonnt_rc.h">
+     <WriteLinesToFile File="$(IntDir)pythonnt_rc.h" Overwrite="true" Encoding="ascii"
+-                      Lines='/* This file created by pyproject.props /t:GeneratePythonNtRcH */
+-#define FIELD3 $(Field3Value)
+-#define MS_DLL_ID "$(SysWinVer)"
++                      Lines='/* This file created by pyproject.props /t:GeneratePythonNtRcH */;
++#define FIELD3 $(Field3Value);
++#define MS_DLL_ID "$(SysWinVer)";
+ #define PYTHON_DLL_NAME "$(TargetName)$(TargetExt)"
+ ' />
+     <ItemGroup>
+diff --git a/PCbuild/python.props b/PCbuild/python.props
+index 683fbb6..17088dc 100644
+--- a/PCbuild/python.props
++++ b/PCbuild/python.props
+@@ -51,7 +51,8 @@
+     <lzmaDir>$(ExternalsDir)xz-5.2.2\</lzmaDir>
+     <opensslDir>$(ExternalsDir)openssl-1.1.0j\</opensslDir>
+     <opensslOutDir>$(ExternalsDir)openssl-bin-1.1.0j\$(ArchName)\</opensslOutDir>
+-    <opensslIncludeDir>$(opensslOutDir)include</opensslIncludeDir>
++    <opensslIncludeDir>$(opensslOutDir)include\openssl</opensslIncludeDir>
++    <opensslLibDir>$(opensslOutDir)lib</opensslLibDir>
+     <nasmDir>$(ExternalsDir)\nasm-2.11.06\</nasmDir>
+     <zlibDir>$(ExternalsDir)\zlib-1.2.11\</zlibDir>
+     
