@@ -1,0 +1,38 @@
+diff --git a/lib/vcppmake/libsword.vcxproj b/lib/vcppmake/libsword.vcxproj
+index 8b90739..8f4fb33 100644
+--- a/lib/vcppmake/libsword.vcxproj
++++ b/lib/vcppmake/libsword.vcxproj
+@@ -16,13 +16,13 @@ ﻿<?xml version="1.0" encoding="utf-8"?>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+-    <ConfigurationType>DynamicLibrary</ConfigurationType>
++    <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+     <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+-    <ConfigurationType>DynamicLibrary</ConfigurationType>
++    <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
+     <PlatformToolset>v120</PlatformToolset>
+@@ -66,7 +66,7 @@ ﻿<?xml version="1.0" encoding="utf-8"?>
+       <AdditionalIncludeDirectories>../../include;../../include/internal/regex;../../../icu-sword/include;../../src/utilfuns/win32;../../../curl/include;../../../xz/include;../../../bzip2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>_DEBUG;_ICU_;_ICUSWORD_;WIN32;_LIB;REGEX_MALLOC;SWMAKINGDLL;CURLAVAILABLE;CURL_STATICLIB;USBINARY;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
++      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+       <PrecompiledHeader>
+       </PrecompiledHeader>
+       <PrecompiledHeaderOutputFile>.\Debug/libsword.pch</PrecompiledHeaderOutputFile>
+@@ -103,7 +103,7 @@ ﻿<?xml version="1.0" encoding="utf-8"?>
+       <PreprocessorDefinitions>NDEBUG;_ICU_;_ICUSWORD_;WIN32;_LIB;REGEX_MALLOC;SWMAKINGDLL;CURLAVAILABLE;CURL_STATICLIB;USBINARY;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <StringPooling>
+       </StringPooling>
+-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
++      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+       <FunctionLevelLinking>true</FunctionLevelLinking>
+       <PrecompiledHeader>
+       </PrecompiledHeader>

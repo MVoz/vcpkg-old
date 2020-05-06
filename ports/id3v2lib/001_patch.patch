@@ -1,0 +1,21 @@
+diff --git a/libs/id3v2lib/CMakeLists.txt b/libs/id3v2lib/CMakeLists.txt
+index cc42c83..36a221f 100644
+--- a/libs/id3v2lib/CMakeLists.txt
++++ b/libs/id3v2lib/CMakeLists.txt
+@@ -1,16 +1,6 @@
+ CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+ PROJECT(id3v2lib)
+ 
+-if(MSVC)
+-	set(CMAKE_C_FLAGS "/EHsc /RTCc /RTC1 /MTd /Zp16 /GS /Qpar /MP /wd4244")
+-	set(CMAKE_CXX_FLAGS "/EHsc /RTCc /RTC1 /MTd /Zp16 /GS /Qpar /MP /wd4244")
+-else()
+-	ADD_DEFINITIONS(-O2)
+-	ADD_DEFINITIONS(-Wno-deprecated-writable-strings)
+-	ADD_DEFINITIONS(-Wno-write-strings)
+-	ADD_DEFINITIONS(-Wno-unused-result)
+-endif()
+-
+ SET(VERSION_MAJOR 1)
+ SET(VERSION_MINOR 0)
+ 

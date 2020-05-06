@@ -1,5 +1,6 @@
 include(vcpkg_common_functions)
 
+#http://visit.ilight.com/svn/visit/trunk/windowsbuild/thirdparty-projects/mfem-3.3/CMakeLists.txt
 vcpkg_download_distfile(ARCHIVE
     URLS "https://github.com/mfem/mfem/archive/369fc7c903398a86588788cef687596dff85d56f.zip"
     FILENAME "369fc7c903398a86588788cef687596dff85d56f.zip"

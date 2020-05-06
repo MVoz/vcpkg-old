@@ -1,0 +1,3 @@
+Source: pbc-windows
+Version: 0.5.14
+Description: The PBC (Pairing-Based Crypto) library is a C library providing low-level routines for pairing-based cryptosystems.

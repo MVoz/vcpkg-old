@@ -10,7 +10,19 @@ vcpkg_from_github(
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA
+    PREFER_NINJA # Disable this option if project cannot be built with Ninja
+    NO_CHARSET_FLAG # automatic templates
+#    GENERATOR "NMake Makefiles" # automatic templates
+#    DISABLE_PARALLEL_CONFIGURE
+    OPTIONS_DEBUG # automatic templates
+      -DDISABLE_INSTALL_HEADERS=ON # automatic templates
+      -DINSTALL_HEADERS_TOOLS=OFF
+      -DINSTALL_HEADERS=OFF
+    OPTIONS_RELEASE 
+      -DINSTALL_HEADERS=ON # automatic templates
+#      -D =OFF
+    OPTIONS 
+      -DBUILD_SHARED_LIBS:BOOL=ON
 )
 
 vcpkg_install_cmake()

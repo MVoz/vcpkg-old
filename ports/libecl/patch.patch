@@ -1,0 +1,45 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c5d3f87..530b1a0 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -171,18 +171,21 @@ if (CMAKE_USE_PTHREADS_INIT)
+     set(ERT_HAVE_THREAD_POOL ON)
+ 
+     set(pthread "${CMAKE_THREAD_LIBS_INIT}")
+-
++	if(NOT MSVC)
+     if (THREADS_HAVE_PTHREAD_ARG)
+         set(pthreadarg "-pthread")
+     endif ()
++	endif()
+ endif ()
+ 
+ set(dl "${CMAKE_DL_LIBS}")
+ 
++if(NOT MSVC)
+ find_library(M_LIBRARY NAMES m)
+ if(M_LIBRARY)
+     set(m m)
+ endif ()
++endif()
+ 
+ find_package(ZLIB)
+ if (ZLIB_FOUND)
+diff --git a/lib/util/util.c b/lib/util/util.c
+index c8b0023..f1f6bb9 100644
+--- a/lib/util/util.c
++++ b/lib/util/util.c
+@@ -4888,9 +4888,10 @@ int util_chdir(const char * path) {
+ #ifdef HAVE_WINDOWS_CHDIR
+ #include <direct.h>
+ 
+-int util_chdir(const char * path) {
+-  return _chdir( path );
+-}
++// error C2084: function 'int util_chdir(const char *)' already has a body
++//int util_chdir(const char * path) {
++//  return _chdir( path );
++//}
+ 
+ #endif
+ 

@@ -1,0 +1,32 @@
+From 64f47c2d71ffba5aa8cd1d2a447339fd95f362f9 Mon Sep 17 00:00:00 2001
+From: Erik de Castro Lopo <erikd@mega-nerd.com>
+Date: Wed, 19 Apr 2017 18:14:26 +1000
+Subject: [PATCH] libFLAC: Fix default flac_max/min
+
+There were a number of specialized versions, but the default case
+defined `MAX` and `MIN` instead of `flac_max` and `flac_min`.
+---
+ src/libFLAC/include/private/macros.h | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/libFLAC/include/private/macros.h b/src/libFLAC/include/private/macros.h
+index becc59f9..02eada45 100644
+--- a/src/libFLAC/include/private/macros.h
++++ b/src/libFLAC/include/private/macros.h
+@@ -61,12 +61,12 @@
+ #define flac_min(a,b) __min(a,b)
+ #endif
+ 
+-#ifndef MIN
+-#define MIN(x,y)	((x) <= (y) ? (x) : (y))
++#ifndef flac_min
++#define flac_min(x,y)	((x) <= (y) ? (x) : (y))
+ #endif
+ 
+-#ifndef MAX
+-#define MAX(x,y)	((x) >= (y) ? (x) : (y))
++#ifndef flac_max
++#define flac_max(x,y)	((x) >= (y) ? (x) : (y))
+ #endif
+ 
+ #endif

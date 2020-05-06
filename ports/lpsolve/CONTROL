@@ -1,0 +1,4 @@
+Source: lpsolve
+Version: 5.5.2.5-1
+Description: Mixed Integer Linear Programming (MILP) solver lp_solve solves pure linear, (mixed) integer/binary, semi-cont and special ordered sets (SOS) models.lp_solve is written in ANSI C and can be compiled on many different platforms like Linux and WINDOWS
+

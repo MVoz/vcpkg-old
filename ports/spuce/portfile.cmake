@@ -15,8 +15,8 @@ vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA # Disable this option if project cannot be built with Ninja
 #    DISABLE_PARALLEL_CONFIGURE
-#    OPTIONS 
-#        -D =ON
+    OPTIONS 
+        -DBUILD_TESTING:BOOL=OFF
 #        -D =OFF
 #    OPTIONS_RELEASE
 #        -D =ON

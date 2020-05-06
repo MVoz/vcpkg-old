@@ -6,18 +6,8 @@ index 7bc14bc8..a99a740c 100644
  set_and_check(FOLLY_INCLUDE_DIR "@PACKAGE_INCLUDE_INSTALL_DIR@")
  set_and_check(FOLLY_CMAKE_DIR "@PACKAGE_CMAKE_INSTALL_DIR@")
  
-<<<<<<< HEAD
-<<<<<<< HEAD
 +find_package(double-conversion REQUIRED)
 +find_package(gflags REQUIRED)
-=======
-+find_package(double-conversion CONFIG REQUIRED)
-+find_package(gflags CONFIG REQUIRED)
->>>>>>> fixing and updating folly for fizz regression.
-=======
-+find_package(double-conversion REQUIRED)
-+find_package(gflags REQUIRED)
->>>>>>> smaller fixes to folly
 +
  # Include the folly-targets.cmake file, which is generated from our CMake rules
  if (NOT TARGET Folly::folly)

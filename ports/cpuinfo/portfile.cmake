@@ -1,69 +1,69 @@
 include(vcpkg_common_functions)
 
+# On Windows, we can get a cpuinfo.dll, but it exports no symbols.
 vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 
-find_program(GIT NAMES git git.cmd)
-set(GIT_URL "https://github.com/hunter-packages/cpuinfo")
-set(GIT_REV master)
-set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/${PORT})
-if(NOT EXISTS "${SOURCE_PATH}/.git")
-    message(STATUS "Cloning and fetching submodules")
-    vcpkg_execute_required_process(
-      COMMAND ${GIT} clone --recurse-submodules ${GIT_URL} ${SOURCE_PATH}
-      WORKING_DIRECTORY ${SOURCE_PATH}
-      LOGNAME clone
-    )
-    message(STATUS "Checkout revision ${GIT_REV}")
-    vcpkg_execute_required_process(
-      COMMAND ${GIT} checkout ${GIT_REV}
-      WORKING_DIRECTORY ${SOURCE_PATH}
-      LOGNAME checkout
-    )
-endif()
+vcpkg_download_distfile(
+    pull_22_patch_file
+    URLS "https://github.com/pytorch/cpuinfo/compare/d5e37adf1406cf899d7d9ec1d317c47506ccb970...868bd113ed496a01cd030ab4d5b8853561f919a3.diff"
+    FILENAME "cpuinfo-pull-22-868bd11.patch"
+    SHA512 6971707e71613ca07fe0d18cb9c36cd5161177fc9ad3eb9e66f17a694559f3a95ccdad8f50e9342507a7978bd454f66e47c8a94db9077267ca302535b7cc3b59
+)
 
-vcpkg_find_acquire_program(PYTHON3)
-get_filename_component(PYTHON3_DIR "${PYTHON3}" DIRECTORY)
-set(ENV{PATH} "$ENV{PATH};${PYTHON3_DIR}")
+vcpkg_from_github(
+    OUT_SOURCE_PATH SOURCE_PATH
+    REPO pytorch/cpuinfo
+    REF d5e37adf1406cf899d7d9ec1d317c47506ccb970
+    SHA512 ecd2115340fa82a67db7889ce286c3070d5ab9c30b02372b08aac893e90ccebc65c6b3e66aa02a9ae9c57892d2d8c3b77cb836e5fc3b88df2c75d33e574d90d2
+    HEAD_REF master
+    PATCHES
+        ${pull_22_patch_file}
+)
+
+vcpkg_check_features(
+    OUT_FEATURE_OPTIONS FEATURE_OPTIONS
+    tools CPUINFO_BUILD_TOOLS
+)
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA # Disable this option if project cannot be built with Ninja
-    NO_CHARSET_FLAG # automatic templates
-#    GENERATOR "NMake Makefiles" # automatic templates
-#    DISABLE_PARALLEL_CONFIGURE
-    OPTIONS_DEBUG # automatic templates
-      -DDISABLE_INSTALL_HEADERS=ON # automatic templates
-      -DINSTALL_HEADERS_TOOLS=OFF
-      -DINSTALL_HEADERS=OFF
-    OPTIONS_RELEASE 
-      -DINSTALL_HEADERS=ON # automatic templates
-#      -D =OFF
-    OPTIONS 
-#      -DBENCHMARK_BUILD_32_BITS=OFF
-      -DBENCHMARK_ENABLE_EXCEPTIONS=ON
-      -DBENCHMARK_ENABLE_LTO=OFF
-      -DBENCHMARK_ENABLE_TESTING=OFF
-      -DBENCHMARK_USE_LIBCXX=OFF
-      -DBUILD_GMOCK=OFF
-      -DBUILD_GTEST=OFF
-      -DBUILD_SHARED_LIBS=OFF
-      -DCLOG_BUILD_TESTS=OFF
-      -DCLOG_LOG_TO_STDIO=ON
-      -DCPUINFO_BUILD_BENCHMARKS=OFF
-      -DCPUINFO_BUILD_MOCK_TESTS=OFF
-      -DCPUINFO_BUILD_TOOLS=OFF
-      -DCPUINFO_BUILD_UNIT_TESTS=OFF
-      -Dgmock_build_tests=OFF
-      -Dgtest_build_samples=OFF
-      -Dgtest_build_tests=OFF
-      -Dgtest_disable_pthreads=OFF
-      -Dgtest_force_shared_crt=OFF
-      -Dgtest_hide_internal_symbols=OFF
+    PREFER_NINJA
+    OPTIONS_DEBUG
+        -DCPUINFO_BUILD_TOOLS=OFF
+    OPTIONS_RELEASE
+        ${FEATURE_OPTIONS}
+    OPTIONS
+        -DCPUINFO_BUILD_UNIT_TESTS=OFF
+        -DCPUINFO_BUILD_MOCK_TESTS=OFF
+        -DCPUINFO_BUILD_BENCHMARKS=OFF
 )
 
 vcpkg_install_cmake()
 
-set(VCPKG_POLICY_EMPTY_PACKAGE enabled) # automatic templates
-vcpkg_copy_pdbs() # automatic templates
+vcpkg_copy_pdbs()
+
+vcpkg_fixup_cmake_targets(CONFIG_PATH lib/cmake/${PORT})
+
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
+
+if(tools IN_LIST FEATURES)
+    foreach(cpuinfo_tool cache-info cpuid-dump cpu-info isa-info)
+        file(COPY
+            ${CURRENT_PACKAGES_DIR}/bin/${cpuinfo_tool}${VCPKG_TARGET_EXECUTABLE_SUFFIX}
+            DESTINATION ${CURRENT_PACKAGES_DIR}/tools/${PORT}
+        )
+        vcpkg_copy_tool_dependencies(${CURRENT_PACKAGES_DIR}/tools/${PORT})
+    endforeach()
+
+    if(VCPKG_LIBRARY_LINKAGE STREQUAL static)
+        file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/bin)
+    else()
+        message(FATAL_ERROR "FIXME")
+    endif()
+endif()
+
+# Handle copyright
 configure_file(${SOURCE_PATH}/LICENSE ${CURRENT_PACKAGES_DIR}/share/${PORT}/copyright COPYONLY)
-###
+
+# CMake integration test
+vcpkg_test_cmake(PACKAGE_NAME ${PORT})

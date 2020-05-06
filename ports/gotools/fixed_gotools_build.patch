@@ -1,0 +1,210 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a52338f..53bdcfb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -43,6 +43,7 @@ IF(WIN32)
+   SET(BOOST_LIBRARYDIR ${BOOST_ROOT}/lib64-msvc-14.0/)
+ ENDIF()
+ SET(Boost_ADDITIONAL_VERSIONS
++  "1.66" "1.66.0"
+   "1.65" "1.65.0"
+   "1.58" "1.58.0"
+   "1.51" "1.51.0"
+diff --git a/compositemodel/CMakeLists.txt b/compositemodel/CMakeLists.txt
+index c7cc93f..ad4a294 100644
+--- a/compositemodel/CMakeLists.txt
++++ b/compositemodel/CMakeLists.txt
+@@ -57,7 +57,7 @@ SET(DEPLIBS
+ 
+ FILE(GLOB_RECURSE GoCompositeModel_SRCS src/*.C include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-    ADD_LIBRARY(GoCompositeModel SHARED ${GoCompositeModel_SRCS})
++    ADD_LIBRARY(GoCompositeModel STATIC ${GoCompositeModel_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(GoCompositeModel ${GoCompositeModel_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+diff --git a/gotools-core/CMakeLists.txt b/gotools-core/CMakeLists.txt
+index 9fdd5e9..c89cc44 100644
+--- a/gotools-core/CMakeLists.txt
++++ b/gotools-core/CMakeLists.txt
+@@ -21,7 +21,7 @@ INCLUDE_DIRECTORIES(
+ 
+ FILE(GLOB_RECURSE GoToolsCore_SRCS src/*.cpp src/*.C include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-    ADD_LIBRARY(GoToolsCore SHARED ${GoToolsCore_SRCS})
++    ADD_LIBRARY(GoToolsCore STATIC ${GoToolsCore_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(GoToolsCore ${GoToolsCore_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+diff --git a/igeslib/CMakeLists.txt b/igeslib/CMakeLists.txt
+index 52e06df..a21eb01 100644
+--- a/igeslib/CMakeLists.txt
++++ b/igeslib/CMakeLists.txt
+@@ -22,7 +22,7 @@ SET(DEPLIBS
+ 
+ FILE(GLOB_RECURSE GoIgeslib_SRCS src/*.C include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-    ADD_LIBRARY(GoIgeslib SHARED ${GoIgeslib_SRCS})
++    ADD_LIBRARY(GoIgeslib STATIC ${GoIgeslib_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(GoIgeslib ${GoIgeslib_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+diff --git a/implicitization/CMakeLists.txt b/implicitization/CMakeLists.txt
+index 864a65c..39ace42 100644
+--- a/implicitization/CMakeLists.txt
++++ b/implicitization/CMakeLists.txt
+@@ -23,7 +23,7 @@ SET(DEPLIBS
+ 
+ FILE(GLOB_RECURSE GoImplicitization_SRCS src/*.C include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-    ADD_LIBRARY(GoImplicitization SHARED ${GoImplicitization_SRCS})
++    ADD_LIBRARY(GoImplicitization STATIC ${GoImplicitization_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(GoImplicitization ${GoImplicitization_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+diff --git a/intersections/CMakeLists.txt b/intersections/CMakeLists.txt
+index 9d8a91b..c0a9537 100644
+--- a/intersections/CMakeLists.txt
++++ b/intersections/CMakeLists.txt
+@@ -27,7 +27,7 @@ SET(DEPLIBS
+ 
+ FILE(GLOB_RECURSE GoIntersections_SRCS src/*.C include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-    ADD_LIBRARY(GoIntersections SHARED ${GoIntersections_SRCS})
++    ADD_LIBRARY(GoIntersections STATIC ${GoIntersections_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(GoIntersections ${GoIntersections_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+diff --git a/isogeometric_model/CMakeLists.txt b/isogeometric_model/CMakeLists.txt
+index 8308dfd..dd3cff8 100644
+--- a/isogeometric_model/CMakeLists.txt
++++ b/isogeometric_model/CMakeLists.txt
+@@ -39,7 +39,7 @@ SET(DEPLIBS
+ 
+ FILE(GLOB_RECURSE GoIsogeometricModel_SRCS src/*.C include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-    ADD_LIBRARY(GoIsogeometricModel SHARED ${GoIsogeometricModel_SRCS})
++    ADD_LIBRARY(GoIsogeometricModel STATIC ${GoIsogeometricModel_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(GoIsogeometricModel ${GoIsogeometricModel_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+diff --git a/lrsplines2D/CMakeLists.txt b/lrsplines2D/CMakeLists.txt
+index 179f335..793bb80 100644
+--- a/lrsplines2D/CMakeLists.txt
++++ b/lrsplines2D/CMakeLists.txt
+@@ -27,7 +27,7 @@ SET(DEPLIBS
+ 
+ FILE(GLOB_RECURSE GoLRspline2D_SRCS src/*.C include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-    ADD_LIBRARY(GoLRspline2D SHARED ${GoLRspline2D_SRCS})
++    ADD_LIBRARY(GoLRspline2D STATIC ${GoLRspline2D_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(GoLRspline2D ${GoLRspline2D_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+diff --git a/newmat/CMakeLists.txt b/newmat/CMakeLists.txt
+index 5e39c41..65eacbe 100644
+--- a/newmat/CMakeLists.txt
++++ b/newmat/CMakeLists.txt
+@@ -12,7 +12,7 @@ INCLUDE_DIRECTORIES(
+ 
+ FILE(GLOB_RECURSE newmat_SRCS src/*.cpp include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-    ADD_LIBRARY(newmat SHARED ${newmat_SRCS})
++    ADD_LIBRARY(newmat STATIC ${newmat_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(newmat ${newmat_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+@@ -22,6 +22,7 @@ SET_PROPERTY(TARGET newmat
+ 
+ # Apps, examples, tests, ...?
+ 
++IF(GoTools_COMPILE_APPS)
+ FILE(GLOB tmt_SRCS app/tmt.cpp app/tmt?.cpp)
+ ADD_EXECUTABLE(tmt ${tmt_SRCS})
+ TARGET_LINK_LIBRARIES(tmt newmat)
+@@ -58,7 +59,7 @@ ADD_EXECUTABLE(test_exc app/test_exc.cpp)
+ TARGET_LINK_LIBRARIES(test_exc newmat)
+ SET_PROPERTY(TARGET test_exc
+   PROPERTY FOLDER "newmat/Apps")
+-
++ENDIF()
+ 
+ # Install newmat
+ 
+diff --git a/parametrization/CMakeLists.txt b/parametrization/CMakeLists.txt
+index ff779af..1322253 100644
+--- a/parametrization/CMakeLists.txt
++++ b/parametrization/CMakeLists.txt
+@@ -21,7 +21,7 @@ SET(DEPLIBS
+ 
+ FILE(GLOB_RECURSE parametrization_SRCS src/*.C include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-    ADD_LIBRARY(parametrization SHARED ${parametrization_SRCS})
++    ADD_LIBRARY(parametrization STATIC ${parametrization_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(parametrization ${parametrization_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+diff --git a/qualitymodule/CMakeLists.txt b/qualitymodule/CMakeLists.txt
+index c2c949e..8e7e2c1 100644
+--- a/qualitymodule/CMakeLists.txt
++++ b/qualitymodule/CMakeLists.txt
+@@ -36,7 +36,7 @@ SET(DEPLIBS
+ 
+ FILE(GLOB_RECURSE GoQualityModule_SRCS src/*.C include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-    ADD_LIBRARY(GoQualityModule SHARED ${GoQualityModule_SRCS})
++    ADD_LIBRARY(GoQualityModule STATIC ${GoQualityModule_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(GoQualityModule ${GoQualityModule_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+diff --git a/sisl b/sisl
+--- a/sisl
++++ b/sisl
+@@ -1 +1 @@
+-Subproject commit 8526f4182f75901feb0f962fddd6483fb3cf0596
++Subproject commit 8526f4182f75901feb0f962fddd6483fb3cf0596-dirty
+diff --git a/topology/CMakeLists.txt b/topology/CMakeLists.txt
+index 0d3dfa7..94d1c75 100644
+--- a/topology/CMakeLists.txt
++++ b/topology/CMakeLists.txt
+@@ -20,7 +20,7 @@ SET(DEPLIBS
+ # Make the GoTopology library
+ FILE(GLOB_RECURSE GoTopology_SRCS src/*.C include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-    ADD_LIBRARY(GoTopology SHARED ${GoTopology_SRCS})
++    ADD_LIBRARY(GoTopology STATIC ${GoTopology_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(GoTopology ${GoTopology_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+diff --git a/trivariate/CMakeLists.txt b/trivariate/CMakeLists.txt
+index aaab6bd..a2d0dcd 100644
+--- a/trivariate/CMakeLists.txt
++++ b/trivariate/CMakeLists.txt
+@@ -22,7 +22,7 @@ SET(DEPLIBS
+ 
+ FILE(GLOB_RECURSE GoTrivariate_SRCS src/*.C include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-    ADD_LIBRARY(GoTrivariate SHARED ${GoTrivariate_SRCS})
++    ADD_LIBRARY(GoTrivariate STATIC ${GoTrivariate_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(GoTrivariate ${GoTrivariate_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+diff --git a/trivariatemodel/CMakeLists.txt b/trivariatemodel/CMakeLists.txt
+index b5daf1d..51d56c0 100644
+--- a/trivariatemodel/CMakeLists.txt
++++ b/trivariatemodel/CMakeLists.txt
+@@ -42,7 +42,7 @@ SET(DEPLIBS
+ 
+ FILE(GLOB_RECURSE GoTrivariateModel_SRCS src/*.C include/*.h)
+ if (BUILD_AS_SHARED_LIBRARY)
+-  ADD_LIBRARY(GoTrivariateModel SHARED ${GoTrivariateModel_SRCS})
++  ADD_LIBRARY(GoTrivariateModel STATIC ${GoTrivariateModel_SRCS})
+ else (BUILD_AS_SHARED_LIBRARY)
+     ADD_LIBRARY(GoTrivariateModel ${GoTrivariateModel_SRCS})
+ endif (BUILD_AS_SHARED_LIBRARY)
+diff --git a/ttl b/ttl
+--- a/ttl
++++ b/ttl
+@@ -1 +1 @@
+-Subproject commit 4b69f8b7f485823112cfbd992145edfbb9efab8d
++Subproject commit 4b69f8b7f485823112cfbd992145edfbb9efab8d-dirty

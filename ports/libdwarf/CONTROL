@@ -1,0 +1,4 @@
+Source: libdwarf
+Version: v1.0
+Description: Library to provide access to DWARF debugging information.
+Build-Depends: libelf

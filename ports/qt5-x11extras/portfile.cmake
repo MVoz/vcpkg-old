@@ -1,0 +1,7 @@
+include(vcpkg_common_functions)
+
+include(${CURRENT_INSTALLED_DIR}/share/qt5modularscripts/qt_modular_library.cmake)
+
+qt_modular_library(qtx11extras 21dda778aaccab44d8c4950fc6cc9fc6748f1f38721d8f775c61754ace81d17a03847cc6fbe98a9d23ea592fd5f6942eedff102d4841daa5847125986c474854)
+
+set(VCPKG_POLICY_EMPTY_PACKAGE enabled) # automatic templates

@@ -1,0 +1,22 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index bc65d91..b5ab26d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -220,7 +220,7 @@ else()
+ 	set_target_properties(opencore-amrnb PROPERTIES VERSION 0.0.3)
+ 	if(MSVC)
+ 		if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+-			install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Debug/opencore-amrnb.pdb
++			install(FILES ${CMAKE_CURRENT_BINARY_DIR}/opencore-amrnb.pdb
+ 				DESTINATION bin
+ 				PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+ 			)
+@@ -312,7 +312,7 @@ if(ENABLE_AMRWB_DECODER)
+ 		set_target_properties(opencore-amrwb PROPERTIES VERSION 0.0.3)
+ 		if(MSVC)
+ 			if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+-				install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Debug/opencore-amrwb.pdb
++				install(FILES ${CMAKE_CURRENT_BINARY_DIR}/opencore-amrwb.pdb
+ 					DESTINATION bin
+ 					PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+ 				)

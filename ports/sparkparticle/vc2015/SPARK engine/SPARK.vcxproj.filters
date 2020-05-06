@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers sources\Core">
+      <UniqueIdentifier>{36da9e9a-84b4-4f1b-a30c-8be43dcc4a0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Extensions">
+      <UniqueIdentifier>{f8ee2631-c283-44ff-be40-ef6ba35654a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Extensions\Modifiers">
+      <UniqueIdentifier>{c00d0e96-e24f-4bf3-b0be-7df31fc811f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Extensions\Emitters">
+      <UniqueIdentifier>{8bf38c34-29ef-4a2f-8490-846eeead0e6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Extensions\Zones">
+      <UniqueIdentifier>{1db1a649-26fa-450f-b8c7-3086e475e108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Extensions\Renderers">
+      <UniqueIdentifier>{a97ab34e-93e3-41bf-88d6-bb610454b2cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\RenderingAPIs">
+      <UniqueIdentifier>{95833fa5-9677-448e-8735-274738e9a191}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\RenderingAPIs\OpenGL">
+      <UniqueIdentifier>{da71afb1-a5fb-4827-8f04-aa2a8d631188}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\RenderingAPIs\Irrlicht">
+      <UniqueIdentifier>{05d27cf3-4333-40d1-b258-dced41f2d11a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\RenderingAPIs\SFML">
+      <UniqueIdentifier>{eee13ad0-9311-499f-8a2c-5a17a7bcd2c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\RenderingAPIs\DX9">
+      <UniqueIdentifier>{5b2a4e95-4f6b-491a-8d22-03cd230c01f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Core">
+      <UniqueIdentifier>{2ca99974-b3ee-454c-9b1e-7d7dbdbd0a30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Extensions">
+      <UniqueIdentifier>{f04e10b3-b5f1-4106-ab43-788e39ede1cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Extensions\Modifiers">
+      <UniqueIdentifier>{240973c7-931b-4133-a4e8-1ad91ed952df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Extensions\Emitters">
+      <UniqueIdentifier>{fbfbb3b0-ca53-4753-8820-43984cd03285}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Extensions\Zones">
+      <UniqueIdentifier>{3b98ae4a-ea77-42be-92cf-673ac0b94739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Extensions\Renderer">
+      <UniqueIdentifier>{64d3746b-e508-4ea1-9068-24cea5477aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\RenderingAPIs">
+      <UniqueIdentifier>{96809ae5-2cbc-40f7-bee6-6d7e73ce08ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\RenderingAPIs\OpenGL">
+      <UniqueIdentifier>{deaa93d4-13a2-4162-9f15-11bbc4459ed8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\RenderingAPIs\SFML">
+      <UniqueIdentifier>{5a1fe2cc-3a2f-4370-9b2d-086d03da9f2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\RenderingAPIs\Irrlicht">
+      <UniqueIdentifier>{782ffd9b-96fa-4830-824d-1d3731e5c8fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\RenderingAPIs\DX9">
+      <UniqueIdentifier>{5b14e9ba-38c1-478d-b5c4-2ec561990148}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Core\SPK_BufferHandler.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_DEF.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_Emitter.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_Factory.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_Group.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_Interpolator.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_Model.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_Modifier.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_Particle.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_Registerable.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_Renderer.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_System.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_Transformable.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_Vector3D.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Core\SPK_Zone.cpp">
+      <Filter>Fichiers sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Modifiers\SPK_Collision.cpp">
+      <Filter>Fichiers sources\Extensions\Modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Modifiers\SPK_Destroyer.cpp">
+      <Filter>Fichiers sources\Extensions\Modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Modifiers\SPK_LinearForce.cpp">
+      <Filter>Fichiers sources\Extensions\Modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Modifiers\SPK_ModifierGroup.cpp">
+      <Filter>Fichiers sources\Extensions\Modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Modifiers\SPK_Obstacle.cpp">
+      <Filter>Fichiers sources\Extensions\Modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Modifiers\SPK_PointMass.cpp">
+      <Filter>Fichiers sources\Extensions\Modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Modifiers\SPK_Vortex.cpp">
+      <Filter>Fichiers sources\Extensions\Modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Emitters\SPK_NormalEmitter.cpp">
+      <Filter>Fichiers sources\Extensions\Emitters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Emitters\SPK_RandomEmitter.cpp">
+      <Filter>Fichiers sources\Extensions\Emitters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Emitters\SPK_SphericEmitter.cpp">
+      <Filter>Fichiers sources\Extensions\Emitters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Emitters\SPK_StraightEmitter.cpp">
+      <Filter>Fichiers sources\Extensions\Emitters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Zones\SPK_AABox.cpp">
+      <Filter>Fichiers sources\Extensions\Zones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Zones\SPK_Cylinder.cpp">
+      <Filter>Fichiers sources\Extensions\Zones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Zones\SPK_Line.cpp">
+      <Filter>Fichiers sources\Extensions\Zones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Zones\SPK_Plane.cpp">
+      <Filter>Fichiers sources\Extensions\Zones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Zones\SPK_Point.cpp">
+      <Filter>Fichiers sources\Extensions\Zones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Zones\SPK_Ring.cpp">
+      <Filter>Fichiers sources\Extensions\Zones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Zones\SPK_Sphere.cpp">
+      <Filter>Fichiers sources\Extensions\Zones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Zones\SPK_ZoneIntersection.cpp">
+      <Filter>Fichiers sources\Extensions\Zones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Zones\SPK_ZoneUnion.cpp">
+      <Filter>Fichiers sources\Extensions\Zones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Renderers\SPK_Oriented3DRendererInterface.cpp">
+      <Filter>Fichiers sources\Extensions\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Extensions\Renderers\SPK_QuadRendererInterface.cpp">
+      <Filter>Fichiers sources\Extensions\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\OpenGL\SPK_GLExtHandler.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\OpenGL\SPK_GLLineRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\OpenGL\SPK_GLLineTrailRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\OpenGL\SPK_GLPointRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\OpenGL\SPK_GLQuadRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\OpenGL\SPK_GLRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\Irrlicht\SPK_IRRBuffer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\Irrlicht</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\Irrlicht\SPK_IRRLineRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\Irrlicht</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\Irrlicht\SPK_IRRPointRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\Irrlicht</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\Irrlicht\SPK_IRRQuadRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\Irrlicht</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\Irrlicht\SPK_IRRRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\Irrlicht</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\Irrlicht\SPK_IRRSystem.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\Irrlicht</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\SFML\SPK_SFMLDrawableRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\SFML\SPK_SFMLLineRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\SFML\SPK_SFMLPointRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\SFML\SPK_SFMLQuadRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\SFML\SPK_SFMLRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\SFML\SPK_SFMLSystem.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\DX9\SPK_DX9BufferHandler.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\DX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\DX9\SPK_DX9Info.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\DX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\DX9\SPK_DX9LineRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\DX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\DX9\SPK_DX9LineTrailRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\DX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\DX9\SPK_DX9PointRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\DX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\DX9\SPK_DX9QuadRenderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\DX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\RenderingAPIs\DX9\SPK_DX9Renderer.cpp">
+      <Filter>Fichiers sources\RenderingAPIs\DX9</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\SPK.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\SPK_DX9.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\SPK_GL.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\SPK_IRR.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\SPK_SFML.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_ArrayBuffer.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Buffer.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_BufferHandler.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_DEF.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Emitter.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Factory.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Group.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Interpolator.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Model.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Modifier.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Particle.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Pool.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Registerable.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_RegWrapper.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Renderer.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_System.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Transformable.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Vector3D.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Core\SPK_Zone.h">
+      <Filter>Fichiers d%27en-tête\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Modifiers\SPK_Collision.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Modifiers\SPK_Destroyer.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Modifiers\SPK_LinearForce.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Modifiers\SPK_ModifierGroup.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Modifiers\SPK_Obstacle.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Modifiers\SPK_PointMass.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Modifiers\SPK_Rotator.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Modifiers\SPK_Vortex.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Emitters\SPK_NormalEmitter.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Emitters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Emitters\SPK_RandomEmitter.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Emitters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Emitters\SPK_SphericEmitter.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Emitters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Emitters\SPK_StaticEmitter.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Emitters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Emitters\SPK_StraightEmitter.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Emitters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Zones\SPK_AABox.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Zones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Zones\SPK_Cylinder.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Zones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Zones\SPK_Line.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Zones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Zones\SPK_Plane.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Zones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Zones\SPK_Point.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Zones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Zones\SPK_Ring.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Zones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Zones\SPK_Sphere.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Zones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Zones\SPK_ZoneIntersection.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Zones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Zones\SPK_ZoneUnion.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Zones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Renderers\SPK_LineRendererInterface.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Renderers\SPK_Oriented2DRendererInterface.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Renderers\SPK_Oriented3DRendererInterface.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Renderers\SPK_PointRendererInterface.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\Extensions\Renderers\SPK_QuadRendererInterface.h">
+      <Filter>Fichiers d%27en-tête\Extensions\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\OpenGL\SPK_GL_DEF.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\OpenGL\SPK_GLExtHandler.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\OpenGL\SPK_GLLineRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\OpenGL\SPK_GLLineTrailRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\OpenGL\SPK_GLPointRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\OpenGL\SPK_GLQuadRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\OpenGL\SPK_GLRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\SFML\SPK_SFML_DEF.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\SFML\SPK_SFML_GLOBAL.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\SFML\SPK_SFMLDrawableRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\SFML\SPK_SFMLLineRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\SFML\SPK_SFMLPointRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\SFML\SPK_SFMLQuadRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\SFML\SPK_SFMLRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\SFML\SPK_SFMLSystem.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\SFML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\Irrlicht\SPK_IRR_DEF.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\Irrlicht</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\Irrlicht\SPK_IRRBuffer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\Irrlicht</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\Irrlicht\SPK_IRRLineRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\Irrlicht</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\Irrlicht\SPK_IRRMaterialProxy.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\Irrlicht</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\Irrlicht\SPK_IRRPointRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\Irrlicht</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\Irrlicht\SPK_IRRQuadRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\Irrlicht</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\Irrlicht\SPK_IRRRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\Irrlicht</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\Irrlicht\SPK_IRRSystem.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\Irrlicht</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\DX9\SPK_DX9_DEF.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\DX9\SPK_DX9BufferHandler.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\DX9\SPK_DX9Info.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\DX9\SPK_DX9LineRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\DX9\SPK_DX9LineTrailRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\DX9\SPK_DX9PointRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\DX9\SPK_DX9QuadRenderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\RenderingAPIs\DX9\SPK_DX9Renderer.h">
+      <Filter>Fichiers d%27en-tête\RenderingAPIs\DX9</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

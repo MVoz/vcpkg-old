@@ -1,0 +1,31 @@
+diff --git a/CMake/CMakeLists.txt b/CMake/CMakeLists.txt
+index b1e9462..c279a0d 100644
+--- a/CMake/CMakeLists.txt
++++ b/CMake/CMakeLists.txt
+@@ -13,10 +13,12 @@
+ # directory, but can also be used for custom projects.
+ #############################################################
+ 
+-if(WIN32 OR APPLE)
+-	set(OGRE_CMAKE_DIR "CMake")
+-else()
+-	set(OGRE_CMAKE_DIR "${OGRE_LIB_DIRECTORY}/OGRE/cmake")
++if(NOT DEFINED OGRE_CMAKE_DIR)
++    if(WIN32 OR APPLE)
++	    set(OGRE_CMAKE_DIR "CMake")
++    else()
++	    set(OGRE_CMAKE_DIR "${OGRE_LIB_DIRECTORY}/OGRE/cmake")
++    endif()
+ endif()
+ 
+ set(INST_FILES
+@@ -71,6 +73,9 @@ if (APPLE)
+   )
+ endif ()
+ 
++message(STATUS "INST_FILE ${INST_FILES}")
++message(STATUS "OGRE_CMAKE_DIR: ${OGRE_CMAKE_DIR}")
++
+ install(FILES ${INST_FILES} DESTINATION ${OGRE_CMAKE_DIR})
+ if (OGRE_STATIC)
+   install(FILES ${STATIC_INST_FILES} DESTINATION ${OGRE_CMAKE_DIR})

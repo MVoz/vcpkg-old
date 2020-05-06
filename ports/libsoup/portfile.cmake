@@ -11,6 +11,10 @@ vcpkg_extract_source_archive_ex(
     ARCHIVE ${ARCHIVE}
 )
 
+vcpkg_find_acquire_program(XGETTEXT)
+get_filename_component(GETTEXT_DIR "${XGETTEXT}" DIRECTORY)
+set(ENV{PATH} ";$ENV{PATH};${GETTEXT_DIR}")
+
 #vcpkg_find_acquire_program(VALAC)
 #get_filename_component(VALAC_DIR ${VALAC} DIRECTORY)
 #set(ENV{PATH} ";$ENV{PATH};${VALAC_DIR}")
@@ -34,7 +38,6 @@ vcpkg_install_meson()
 vcpkg_copy_pdbs()
 
 # Handle copyright
-file(INSTALL ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/libsoup RENAME copyright)
-
-# Post-build test for cmake libraries
-# vcpkg_test_cmake(PACKAGE_NAME libsoup)
+file(INSTALL ${SOURCE_PATH}/COPYING DESTINATION ${CURRENT_PACKAGES_DIR}/share/libsoup RENAME copyright)
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/share)

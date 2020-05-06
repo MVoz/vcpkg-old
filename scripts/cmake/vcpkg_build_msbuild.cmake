@@ -86,17 +86,33 @@ function(vcpkg_build_msbuild)
         vcpkg_get_windows_sdk(_csc_TARGET_PLATFORM_VERSION)
     endif()
     if(NOT DEFINED _csc_TARGET)
-        set(_csc_TARGET Rebuild)
+#        set(_csc_TARGET Clean;ReBuild)
+        set(_csc_TARGET ReBuild)
     endif()
 
     list(APPEND _csc_OPTIONS
         /t:${_csc_TARGET}
         /p:Platform=${_csc_PLATFORM}
         /p:PlatformToolset=${_csc_PLATFORM_TOOLSET}
-        /p:VCPkgLocalAppDataDisabled=true
+        /p:VCPkgLocalAppDataDisabled=false
         /p:UseIntelMKL=No
-        /p:WindowsTargetPlatformVersion=${_csc_TARGET_PLATFORM_VERSION}
-        /m
+#        /p:UseIntelMKL=Yes
+##        q[uiet], m[inimal], n[ormal], d[etailed] e diag[nostic]
+        /verbosity:minimal
+        /nologo
+#        /nowarn:msb4011 ## dotnet
+        /p:BuildInParallel=false
+        /p:DISABLE_METRICS=1
+#        /p:PreferredToolArchitecture=x64
+#        /p:WindowsTargetPlatformVersion=${_csc_TARGET_PLATFORM_VERSION}
+        /p:WindowsTargetPlatformVersion=10.0.17134.0
+        /p:TargetPlatformVersion=10.0.17134.0
+        /p:EnableManagedIncrementalBuild=false
+        /p:VCToolArchitecture=Native64Bit
+        /m:1
+#        /nr:true
+        /warnasmessage:msb4011
+#        /nowarn:msb4011 ## /nowarn:msb8012 ##;C4005;C4838;C4334;C4146;C4244;C4177;C4309;C4996;C4267;C4101;C4312;C4661 # MSBuild ver. 15.3++
     )
 
     if(VCPKG_LIBRARY_LINKAGE STREQUAL "static")
@@ -108,7 +124,9 @@ function(vcpkg_build_msbuild)
     if(_csc_USE_VCPKG_INTEGRATION)
         list(
             APPEND _csc_OPTIONS
-            /p:ForceImportBeforeCppTargets=${VCPKG_ROOT_DIR}/scripts/buildsystems/msbuild/vcpkg.targets
+            "/p:ForceImportBeforeCppTargets=${VCPKG_ROOT_DIR}/scripts/buildsystems/msbuild/vcpkg.targets"
+#            "/p:VcpkgApplocalDeps=true"
+            "/p:VcpkgApplocalDeps=false"
             "/p:VcpkgTriplet=${TARGET_TRIPLET}"
         )
     endif()

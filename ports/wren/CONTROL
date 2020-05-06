@@ -1,0 +1,13 @@
+Source: wren
+Version: 2019-04-09-a8fd83-2
+Description: Wren is a small, fast, class-based concurrent scripting language
+
+Feature: cli
+Description: Enable wren CLI tool
+Build-Depends: libuv
+
+Feature: meta
+Description: Enable the Meta class in wren, allows for source code inspection
+
+Feature: random
+Description: Enable the Random class in wren, allowing for generation of random numbers

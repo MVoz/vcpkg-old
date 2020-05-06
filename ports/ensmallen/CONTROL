@@ -1,9 +1,5 @@
 Source: ensmallen
-<<<<<<< HEAD
 Version: 1.14.3
-=======
-Version: 1.14.2
->>>>>>>  [ensmallen] Updated to version 1.14.2  (#6242)
 Description: A header-only C++ library for mathematical optimization.
 Build-Depends: openblas, clapack, armadillo
 

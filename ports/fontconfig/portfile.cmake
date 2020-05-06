@@ -1,51 +1,46 @@
-
 include(vcpkg_common_functions)
 
-set(FONTCONFIG_VERSION 2.12.4)
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://www.freedesktop.org/software/fontconfig/release/fontconfig-${FONTCONFIG_VERSION}.tar.gz"
-    FILENAME "fontconfig-${FONTCONFIG_VERSION}.tar.gz"
-    SHA512 2be3ee0e8e0e3b62571135a3cae06e456c289dd1ad40ef2a7c780406418ee5efce863a833eca5a8ef55bc737a0ea04ef562bba6fd27e174ae43e42131b52810d
+    URLS "https://gitlab.freedesktop.org/tpm/fontconfig/-/archive/meson-rebased-fc-lang-python-port/fontconfig-meson-rebased-fc-lang-python-port.tar.gz"
+    FILENAME "fontconfig-meson-rebased-fc-lang-python-port.tar.gz"
+    SHA512 42996ec16828f598f0fa507416694f4711add53dbb9fac3faecbd52adcc8ce47cc8a3f06eb8225cb9dd4031ad8f1dc0534df320d3727053747e4b79520a97609
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-    REF ${FONTCONFIG_VERSION}
-    PATCHES fcobjtypehash.patch
 )
 
-file(COPY ${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt DESTINATION ${SOURCE_PATH})
+vcpkg_acquire_msys(MSYS_ROOT)
+set(GPERF ${MSYS_ROOT}/usr/bin/gperf.exe)
 
-vcpkg_configure_cmake(
-    SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA
+#file(DOWNLOAD
+#    https://raw.githubusercontent.com/wingtk/gvsbuild/master/patches/fontconfig/config.h
+#    ${SOURCE_PATH}/config.h
+#    EXPECTED_MD5 d5cc0296eac03a5941a6e302f4d854f5
+#	TIMEOUT 60
+#	LOG download.log
+#    SHOW_PROGRESS
+#)
+
+#file(COPY ${CMAKE_CURRENT_LIST_DIR}/config.h DESTINATION ${SOURCE_PATH})
+
+# https://mesonbuild.com/Configuring-a-build-directory.html
+vcpkg_configure_meson(
+	SOURCE_PATH ${SOURCE_PATH}
     OPTIONS
-        -DFC_INCLUDE_DIR=${CMAKE_CURRENT_LIST_DIR}/include
-    OPTIONS_DEBUG
-        -DFC_SKIP_TOOLS=ON
-        -DFC_SKIP_HEADERS=ON
+		--backend=ninja
 )
 
-vcpkg_install_cmake()
-
-vcpkg_fixup_cmake_targets(CONFIG_PATH share/unofficial-fontconfig TARGET_PATH share/unofficial-fontconfig)
+vcpkg_install_meson()
 
 vcpkg_copy_pdbs()
 
-if(VCPKG_LIBRARY_LINKAGE STREQUAL dynamic)
-    foreach(HEADER fcfreetype.h fontconfig.h)
-        file(READ ${CURRENT_PACKAGES_DIR}/include/fontconfig/${HEADER} FC_HEADER)
-        if(WIN32)
-            string(REPLACE "#define FcPublic" "#define FcPublic __declspec(dllimport)" FC_HEADER "${FC_HEADER}")
-        else()
-            string(REPLACE "#define FcPublic" "#define FcPublic __attribute__((visibility(\"default\")))" FC_HEADER "${FC_HEADER}")
-        endif()
-        file(WRITE ${CURRENT_PACKAGES_DIR}/include/fontconfig/${HEADER} "${FC_HEADER}")
-    endforeach()
-endif()
-
-file(COPY ${SOURCE_PATH}/COPYING DESTINATION ${CURRENT_PACKAGES_DIR}/share/fontconfig)
-file(RENAME ${CURRENT_PACKAGES_DIR}/share/fontconfig/COPYING ${CURRENT_PACKAGES_DIR}/share/fontconfig/copyright)
-
-vcpkg_test_cmake(PACKAGE_NAME unofficial-fontconfig)
+# Handle copyright
+file(INSTALL ${SOURCE_PATH}/COPYING DESTINATION ${CURRENT_PACKAGES_DIR}/share/fontconfig RENAME copyright)
+file(GLOB_RECURSE EXE ${CURRENT_PACKAGES_DIR}/*.exe)
+file(GLOB_RECURSE PDB ${CURRENT_PACKAGES_DIR}/*.pdb)
+file(REMOVE_RECURSE ${EXE} ${PDB})
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include ${CURRENT_PACKAGES_DIR}/debug/share)
+# Post-build test for cmake libraries
+# vcpkg_test_cmake(PACKAGE_NAME fontconfig)

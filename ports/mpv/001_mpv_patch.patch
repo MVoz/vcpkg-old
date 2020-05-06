@@ -1,0 +1,305 @@
+diff --git a/SMP/libmpv.vcxproj b/SMP/libmpv.vcxproj
+index 6615727..e240951 100644
+--- a/SMP/libmpv.vcxproj
++++ b/SMP/libmpv.vcxproj
+@@ -549,72 +549,72 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
+     <TargetName>mpvd</TargetName>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLStaticDeps|Win32'">
+     <TargetName>mpvd</TargetName>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
+     <TargetName>mpvd</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLStaticDeps|x64'">
+     <TargetName>mpvd</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
+     <TargetName>mpv</TargetName>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLStaticDeps|Win32'">
+     <TargetName>mpv</TargetName>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
+     <TargetName>mpv</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLStaticDeps|x64'">
+     <TargetName>mpv</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+     <TargetName>libmpvd</TargetName>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+     <TargetName>libmpvd</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+     <TargetName>libmpv</TargetName>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+     <TargetName>libmpv</TargetName>
+-    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
++    <OutDir>$(ProjectDir)..\..\msvc\</OutDir>
+     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+     <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+   </PropertyGroup>
+@@ -624,7 +624,7 @@
+       <Optimization>Disabled</Optimization>
+       <PreprocessorDefinitions>WIN32;_WINDOWS;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;restrict=__restrict;__thread=__declspec(thread);COBJMACROS;_WIN32_WINNT=0x0601;_LIB;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+-      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <DisableSpecificWarnings>4244;4090;4018;4305;4047;4146;4996;4133;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -634,7 +634,7 @@
+       <TargetMachine>MachineX86</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/IGNORE:4006,4221,4049,4217,4197,4099 %(AdditionalOptions)</AdditionalOptions>
+       <AdditionalDependencies>libavutild.lib;libavcodecd.lib;libavformatd.lib;libavfilterd.lib;libavdeviced.lib;libswscaled.lib;libpostprocd.lib;libswresampled.lib;libarchived.lib;libblurayd.lib;libdvdnavd.lib;libdvdreadd.lib;libcdiod.lib;libcdio_paranoiad.lib;libassd.lib;libiconvd.lib;libzlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Lib>
+@@ -675,7 +675,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <Optimization>Disabled</Optimization>
+       <PreprocessorDefinitions>WIN32;_WINDOWS;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;restrict=__restrict;__thread=__declspec(thread);COBJMACROS;_WIN32_WINNT=0x0601;_LIB;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+-      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <DisableSpecificWarnings>4244;4090;4018;4305;4047;4146;4996;4133;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -685,7 +685,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <TargetMachine>MachineX64</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalOptions>/IGNORE:4006,4221,4049,4217,4197,4099 %(AdditionalOptions)</AdditionalOptions>
+       <AdditionalDependencies>libavutild.lib;libavcodecd.lib;libavformatd.lib;libavfilterd.lib;libavdeviced.lib;libswscaled.lib;libpostprocd.lib;libswresampled.lib;libarchived.lib;libblurayd.lib;libdvdnavd.lib;libdvdreadd.lib;libcdiod.lib;libcdio_paranoiad.lib;libassd.lib;libiconvd.lib;libzlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Lib>
+@@ -726,7 +726,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <Optimization>Disabled</Optimization>
+       <PreprocessorDefinitions>WIN32;_WINDOWS;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;restrict=__restrict;__thread=__declspec(thread);COBJMACROS;_WIN32_WINNT=0x0601;_USRDLL;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+-      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <DisableSpecificWarnings>4244;4090;4018;4305;4047;4146;4996;4133;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -743,7 +743,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+       <AdditionalDependencies>avutild.lib;avcodecd.lib;avformatd.lib;avfilterd.lib;avdeviced.lib;swscaled.lib;postprocd.lib;swresampled.lib;archived.lib;blurayd.lib;dvdnavd.lib;dvdreadd.lib;cdiod.lib;cdio_paranoiad.lib;assd.lib;iconvd.lib;zlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+     </Link>
+     <PostBuildEvent>
+       <Command>mkdir "$(OutDir)"\include
+@@ -782,7 +782,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <Optimization>Disabled</Optimization>
+       <PreprocessorDefinitions>WIN32;_WINDOWS;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;restrict=__restrict;__thread=__declspec(thread);COBJMACROS;_WIN32_WINNT=0x0601;_USRDLL;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+-      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <DisableSpecificWarnings>4244;4090;4018;4305;4047;4146;4996;4133;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -799,7 +799,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+       <AdditionalDependencies>libavutild.lib;libavcodecd.lib;libavformatd.lib;libavfilterd.lib;libavdeviced.lib;libswscaled.lib;libpostprocd.lib;libswresampled.lib;libarchived.lib;libblurayd.lib;libdvdnavd.lib;libdvdreadd.lib;libcdiod.lib;libcdio_paranoiad.lib;libassd.lib;libiconvd.lib;libzlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+     </Link>
+     <PostBuildEvent>
+       <Command>mkdir "$(OutDir)"\include
+@@ -838,7 +838,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <Optimization>Disabled</Optimization>
+       <PreprocessorDefinitions>WIN32;_WINDOWS;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;restrict=__restrict;__thread=__declspec(thread);COBJMACROS;_WIN32_WINNT=0x0601;_USRDLL;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+-      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <DisableSpecificWarnings>4244;4090;4018;4305;4047;4146;4996;4133;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -854,7 +854,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
+       <AdditionalDependencies>avutild.lib;avcodecd.lib;avformatd.lib;avfilterd.lib;avdeviced.lib;swscaled.lib;postprocd.lib;swresampled.lib;archived.lib;blurayd.lib;dvdnavd.lib;dvdreadd.lib;cdiod.lib;cdio_paranoiad.lib;assd.lib;iconvd.lib;zlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+     </Link>
+     <PostBuildEvent>
+       <Command>mkdir "$(OutDir)"\include
+@@ -893,7 +893,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <Optimization>Disabled</Optimization>
+       <PreprocessorDefinitions>WIN32;_WINDOWS;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;restrict=__restrict;__thread=__declspec(thread);COBJMACROS;_WIN32_WINNT=0x0601;_USRDLL;_DEBUG;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+-      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <MinimalRebuild>false</MinimalRebuild>
+       <DisableSpecificWarnings>4244;4090;4018;4305;4047;4146;4996;4133;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -909,7 +909,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
+       <AdditionalDependencies>libavutild.lib;libavcodecd.lib;libavformatd.lib;libavfilterd.lib;libavdeviced.lib;libswscaled.lib;libpostprocd.lib;libswresampled.lib;libarchived.lib;libblurayd.lib;libdvdnavd.lib;libdvdreadd.lib;libcdiod.lib;libcdio_paranoiad.lib;libassd.lib;libiconvd.lib;libzlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+     </Link>
+     <PostBuildEvent>
+       <Command>mkdir "$(OutDir)"\include
+@@ -955,7 +955,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+       <OmitFramePointers>true</OmitFramePointers>
+       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+-      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDataBaseFileName>
+       <DisableSpecificWarnings>4244;4090;4018;4305;4047;4146;4996;4133;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -965,7 +965,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <TargetMachine>MachineX86</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalDependencies>libavutil.lib;libavcodec.lib;libavformat.lib;libavfilter.lib;libavdevice.lib;libswscale.lib;libpostproc.lib;libswresample.lib;libarchive.lib;libbluray.lib;libdvdnav.lib;libdvdread.lib;libcdio.lib;libcdio_paranoia.lib;libass.lib;libiconv.lib;libzlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <AdditionalOptions>/IGNORE:4006,4221,4049,4217,4197,4099 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+@@ -1013,7 +1013,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+       <OmitFramePointers>true</OmitFramePointers>
+       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+-      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+       <ProgramDataBaseFileName>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDataBaseFileName>
+       <DisableSpecificWarnings>4244;4090;4018;4305;4047;4146;4996;4133;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+@@ -1023,7 +1023,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <TargetMachine>MachineX64</TargetMachine>
+       <SubSystem>Windows</SubSystem>
+       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalDependencies>libavutil.lib;libavcodec.lib;libavformat.lib;libavfilter.lib;libavdevice.lib;libswscale.lib;libpostproc.lib;libswresample.lib;libarchive.lib;libbluray.lib;libdvdnav.lib;libdvdread.lib;libcdio.lib;libcdio_paranoia.lib;libass.lib;libiconv.lib;libzlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+       <AdditionalOptions>/IGNORE:4006,4221,4049,4217,4197,4099 %(AdditionalOptions)</AdditionalOptions>
+     </Lib>
+@@ -1071,7 +1071,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+       <OmitFramePointers>true</OmitFramePointers>
+       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+-      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <DisableSpecificWarnings>4244;4090;4018;4305;4047;4146;4996;4133;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+@@ -1089,7 +1089,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+       <AdditionalDependencies>avutil.lib;avcodec.lib;avformat.lib;avfilter.lib;avdevice.lib;swscale.lib;postproc.lib;swresample.lib;archive.lib;bluray.lib;dvdnav.lib;dvdread.lib;cdio.lib;cdio_paranoia.lib;ass.lib;iconv.lib;zlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+     </Link>
+     <PostBuildEvent>
+       <Command>mkdir "$(OutDir)"\include
+@@ -1135,7 +1135,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+       <OmitFramePointers>true</OmitFramePointers>
+       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+-      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <DisableSpecificWarnings>4244;4090;4018;4305;4047;4146;4996;4133;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+@@ -1153,7 +1153,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
+       <AdditionalDependencies>libavutil.lib;libavcodec.lib;libavformat.lib;libavfilter.lib;libavdevice.lib;libswscale.lib;libpostproc.lib;libswresample.lib;libarchive.lib;libbluray.lib;libdvdnav.lib;libdvdread.lib;libcdio.lib;libcdio_paranoia.lib;libass.lib;libiconv.lib;libzlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+     </Link>
+     <PostBuildEvent>
+       <Command>mkdir "$(OutDir)"\include
+@@ -1199,7 +1199,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+       <OmitFramePointers>true</OmitFramePointers>
+       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+-      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <DisableSpecificWarnings>4244;4090;4018;4305;4047;4146;4996;4133;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+@@ -1216,7 +1216,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
+       <AdditionalDependencies>avutil.lib;avcodec.lib;avformat.lib;avfilter.lib;avdevice.lib;swscale.lib;postproc.lib;swresample.lib;archive.lib;bluray.lib;dvdnav.lib;dvdread.lib;cdio.lib;cdio_paranoia.lib;ass.lib;iconv.lib;zlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+     </Link>
+     <PostBuildEvent>
+       <Command>mkdir "$(OutDir)"\include
+@@ -1262,7 +1262,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+       <OmitFramePointers>true</OmitFramePointers>
+       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+-      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>.\;..\;..\osdep\win32\include\;$(OutDir)\include;$(ProjectDir)\..\..\prebuilt\include;$(VcpkgRoot)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <ProgramDataBaseFileName>$(IntDir)$(TargetName).pdb</ProgramDataBaseFileName>
+       <DisableSpecificWarnings>4244;4090;4018;4305;4047;4146;4996;4133;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+@@ -1279,7 +1279,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
+       <AdditionalDependencies>libavutil.lib;libavcodec.lib;libavformat.lib;libavfilter.lib;libavdevice.lib;libswscale.lib;libpostproc.lib;libswresample.lib;libarchive.lib;libbluray.lib;libdvdnav.lib;libdvdread.lib;libcdio.lib;libcdio_paranoia.lib;libass.lib;libiconv.lib;libzlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+-      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;$(VcpkgRoot)\$(VcpkgTriplet)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+     </Link>
+     <PostBuildEvent>
+       <Command>mkdir "$(OutDir)"\include

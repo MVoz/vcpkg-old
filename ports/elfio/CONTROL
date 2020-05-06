@@ -1,0 +1,4 @@
+Source: elfio
+Version: v1.0-1
+Description: Library for reading and generating ELF files.
+

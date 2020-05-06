@@ -1,15 +1,16 @@
 include(vcpkg_common_functions)
 
-vcpkg_check_linkage(ONLY_DYNAMIC_LIBRARY)
-
 vcpkg_from_github(
 	OUT_SOURCE_PATH SOURCE_PATH
 	REPO openscenegraph/OpenSceneGraph
-	REF OpenSceneGraph-3.6.3
-	SHA512 5d66002cffa935ce670a119ffaebd8e4709acdf79ae2b34b37ad9df284ec8a1a74fee5a7a4109fbf3da6b8bd857960f2b7ae68c4c2e26036edbf484fccf08322
+	REF OpenSceneGraph-3.6.4
+	SHA512 7cb34fc279ba62a7d7177d3f065f845c28255688bd29026ffb305346e1bb2e515a22144df233e8a7246ed392044ee3e8b74e51bf655282d33ab27dcaf12f4b19
 	HEAD_REF master
     PATCHES
         collada.patch
+        static.patch
+        fix-example-application.patch
+        fix-sdl.patch
 )
 
 if(VCPKG_LIBRARY_LINKAGE STREQUAL "static")
@@ -18,10 +19,23 @@ else()
     set(OSG_DYNAMIC ON)
 endif()
 
+file(REMOVE ${SOURCE_PATH}/CMakeModules/FindSDL2.cmake)
+
+set(OSG_USE_UTF8_FILENAME ON)
+if (VCPKG_CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    message("Build osg requires gcc with version higher than 4.7.")
+    # Enable OSG_USE_UTF8_FILENAME will call some windows-only functions.
+    set(OSG_USE_UTF8_FILENAME OFF)
+endif()
+
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     OPTIONS
-        -DOSG_USE_UTF8_FILENAME=ON
+        -DOSG_USE_UTF8_FILENAME=${OSG_USE_UTF8_FILENAME}
+        -DDYNAMIC_OPENSCENEGRAPH=${OSG_DYNAMIC}
+        -DDYNAMIC_OPENTHREADS=${OSG_DYNAMIC}
+        -DBUILD_OSG_EXAMPLES=ON
+        -DBUILD_OSG_APPLICATIONS=ON
 )
 
 vcpkg_install_cmake()
@@ -38,12 +52,12 @@ file(REMOVE_RECURSE ${OSG_TOOLS})
 file(GLOB OSG_TOOLS_DBG ${CURRENT_PACKAGES_DIR}/debug/bin/*.exe)
 file(REMOVE_RECURSE ${OSG_TOOLS_DBG})
 
-file(GLOB OSG_PLUGINS_DBG ${CURRENT_PACKAGES_DIR}/debug/bin/osgPlugins-3.6.3/*.dll)
-file(COPY ${OSG_PLUGINS_DBG} DESTINATION ${CURRENT_PACKAGES_DIR}/debug/tools/osg/osgPlugins-3.6.3)
-file(GLOB OSG_PLUGINS_REL ${CURRENT_PACKAGES_DIR}/bin/osgPlugins-3.6.3/*.dll)
-file(COPY ${OSG_PLUGINS_REL} DESTINATION ${OSG_TOOL_PATH}/osgPlugins-3.6.3)
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/bin/osgPlugins-3.6.3/)
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/bin/osgPlugins-3.6.3/)
+file(GLOB OSG_PLUGINS_DBG ${CURRENT_PACKAGES_DIR}/debug/bin/osgPlugins-3.6.4/*.dll)
+file(COPY ${OSG_PLUGINS_DBG} DESTINATION ${CURRENT_PACKAGES_DIR}/debug/tools/osg/osgPlugins-3.6.4)
+file(GLOB OSG_PLUGINS_REL ${CURRENT_PACKAGES_DIR}/bin/osgPlugins-3.6.4/*.dll)
+file(COPY ${OSG_PLUGINS_REL} DESTINATION ${OSG_TOOL_PATH}/osgPlugins-3.6.4)
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/bin/osgPlugins-3.6.4/)
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/bin/osgPlugins-3.6.4/)
 
 # Handle copyright
 file(COPY ${SOURCE_PATH}/LICENSE.txt DESTINATION ${CURRENT_PACKAGES_DIR}/share/osg)

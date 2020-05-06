@@ -32,7 +32,9 @@ vcpkg_configure_cmake(
         -DZSTD_LEGACY_SUPPORT=1
         -DZSTD_BUILD_PROGRAMS=0
         -DZSTD_BUILD_TESTS=0
-        -DZSTD_BUILD_CONTRIB=0)
+        -DZSTD_BUILD_CONTRIB=0
+    OPTIONS_DEBUG
+        -DCMAKE_DEBUG_POSTFIX=d)
 
 vcpkg_install_cmake()
 vcpkg_copy_pdbs()

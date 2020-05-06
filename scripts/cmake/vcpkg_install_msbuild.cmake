@@ -96,9 +96,11 @@ function(vcpkg_install_msbuild)
         _csc
         "USE_VCPKG_INTEGRATION;ALLOW_ROOT_INCLUDES;REMOVE_ROOT_INCLUDES;SKIP_CLEAN"
         "SOURCE_PATH;PROJECT_SUBPATH;INCLUDES_SUBPATH;LICENSE_SUBPATH;RELEASE_CONFIGURATION;DEBUG_CONFIGURATION;PLATFORM;PLATFORM_TOOLSET;TARGET_PLATFORM_VERSION;TARGET"
-        "OPTIONS;OPTIONS_RELEASE;OPTIONS_DEBUG"
+        "OPTIONS;OPTIONS_RELEASE;OPTIONS_DEBUG;RELEASE_LIB_SUBPATH;DEBUG_LIB_SUBPATH"
         ${ARGN}
     )
+
+    file(REMOVE_RECURSE ${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-rel ${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-dbg)
 
     if(NOT DEFINED _csc_RELEASE_CONFIGURATION)
         set(_csc_RELEASE_CONFIGURATION Release)
@@ -124,17 +126,34 @@ function(vcpkg_install_msbuild)
         vcpkg_get_windows_sdk(_csc_TARGET_PLATFORM_VERSION)
     endif()
     if(NOT DEFINED _csc_TARGET)
-        set(_csc_TARGET Rebuild)
+#        set(_csc_TARGET Clean;ReBuild)
+        set(_csc_TARGET ReBuild)
     endif()
 
     list(APPEND _csc_OPTIONS
         /t:${_csc_TARGET}
         /p:Platform=${_csc_PLATFORM}
         /p:PlatformToolset=${_csc_PLATFORM_TOOLSET}
-        /p:VCPkgLocalAppDataDisabled=true
+        /p:VCPkgLocalAppDataDisabled=false
         /p:UseIntelMKL=No
-        /p:WindowsTargetPlatformVersion=${_csc_TARGET_PLATFORM_VERSION}
-        /m
+#        /p:UseIntelMKL=Yes
+##        q[uiet], m[inimal], n[ormal], d[etailed] e diag[nostic]
+        /verbosity:minimal
+        /nologo
+#        /nowarn:msb4011 ## dotnet
+        /p:BuildInParallel=false
+#        /p:PreferredToolArchitecture=x64
+        /p:DISABLE_METRICS=1
+#        /p:WindowsTargetPlatformVersion=${_csc_TARGET_PLATFORM_VERSION}
+        /p:WindowsTargetPlatformVersion=10.0.17134.0
+        /p:TargetPlatformVersion=10.0.17134.0
+#        /p:EnableManagedIncrementalBuild=false
+        /p:VCToolArchitecture=Native64Bit
+#        /p:AdditionalOptions=FORCE:MULTIPLE
+        /m:1
+#        /nr:true
+        /warnasmessage:MSB4011
+#        /nowarn:msb4011 ## MSBuild ver. 15.3++
     )
 
     if(VCPKG_LIBRARY_LINKAGE STREQUAL "static")
@@ -144,7 +163,52 @@ function(vcpkg_install_msbuild)
     endif()
 
     if(_csc_USE_VCPKG_INTEGRATION)
-        list(APPEND _csc_OPTIONS /p:ForceImportBeforeCppTargets=${VCPKG_ROOT_DIR}/scripts/buildsystems/msbuild/vcpkg.targets /p:VcpkgApplocalDeps=false)
+        list(
+            APPEND _csc_OPTIONS
+            "/p:ForceImportBeforeCppTargets=${VCPKG_ROOT_DIR}/scripts/buildsystems/msbuild/vcpkg.targets"
+#            "/p:VcpkgApplocalDeps=true"
+            "/p:VcpkgApplocalDeps=false"
+            "/p:VcpkgTriplet=${TARGET_TRIPLET}"
+        )
+    endif()
+
+    if(DEFINED _csc_INCLUDES_SUBPATH)
+        file(COPY ${_csc_SOURCE_PATH}/${_csc_INCLUDES_SUBPATH}/ DESTINATION ${CURRENT_PACKAGES_DIR}/include/)
+        file(GLOB ROOT_INCLUDES LIST_DIRECTORIES false ${CURRENT_PACKAGES_DIR}/include/*)
+        if(ROOT_INCLUDES)
+            if(_csc_REMOVE_ROOT_INCLUDES)
+                file(REMOVE ${ROOT_INCLUDES})
+            elseif(_csc_ALLOW_ROOT_INCLUDES)
+            else()
+                message(FATAL_ERROR "Top-level files were found in ${CURRENT_PACKAGES_DIR}/include; this may indicate a problem with the call to `vcpkg_install_msbuild()`.\nTo avoid conflicts with other libraries, it is recommended to not put includes into the root `include/` directory.\nPass either ALLOW_ROOT_INCLUDES or REMOVE_ROOT_INCLUDES to handle these files.\n")
+            endif()
+        endif()
+    endif()
+
+    if(DEFINED _csc_DEBUG_LIB_SUBPATH)
+        file(COPY ${_csc_DEBUG_LIB_SUBPATH}/ DESTINATION ${CURRENT_PACKAGES_DIR}/debug/lib/)
+        file(GLOB ROOT_DEBUG_LIB LIST_DIRECTORIES false ${CURRENT_PACKAGES_DIR}/debug/lib/*)
+        if(ROOT_DEBUG_LIB)
+            if(_csc_REMOVE_ROOT_DEBUG_LIB)
+                file(REMOVE ${ROOT_DEBUG_LIB})
+            elseif(_csc_ALLOW_ROOT_DEBUG_LIB)
+            else()
+                message(FATAL_ERROR "Top-level files were found in ${CURRENT_PACKAGES_DIR}/debug/lib; this may indicate a problem with the call to `vcpkg_install_msbuild()`.\nTo avoid conflicts with other libraries, it is recommended to not put includes into the root `debug/lib/` directory.\nPass either ALLOW_ROOT_DEBUG_LIB or REMOVE_ROOT_DEBUG_LIB to handle these files.\n")
+            endif()
+        endif()
+    endif()
+	
+    if(DEFINED _csc_RELEASE_LIB_SUBPATH)
+        file(COPY ${_csc_RELEASE_LIB_SUBPATH}/ DESTINATION ${CURRENT_PACKAGES_DIR}/lib/)
+        file(GLOB ROOT_RELEASE_LIB LIST_DIRECTORIES false ${CURRENT_PACKAGES_DIR}/lib/*)
+        if(ROOT_RELEASE_LIB)
+            if(_csc_REMOVE_ROOT_RELEASE_LIB)
+                file(REMOVE ${ROOT_RELEASE_LIB})
+            elseif(_csc_ALLOW_ROOT_RELEASE_LIB)
+            else()
+                message(FATAL_ERROR "Top-level files were found in ${CURRENT_PACKAGES_DIR}/lib; this may indicate a problem with the call to `vcpkg_install_msbuild()`.\nTo avoid conflicts with other libraries, it is recommended to not put includes into the root `lib/` directory.\nPass either ALLOW_ROOT_RELEASE_LIB or REMOVE_ROOT_RELEASE_LIB to handle these files.\n")
+            endif()
+        endif()
     endif()
 
     get_filename_component(SOURCE_PATH_SUFFIX "${_csc_SOURCE_PATH}" NAME)
@@ -154,6 +218,7 @@ function(vcpkg_install_msbuild)
         file(MAKE_DIRECTORY ${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-rel)
         file(COPY ${_csc_SOURCE_PATH} DESTINATION ${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-rel)
         set(SOURCE_COPY_PATH ${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-rel/${SOURCE_PATH_SUFFIX})
+        set(PREBUILT ${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-rel)
         vcpkg_execute_required_process(
             COMMAND msbuild ${SOURCE_COPY_PATH}/${_csc_PROJECT_SUBPATH}
                 /p:Configuration=${_csc_RELEASE_CONFIGURATION}
@@ -162,9 +227,9 @@ function(vcpkg_install_msbuild)
             WORKING_DIRECTORY ${SOURCE_COPY_PATH}
             LOGNAME build-${TARGET_TRIPLET}-rel
         )
-        file(GLOB_RECURSE LIBS ${SOURCE_COPY_PATH}/*.lib)
-        file(GLOB_RECURSE DLLS ${SOURCE_COPY_PATH}/*.dll)
-        file(GLOB_RECURSE EXES ${SOURCE_COPY_PATH}/*.exe)
+        file(GLOB_RECURSE LIBS ${PREBUILT}/*.lib)
+        file(GLOB_RECURSE DLLS ${PREBUILT}/*.dll)
+        file(GLOB_RECURSE EXES ${PREBUILT}/*.exe)
         if(LIBS)
             file(COPY ${LIBS} DESTINATION ${CURRENT_PACKAGES_DIR}/lib)
         endif()
@@ -183,6 +248,7 @@ function(vcpkg_install_msbuild)
         file(MAKE_DIRECTORY ${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-dbg)
         file(COPY ${_csc_SOURCE_PATH} DESTINATION ${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-dbg)
         set(SOURCE_COPY_PATH ${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-dbg/${SOURCE_PATH_SUFFIX})
+        set(PREBUILT ${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-dbg)
         vcpkg_execute_required_process(
             COMMAND msbuild ${SOURCE_COPY_PATH}/${_csc_PROJECT_SUBPATH}
                 /p:Configuration=${_csc_DEBUG_CONFIGURATION}
@@ -191,8 +257,8 @@ function(vcpkg_install_msbuild)
             WORKING_DIRECTORY ${SOURCE_COPY_PATH}
             LOGNAME build-${TARGET_TRIPLET}-dbg
         )
-        file(GLOB_RECURSE LIBS ${SOURCE_COPY_PATH}/*.lib)
-        file(GLOB_RECURSE DLLS ${SOURCE_COPY_PATH}/*.dll)
+        file(GLOB_RECURSE LIBS ${PREBUILT}/*.lib)
+        file(GLOB_RECURSE DLLS ${PREBUILT}/*.dll)
         if(LIBS)
             file(COPY ${LIBS} DESTINATION ${CURRENT_PACKAGES_DIR}/debug/lib)
         endif()
@@ -203,24 +269,12 @@ function(vcpkg_install_msbuild)
 
     vcpkg_copy_pdbs()
 
+    if(DEFINED _csc_LICENSE_SUBPATH)
+        file(INSTALL ${_csc_SOURCE_PATH}/${_csc_LICENSE_SUBPATH} DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT} RENAME copyright)
+    endif()
+
     if(NOT _csc_SKIP_CLEAN)
         vcpkg_clean_msbuild()
     endif()
 
-    if(DEFINED _csc_INCLUDES_SUBPATH)
-        file(COPY ${_csc_SOURCE_PATH}/${_csc_INCLUDES_SUBPATH}/ DESTINATION ${CURRENT_PACKAGES_DIR}/include/)
-        file(GLOB ROOT_INCLUDES LIST_DIRECTORIES false ${CURRENT_PACKAGES_DIR}/include/*)
-        if(ROOT_INCLUDES)
-            if(_csc_REMOVE_ROOT_INCLUDES)
-                file(REMOVE ${ROOT_INCLUDES})
-            elseif(_csc_ALLOW_ROOT_INCLUDES)
-            else()
-                message(FATAL_ERROR "Top-level files were found in ${CURRENT_PACKAGES_DIR}/include; this may indicate a problem with the call to `vcpkg_install_msbuild()`.\nTo avoid conflicts with other libraries, it is recommended to not put includes into the root `include/` directory.\nPass either ALLOW_ROOT_INCLUDES or REMOVE_ROOT_INCLUDES to handle these files.\n")
-            endif()
-        endif()
-    endif()
-
-    if(DEFINED _csc_LICENSE_SUBPATH)
-        file(INSTALL ${_csc_SOURCE_PATH}/${_csc_LICENSE_SUBPATH} DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT} RENAME copyright)
-    endif()
 endfunction()

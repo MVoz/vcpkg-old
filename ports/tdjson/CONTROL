@@ -1,0 +1,3 @@
+Source: tdjson
+Version: 1.3.0
+Description: JSON bindings for TDLib (Telegram Database library).

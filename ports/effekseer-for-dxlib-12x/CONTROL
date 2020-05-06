@@ -1,0 +1,4 @@
+Source: effekseer-for-dxlib-12x
+Version: 1.22-3.16d
+Description: The runtime library of Effekseer fo DXLibrary.
+Build-Depends: dxlib, effekseer-12x

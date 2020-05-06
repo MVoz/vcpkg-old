@@ -1,5 +1,5 @@
 Source: libzip
-Version: rel-1-5-2v1
+Version: rel-1-5-2
 Build-Depends: zlib
 Default-Features: openssl, bzip2
 Description: A library for reading, creating, and modifying zip archives.

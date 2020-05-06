@@ -1,0 +1,3 @@
+Source: results
+Version: 0.0.1
+Description: Single-header modern C++ Result<T, E> libray

@@ -1,0 +1,6 @@
+Source: qtwebengine
+Version: 5.12.3
+Description: Qt5 WebEngine Module - Qt WebEngine provides functionality for rendering regions of dynamic web content.
+Build-Depends: qt5-base, qt5-svg, qt5-imageformats, qt5-location, qt5-multimedia, qt5-networkauth, qt5-quickcontrols2, qt5-remoteobjects, qt5-script, qt5-svg, qt5-tools, qt5-webchannel, qt5-websockets, qt5-winextras, icu
+#icu4c
+

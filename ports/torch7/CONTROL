@@ -1,0 +1,4 @@
+Source: torch7
+Version: 1.0.0
+Description: Torch is a scientific computing framework with wide support for machine learning algorithms that puts GPUs first. It is easy to use and efficient, thanks to an easy and fast scripting language, LuaJIT, and an underlying C/CUDA implementation.
+Build-Depends: clapack, torch-cwrap

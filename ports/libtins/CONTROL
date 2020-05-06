@@ -1,4 +1,6 @@
 Source: libtins
-Version: 4.0-2
-Description: High-level, multiplatform C++ network packet sniffing and crafting library
-Build-Depends: winpcap (windows)
+Version: 
+#Homepage: 
+Description: 
+#Build-Depends: 
+#Feature: 

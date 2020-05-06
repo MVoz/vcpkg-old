@@ -6,16 +6,16 @@ endif()
 
 vcpkg_check_linkage(ONLY_STATIC_LIBRARY ONLY_STATIC_CRT)
 
-if(EXISTS ${CURRENT_BUILDTREES_DIR}/src/MAC_SDK_433.zip.extracted)
+if(EXISTS ${CURRENT_BUILDTREES_DIR}/src/MAC_SDK_478.zip.extracted)
     file(REMOVE_RECURSE ${CURRENT_BUILDTREES_DIR}/src)
 endif()
 
 set(VERSION 4.7)
-set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/433)
+set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/478)
 
 vcpkg_download_distfile(ARCHIVE
-    URLS "http://monkeysaudio.com/files/MAC_SDK_433.zip"
-    FILENAME "MAC_SDK_433.zip"
+    URLS "http://monkeysaudio.com/files/MAC_SDK_478.zip"
+    FILENAME "MAC_SDK_478.zip"
     SHA512 957ba262da29a8542ab82dc828328b19bf80ecf0d09165db935924b390cb6a3a2d9303a2e07b86b28ecf4210a66dd5c4be840205a9f09518189101033f1a13c8
 )
 

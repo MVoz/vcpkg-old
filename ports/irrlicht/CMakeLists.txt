@@ -8,7 +8,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
     
 # Irrlicht directories
 # -------------------------------------------------------------------------------------------------
-set(IRR_ROOT_DIR "")
+set(IRR_ROOT_DIR .)
 set(IRR_SRC_DIR "source/Irrlicht")
 set(IRR_INC_DIR "include")
 
@@ -43,10 +43,10 @@ glob_c_cpp_sources(IRR_SRC_FILES_INTERFACE          ${IRR_INC_DIR})
 glob_c_cpp_sources(IRR_SRC_FILES_AESGLADMAN         ${IRR_SRC_DIR}/aesGladman)
 glob_c_cpp_sources(IRR_SRC_FILES_LZMA               ${IRR_SRC_DIR}/lzma)
 
-glob_c_cpp_sources(IRR_TOOL_FILES_FILE_TO_HEADER    ${IRR_ROOT_DIR}/tools/FileToHeader/)
-glob_c_cpp_sources(IRR_TOOL_FILES_GUI_EDITOR        ${IRR_ROOT_DIR}/tools/GUIEditor/)
-glob_c_cpp_sources(IRR_TOOL_FILES_FONT_TOOL         ${IRR_ROOT_DIR}/tools/IrrFontTool/newFontTool/)
-glob_c_cpp_sources(IRR_TOOL_FILES_MESH_CONVERTER    ${IRR_ROOT_DIR}/tools/MeshConverter/)
+glob_c_cpp_sources(IRR_TOOL_FILES_FILE_TO_HEADER    ${IRR_ROOT_DIR}/tools/FileToHeader)
+glob_c_cpp_sources(IRR_TOOL_FILES_GUI_EDITOR        ${IRR_ROOT_DIR}/tools/GUIEditor)
+glob_c_cpp_sources(IRR_TOOL_FILES_FONT_TOOL         ${IRR_ROOT_DIR}/tools/IrrFontTool/newFontTool)
+glob_c_cpp_sources(IRR_TOOL_FILES_MESH_CONVERTER    ${IRR_ROOT_DIR}/tools/MeshConverter)
     
 # Group files
 # -------------------------------------------------------------------------------------------------
@@ -83,6 +83,13 @@ target_link_libraries(Irrlicht PRIVATE
     ${PNG_LIBRARY} 
     ${JPEG_LIBRARY} 
     ${BZIP2_LIBRARY}
+    )
+
+target_compile_definitions(Irrlicht PRIVATE
+    NO_IRR_USE_NON_SYSTEM_ZLIB_
+    NO_IRR_USE_NON_SYSTEM_LIB_PNG_
+    NO_IRR_USE_NON_SYSTEM_JPEG_LIB_
+    NO_IRR_USE_NON_SYSTEM_BZLIB_
     )
 
 if(IRR_BUILD_TOOLS)
@@ -144,6 +151,9 @@ endif()
 target_compile_definitions(Irrlicht PRIVATE IRRLICHT_EXPORTS)
 
 if(WIN32)
+    # Unicode
+    target_compile_definitions(Irrlicht PRIVATE UNICODE _UNICODE)
+
     # Import the symbols of bzip2
     target_compile_definitions(Irrlicht PRIVATE BZ_IMPORT)
 

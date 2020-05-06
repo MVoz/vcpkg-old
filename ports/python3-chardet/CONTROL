@@ -1,0 +1,4 @@
+Source: python3-chardet
+Version: 2.0.1
+Description: Python Universal Character Encoding Detector C-binding module (Compatible and faster than py-chardet
+Build-Depends: python3-setuptools

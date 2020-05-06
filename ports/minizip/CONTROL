@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 Source: minizip
-Version: 1.2.11-4
+Version: 1.2.11-5
+Build-Depends: zlib
+Homepage: https://github.com/madler/zlib
 Description: Zip compression library
-Build-Depends: bzip2, zlib
-=======
-Source: minizip
-Version: 1.2.11-4
-Description: Zip compression library
-Build-Depends: bzip2, zlib
->>>>>>> bumping all the control files
+
+Feature: bzip2
+Build-Depends: bzip2
+Description: Support compression using bzip2 library

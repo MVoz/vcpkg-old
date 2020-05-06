@@ -1,0 +1,34 @@
+--- a/freetype263/freetype263.vcxproj	2018-01-15 02:15:02.000000000 +0800
++++ b/freetype263/freetype263.vcxproj	2018-02-01 21:54:56.140435500 +0800
+@@ -91,6 +91,7 @@
+       <Optimization>Disabled</Optimization>
+       <PreprocessorDefinitions>FT2_BUILD_LIBRARY;WIN32;_DEBUG;_WINDOWS;_USRDLL;FREETYPE263_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <AdditionalIncludeDirectories>.\include;</AdditionalIncludeDirectories>
++      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+     </ClCompile>
+     <Link>
+       <SubSystem>Windows</SubSystem>
+@@ -105,6 +106,7 @@
+       <PreprocessorDefinitions>FT2_BUILD_LIBRARY;_DEBUG;_WINDOWS;_USRDLL;FREETYPE263_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <AdditionalIncludeDirectories>.\include;</AdditionalIncludeDirectories>
+       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
++      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+     </ClCompile>
+     <Link>
+       <SubSystem>Windows</SubSystem>
+@@ -120,6 +122,7 @@
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <PreprocessorDefinitions>FT2_BUILD_LIBRARY;WIN32;NDEBUG;_WINDOWS;_USRDLL;FREETYPE263_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <AdditionalIncludeDirectories>.\include;</AdditionalIncludeDirectories>
++      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+     </ClCompile>
+     <Link>
+       <SubSystem>Windows</SubSystem>
+@@ -137,6 +140,7 @@
+       <IntrinsicFunctions>true</IntrinsicFunctions>
+       <PreprocessorDefinitions>FT2_BUILD_LIBRARY;NDEBUG;_WINDOWS;_USRDLL;FREETYPE263_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <AdditionalIncludeDirectories>.\include;</AdditionalIncludeDirectories>
++      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+     </ClCompile>
+     <Link>
+       <SubSystem>Windows</SubSystem>

@@ -6,7 +6,6 @@ vcpkg_from_github(
     REF v0.2.0
     SHA512 3525e3f21462cecd3b198f64545786ffddc2cafdfd8146e5a46f0300b83f29f1ad0739618a07ab195c276149d7e2e909f7662e2d379a2880593cac75942b0666
     HEAD_REF master
-    PATCHES FindTurboJPEG.patch
 )
 
 file(READ ${SOURCE_PATH}/cmake_modules/FindLibUSB.cmake FINDLIBUSB)
@@ -21,13 +20,14 @@ file(WRITE ${SOURCE_PATH}/examples/CMakeLists.txt "${EXAMPLECMAKE}")
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
+    PREFER_NINJA
     OPTIONS
         -DENABLE_CUDA=OFF
 )
 
 vcpkg_install_cmake()
 
-vcpkg_fixup_cmake_targets(CONFIG_PATH "lib/cmake/freenect2")
+vcpkg_fixup_cmake_targets(CONFIG_PATH lib/cmake/freenect2)
 
 vcpkg_copy_pdbs()
 

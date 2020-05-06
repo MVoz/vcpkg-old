@@ -1,0 +1,4 @@
+Source: gazebo10
+Version: 10.1.0
+Build-Depends: boost-smart-ptr, bullet3, freeimage, ignition-fuel-tools1, ignition-math4, ignition-msgs1, ignition-transport4, ogre, protobuf, qt5-base, qwt, tbb, tinyxml, tinyxml2, zeromq
+Description: Gazebo robot simulator

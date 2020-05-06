@@ -1,0 +1,188 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 25ded3c2..59637f68 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -161,6 +161,15 @@ include_directories(vs2010/port)
+ include_directories(viewer)
+ include_directories(wordrec)
+ 
++if (OpenCL_FOUND)
++    add_definitions(-DUSE_OPENCL)
++    if (NOT STATIC)
++        add_definitions(-DLIBLEPT_IMPORTS)
++    endif()
++    include_directories(${OpenCL_INCLUDE_DIRS})
++    link_libraries(${OpenCL_LIBRARIES})
++endif()
++
+ ########################################
+ # LIBRARY tesseract
+ ########################################
+diff --git a/opencl/openclwrapper.cpp b/opencl/openclwrapper.cpp
+index b4f6ef9f..d4bdc91f 100644
+--- a/opencl/openclwrapper.cpp
++++ b/opencl/openclwrapper.cpp
+@@ -31,6 +31,7 @@
+ #define FREE LEPT_FREE
+ 
+ #ifdef USE_OPENCL
++#include <cstdint>
+ 
+ #include "opencl_device_selection.h"
+ GPUEnv OpenclDevice::gpuEnv;
+diff --git a/training/CMakeLists.txt b/training/CMakeLists.txt
+index 01e6b739..04be0512 100644
+--- a/training/CMakeLists.txt
++++ b/training/CMakeLists.txt
+@@ -26,33 +26,33 @@ else()
+     message(FATAL_ERROR "Cannot determine target architecture")
+ endif()
+ 
+-set(icu_dir "${CMAKE_CURRENT_BINARY_DIR}/icu")
+-set(icu_archive "${icu_dir}/icu${ARCH_DIR_NAME}.zip")
+-
+-if (X86)
+-    set(icu_hash 45167a240b60e36b59a87eda23490ce4)
+-else()
+-    set(icu_hash 480c72491576c048de1218c3c5519399)
+-endif()
+-
+-message(STATUS "Downloading latest ICU binaries")
+-
+-file(DOWNLOAD
+-    "http://download.icu-project.org/files/icu4c/56.1/icu4c-56_1-Win${ARCH_DIR_NAME}-msvc10.zip"
+-    "${icu_archive}"
+-    SHOW_PROGRESS
+-    INACTIVITY_TIMEOUT 60 # seconds
+-    EXPECTED_HASH MD5=${icu_hash}
+-)
+-execute_process(COMMAND ${CMAKE_COMMAND} -E tar xz "${icu_archive}"
+-    WORKING_DIRECTORY "${icu_dir}"
+-    RESULT_VARIABLE __result
+-)
+-if(NOT __result EQUAL 0)
+-    message(FATAL_ERROR "error ${__result}")
+-endif()
+-
+-set(ICU_ROOT ${icu_dir}/icu)
++# set(icu_dir "${CMAKE_CURRENT_BINARY_DIR}/icu")
++# set(icu_archive "${icu_dir}/icu${ARCH_DIR_NAME}.zip")
++
++# if (X86)
++#     set(icu_hash 45167a240b60e36b59a87eda23490ce4)
++# else()
++#     set(icu_hash 480c72491576c048de1218c3c5519399)
++# endif()
++
++# message(STATUS "Downloading latest ICU binaries")
++
++# file(DOWNLOAD
++#     "http://download.icu-project.org/files/icu4c/56.1/icu4c-56_1-Win${ARCH_DIR_NAME}-msvc10.zip"
++#     "${icu_archive}"
++#     SHOW_PROGRESS
++#     INACTIVITY_TIMEOUT 60 # seconds
++#     EXPECTED_HASH MD5=${icu_hash}
++# )
++# execute_process(COMMAND ${CMAKE_COMMAND} -E tar xz "${icu_archive}"
++#     WORKING_DIRECTORY "${icu_dir}"
++#     RESULT_VARIABLE __result
++# )
++# if(NOT __result EQUAL 0)
++#     message(FATAL_ERROR "error ${__result}")
++# endif()
++
++# set(ICU_ROOT ${icu_dir}/icu)
+ 
+ endif()
+ # experimental
+@@ -65,7 +65,7 @@ endif()
+ # LIBRARY tessopt
+ ########################################
+ 
+-add_library                 (tessopt tessopt.cpp tessopt.h)
++add_library                 (tessopt STATIC tessopt.cpp tessopt.h)
+ project_group               (tessopt "Training Tools")
+ 
+ 
+@@ -81,7 +81,7 @@ set(common_training_hdr
+     commandlineflags.h
+     commontraining.h
+ )
+-add_library                 (common_training ${common_training_src} ${common_training_hdr})
++add_library                 (common_training STATIC ${common_training_src} ${common_training_hdr})
+ target_link_libraries       (common_training libtesseract tessopt)
+ project_group               (common_training "Training Tools")
+ 
+@@ -199,7 +199,7 @@ project_group               (set_unicharset_properties "Training Tools")
+ # EXECUTABLE text2image
+ ########################################
+ 
+-if (PKG_CONFIG_FOUND OR CPPAN_BUILD)
++if (PKG_CONFIG_FOUND OR CPPAN_BUILD OR VCPKG_BUILD)
+ 
+ if (PKG_CONFIG_FOUND)
+ pkg_check_modules(Pango REQUIRED pango)
+@@ -230,21 +230,61 @@ set(text2image_src
+     util.h
+     icuerrorcode.h
+ )
+-if (CYGWIN)
++if (CYGWIN OR VCPKG_BUILD)
+ set(text2image_src ${text2image_src} ../vs2010/port/strcasestr.cpp)
+ endif()
+ 
++if (VCPKG_BUILD)
++# find cairo
++find_path(Cairo_INCLUDE_DIRS cairo.h)
++if(CMAKE_BUILD_TYPE STREQUAL Debug)
++    set(CAIRO_SUFFIX d)
++endif()
++find_library(CAIRO_LIBRARY 
++    NAMES
++        cairo${CAIRO_SUFFIX}
++        cairo-static${CAIRO_SUFFIX})
++find_library(CAIRO_GOBJECT_LIBRARY cairo-gobject${CAIRO_SUFFIX})
++set(Cairo_LIBRARIES ${CAIRO_LIBRARY} ${CAIRO_GOBJECT_LIBRARY})
++
++# find fontconfig
++find_path(FONTCONFIG_INCLUDE_DIR fontconfig/fontconfig.h)
++find_library(FontConfig_LIBRARIES fontconfig)
++
++# find pango
++set(PANGO_LIB_SUFFIX 1.0)
++find_path(Pango_INCLUDE_DIRS pango/pango.h)
++find_library(PANGO_LIBRARY NAMES pango-${PANGO_LIB_SUFFIX})
++find_library(PANGOWIN32_LIBRARY NAMES pangowin32-${PANGO_LIB_SUFFIX})
++set(Pango_LIBRARIES ${PANGO_LIBRARY} ${PANGOWIN32_LIBRARY})
++find_library(PangoCairo_LIBRARIES NAMES pangocairo-${PANGO_LIB_SUFFIX})
++find_library(PangoFt2_LIBRARIES NAMES pangoft2-${PANGO_LIB_SUFFIX})
++
++# find glib
++set(GLIB_LIB_VERSION 2.0)
++find_path(GLIB_INCLUDE_DIR glib.h)
++find_library(GLIB_GLIB_LIBRARY glib-${GLIB_LIB_VERSION})
++find_library(GLIB_GOBJECT_LIBRARY gobject-${GLIB_LIB_VERSION})
++set(GLIB_LIBRARIES ${GLIB_GLIB_LIBRARY} ${GLIB_GOBJECT_LIBRARY} ${GLIB_GMODULE_LIBRARY})
++
++endif()
++
+ add_executable              (text2image ${text2image_src})
+ target_link_libraries       (text2image common_training)
+-if (PKG_CONFIG_FOUND)
++if (PKG_CONFIG_FOUND OR VCPKG_BUILD)
+ target_include_directories  (text2image BEFORE PRIVATE ${Cairo_INCLUDE_DIRS} ${Pango_INCLUDE_DIRS})
+ target_compile_definitions  (text2image PRIVATE -DPANGO_ENABLE_ENGINE)
++if (BUILD_SHARED_LIBS)
++target_compile_definitions  (text2image PRIVATE "-D_PANGO_EXTERN=__declspec(dllimport) extern")
++endif()
+ target_link_libraries       (text2image
+     ${Pango_LIBRARIES}
+     ${Cairo_LIBRARIES}
+     ${PangoCairo_LIBRARIES}
+     ${PangoFt2_LIBRARIES}
+     ${FontConfig_LIBRARIES}
++    ${ICU_LIBRARIES}
++    ${GLIB_LIBRARIES}
+ )
+ endif()
+ if (CPPAN_BUILD)

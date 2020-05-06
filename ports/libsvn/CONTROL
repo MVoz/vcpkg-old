@@ -1,0 +1,4 @@
+Source: libsvn
+Version: 1.12.0-1
+Description: Subversion, a version control system.
+Build-Depends: apr, apr-util, expat, sqlite3, zlib, openssl, gettext

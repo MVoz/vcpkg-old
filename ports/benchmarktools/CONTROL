@@ -1,0 +1,4 @@
+Source: benchmarktools
+Version: 1.1.0
+Description: Some helpers for benchmark applications.
+Build-Depends: cmakeshift, ms-gsl, makeshift

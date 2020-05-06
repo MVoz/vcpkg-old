@@ -9,15 +9,9 @@ vcpkg_from_github(
   PATCHES
     0001-build-fixes.patch
     0002-cmake-config-add-backwards-compatibility.patch
-<<<<<<< HEAD
-<<<<<<< HEAD
     0003-remove-missing-symbol.patch
     0004-add-missing-linked-library.patch
-=======
-    CMakeLists.patch
->>>>>>> fix libwepb regression
-=======
->>>>>>> Revert "fix libwepb regression"
+    0005-fix-static-build.patch
 )
 
 set(WEBP_BUILD_ANIM_UTILS OFF)
@@ -43,6 +37,12 @@ if(VCPKG_CMAKE_SYSTEM_NAME STREQUAL "Linux")
     message("WebP currently requires the following library from the system package manager:\n    Xxf86vm\n\nThis can be installed on Ubuntu systems via apt-get install libxxf86vm-dev")
 endif()
 
+if(VCPKG_CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    set(WEBP_BUILD_VWEBP OFF)
+    set(WEBP_BUILD_EXTRAS OFF)
+    message("Due to GLUT Framework problems with CMake, at the moment it's not possible to build VWebP on Mac. It has been disabled together with extras.")
+endif()
+
 vcpkg_configure_cmake(
   SOURCE_PATH ${SOURCE_PATH}
   PREFER_NINJA
@@ -61,6 +61,7 @@ vcpkg_configure_cmake(
     -DWEBP_NEAR_LOSSLESS:BOOL=${WEBP_NEAR_LOSSLESS}
     -DWEBP_ENABLE_SWAP_16BIT_CSP:BOOL=OFF
   OPTIONS_DEBUG
+    -DCMAKE_DEBUG_POSTFIX=d
 )
 
 vcpkg_install_cmake()
@@ -68,8 +69,12 @@ vcpkg_install_cmake()
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
 
 vcpkg_copy_pdbs()
-vcpkg_fixup_cmake_targets(CONFIG_PATH "share/WebP/cmake/" TARGET_PATH "share/WebP/")
+vcpkg_fixup_cmake_targets(CONFIG_PATH share/WebP/cmake)
+
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/share)
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/share/WebP)
+file(GLOB CMAKE_FILES ${CURRENT_PACKAGES_DIR}/share/${PORT}/*)
+file(COPY ${CMAKE_FILES} DESTINATION ${CURRENT_PACKAGES_DIR}/share/webp/)
 
 #somehow the native CMAKE_EXECUTABLE_SUFFIX does not work, so here we emulate it
 if(CMAKE_HOST_WIN32)
@@ -119,5 +124,4 @@ if(VCPKG_LIBRARY_LINKAGE STREQUAL static)
   file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/bin ${CURRENT_PACKAGES_DIR}/debug/bin)
 endif()
 
-file(COPY ${SOURCE_PATH}/COPYING DESTINATION ${CURRENT_PACKAGES_DIR}/share/libwebp)
-file(RENAME ${CURRENT_PACKAGES_DIR}/share/libwebp/COPYING ${CURRENT_PACKAGES_DIR}/share/libwebp/copyright)
+file(INSTALL ${SOURCE_PATH}/COPYING DESTINATION ${CURRENT_PACKAGES_DIR}/share/libwebp RENAME copyright)

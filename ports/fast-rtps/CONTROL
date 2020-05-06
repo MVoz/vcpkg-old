@@ -2,5 +2,5 @@ Source: fast-rtps
 Version: 
 #Homepage: 
 Description: 
-Build-Depends: foonathan-memory-vendor, fast-cdr, tinyxml2 
+Build-Depends: foonathan-memory-vendor, fast-cdr, tinyxml2
 #Feature: 

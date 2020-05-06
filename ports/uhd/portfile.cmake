@@ -25,7 +25,6 @@ vcpkg_find_acquire_program(DOXYGEN)
 vcpkg_find_acquire_program(PERL)
 get_filename_component(DOXYGEN_DIR "${DOXYGEN}" DIRECTORY)
 get_filename_component(PERL_DIR "${PERL}" DIRECTORY)
-get_filename_component(QT5_DIR "${QT5}" DIRECTORY)
 get_filename_component(PYTHON3_DIR "${PYTHON3}" DIRECTORY)
 get_filename_component(XGETTEXT_DIR "${XGETTEXT}" DIRECTORY)
 set(ENV{PATH} ";$ENV{PATH};${PYTHON3_DIR};${DOXYGEN_DIR};${XGETTEXT_DIR};${PERL_DIR}")
@@ -40,9 +39,9 @@ vcpkg_configure_cmake(
 #    OPTIONS_RELEASE
 #        -D =OFF
     OPTIONS 
-        -DBUILD_SHARED_LIBS=ON # automatic templates
         -DPYTHON_EXECUTABLE=${PYTHON3}
         -DRUNTIME_PYTHON_EXECUTABLE=${PYTHON3_DIR}
+#		-DENABLE_STATIC_LIBS=OFF # ON UHD_LIBRARIES, and UHD_STATIC_LIB_DEPS
 )
 
 vcpkg_install_cmake()

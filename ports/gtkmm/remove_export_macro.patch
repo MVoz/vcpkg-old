@@ -1,0 +1,26 @@
+diff --git a/gtk/gtkmm/celllayout.h b/gtk/gtkmm/celllayout.h
+index dd8c4e5..dcc19eb 100644
+--- a/gtk/gtkmm/celllayout.h
++++ b/gtk/gtkmm/celllayout.h
+@@ -61,7 +61,7 @@ class CellArea;
+  * for packing cells, setting attributes and data funcs.
+  */
+ 
+-class GTKMM_API CellLayout : public Glib::Interface
++class CellLayout : public Glib::Interface
+ {
+   
+ #ifndef DOXYGEN_SHOULD_SKIP_THIS
+diff --git a/gtk/gtkmm/treeviewcolumn.h b/gtk/gtkmm/treeviewcolumn.h
+index f2a77c1..e225455 100644
+--- a/gtk/gtkmm/treeviewcolumn.h
++++ b/gtk/gtkmm/treeviewcolumn.h
+@@ -112,7 +112,7 @@ class TreeView;
+  * @ingroup TreeView
+ */
+ 
+-class GTKMM_API TreeViewColumn
++class TreeViewColumn
+   : public Object,
+     public CellLayout
+ {

@@ -1,0 +1,7 @@
+Source: ign-common2
+Version: 
+#Homepage: 
+Description: 
+Build-Depends: ign-cmake1, ign-math5, ffmpeg
+#dlfcn-win32, glib
+#Feature: 

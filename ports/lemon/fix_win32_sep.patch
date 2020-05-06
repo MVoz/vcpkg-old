@@ -1,0 +1,22 @@
+--- a/lemon.c
++++ b/lemon.c
+@@ -3277,8 +3277,10 @@ PRIVATE char *pathsearch(char *argv0, char *name, int modemask)
+ 
+ #ifdef __WIN32__
+   cp = strrchr(argv0,'\\');
++#define SEP ';'
+ #else
+   cp = strrchr(argv0,'/');
++#define SEP ':'
+ #endif
+   if( cp ){
+     c = *cp;
+@@ -3295,7 +3297,7 @@ PRIVATE char *pathsearch(char *argv0, char *name, int modemask)
+       pathbufptr = pathbuf;
+       lemon_strcpy(pathbuf, pathlist);
+       while( *pathbuf ){
+-        cp = strchr(pathbuf,':');
++        cp = strchr(pathbuf,SEP);
+         if( cp==0 ) cp = &pathbuf[lemonStrlen(pathbuf)];
+         c = *cp;
+         *cp = 0;

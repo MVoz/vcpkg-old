@@ -1,0 +1,25 @@
+diff -ruN a/lib/THNN/generic/FeatureLPPooling.c b/lib/THNN/generic/FeatureLPPooling.c
+--- a/lib/THNN/generic/FeatureLPPooling.c	2017-10-03 04:02:38.000000000 +0800
++++ b/lib/THNN/generic/FeatureLPPooling.c	2018-04-09 19:09:38.428546500 +0800
+@@ -210,8 +210,9 @@
+   real* inputP = THTensor_(data)(input);
+   real* outputP = THTensor_(data)(output);
+ 
++  int batch = 0;
+ #pragma omp parallel for
+-  for (size_t batch = 0; batch < inputDesc.size[0]; ++batch) {
++  for (batch = 0; batch < inputDesc.size[0]; ++batch) {
+     for (size_t opt1 = 0; opt1 < inputDesc.size[2]; ++opt1) {
+       for (size_t opt2 = 0; opt2 < inputDesc.size[3]; ++opt2) {
+         for (size_t outputFeature = 0;
+@@ -304,8 +305,9 @@
+   real* outputP = THTensor_(data)(output);
+   real* inputP = THTensor_(data)(input);
+ 
++  int batch = 0;
+ #pragma omp parallel for
+-  for (size_t batch = 0; batch < inputDesc.size[0]; ++batch) {
++  for (batch = 0; batch < inputDesc.size[0]; ++batch) {
+     for (size_t opt1 = 0; opt1 < inputDesc.size[2]; ++opt1) {
+       for (size_t opt2 = 0; opt2 < inputDesc.size[3]; ++opt2) {
+         for (size_t outputFeature = 0;

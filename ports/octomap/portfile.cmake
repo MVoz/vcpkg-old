@@ -5,8 +5,8 @@ vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO OctoMap/octomap
-    REF cefed0c1d79afafa5aeb05273cf1246b093b771c
-    SHA512 8fdea8b33680488d41e570d55ff88c20b923efb9d48238031f9b96d2e3917dbe7e49699769de63794f4b1d24e40a99615151e72487f30de340a3abf6522ea156
+    REF c921775fbe57980048309c086afa20a0b5a895fe
+    SHA512 cccbf133158af02ac621552e2c7242ce8af9db00c69856b0f18e88c3e6da3839074404ec178338db6db378e12d184234c0339ce5c0934e97edfbbe68391029a2
     HEAD_REF master
     PATCHES
       "001-fix-exported-targets.patch"
@@ -26,7 +26,7 @@ vcpkg_install_cmake()
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
 
 file(MAKE_DIRECTORY ${CURRENT_PACKAGES_DIR}/tools/octomap)
-if(WIN32)
+if(NOT VCPKG_CMAKE_SYSTEM_NAME OR VCPKG_CMAKE_SYSTEM_NAME STREQUAL "WindowsStore")
   file(RENAME ${CURRENT_PACKAGES_DIR}/bin/binvox2bt.exe ${CURRENT_PACKAGES_DIR}/tools/octomap/binvox2bt.exe)
   file(RENAME ${CURRENT_PACKAGES_DIR}/bin/bt2vrml.exe ${CURRENT_PACKAGES_DIR}/tools/octomap/bt2vrml.exe)
   file(RENAME ${CURRENT_PACKAGES_DIR}/bin/compare_octrees.exe ${CURRENT_PACKAGES_DIR}/tools/octomap/compare_octrees.exe)
@@ -49,8 +49,7 @@ else()
   file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/bin)
 endif()
 
-vcpkg_fixup_cmake_targets(CONFIG_PATH share/octomap)
-
+vcpkg_fixup_cmake_targets()
 
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/share)
 

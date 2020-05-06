@@ -1,0 +1,4 @@
+Source: gnutls
+Version: 3.5.19-1
+Description: GnuTLS is a secure communications library implementing the SSL, TLS and DTLS protocols and technologies around them. http://www.gnutls.org/
+Build-Depends: nettle, zlib, gmp

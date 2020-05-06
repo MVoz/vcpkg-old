@@ -1,20 +1,5 @@
 Source: tiff
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Version: 4.0.10-6
-=======
-Version: 4.0.10-5
->>>>>>> bump tiff control
-=======
-Version: 4.0.10-6
->>>>>>> chenged tiff cmake wrapper to correctly handle debug/optimized keywords
-=======
-Version: 4.0.10-5
->>>>>>> Revert "chenged tiff cmake wrapper to correctly handle debug/optimized keywords"
-=======
-Version: 4.0.10-6
->>>>>>> fix tiff again
-Build-Depends: zlib, libjpeg-turbo, liblzma (!uwp)
+Version: 4.0.10-7
+Build-Depends: zlib, libjpeg-turbo, liblzma
+Homepage: https://download.osgeo.org/libtiff
 Description: A library that supports the manipulation of TIFF image files

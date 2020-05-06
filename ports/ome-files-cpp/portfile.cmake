@@ -30,15 +30,17 @@ vcpkg_configure_cmake(
     PREFER_NINJA # Disable this option if project cannot be built with Ninja
     NO_CHARSET_FLAG # automatic templates
     OPTIONS 
-      -Dcxxstd-autodetect:BOOL=ON
-      -Ddoxygen:BOOL=OFF
-      -Dextended-tests:BOOL=OFF
-      -Dextra-warnings:BOOL=OFF
-      -Dfatal-warnings:BOOL=OFF
-      -Drelocatable-install:BOOL=ON
-      -Dsphinx:BOOL=OFF
-      -Dsphinx-linkcheck:BOOL=OFF
-      -Dtest:BOOL=OFF
+      -Dcxxstd-autodetect=ON
+      -Ddoxygen=OFF
+      -Dextended-tests=OFF
+      -Dextra-warnings=OFF
+      -Dfatal-warnings=OFF
+      -Drelocatable-install=OFF
+      -Dsphinx=OFF
+      -Dsphinx-linkcheck=OFF
+      -Dtest=OFF
+#      -Doptions=boost
+#      -Dxmldom=xerces
     OPTIONS_RELEASE 
       -DCMAKE_IGNORE_PATH=${CURRENT_INSTALLED_DIR}/debug #ERROR Searching debug\lib\ome-commond.lib ???
 )

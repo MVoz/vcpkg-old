@@ -1,0 +1,3 @@
+Source: re2c
+Version: 1.0.3
+Description: lexer generator for C/C++ http://re2c.org

@@ -1,0 +1,6 @@
+Source: librpc
+Version: 
+#Homepage: 
+Description: 
+Build-Depends: libyaml, yajl, libsoup
+#Feature: 

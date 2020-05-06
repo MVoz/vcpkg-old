@@ -1,7 +1,9 @@
 #include "tests.pch.h"
 
+#if defined(_WIN32)
 #pragma comment(lib, "version")
 #pragma comment(lib, "winhttp")
+#endif
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -434,6 +436,25 @@ namespace UnitTest1
             auto pghs = vcpkg::Paragraphs::parse_paragraphs(ss).value_or_exit(VCPKG_LINE_INFO);
             Assert::AreEqual(size_t(1), pghs.size());
             Assert::AreEqual("123abc", pghs[0]["Abi"].c_str());
+        }
+
+        TEST_METHOD(to_port_version)
+        {
+          Assert::AreEqual("1.2.3", vcpkg::to_port_version("1.2.3-1").c_str());
+          Assert::AreEqual("1.2.3", vcpkg::to_port_version("1.2.3-").c_str());
+          Assert::AreEqual("1.2.3", vcpkg::to_port_version("1.2.3").c_str());
+          Assert::AreEqual("", vcpkg::to_port_version("").c_str());
+          Assert::AreEqual("", vcpkg::to_port_version("-1").c_str());
+        }
+
+        TEST_METHOD(to_cmake_version)
+        {
+          Assert::AreEqual("1.2.3", vcpkg::to_cmake_version("1.2.3-1").c_str());
+          Assert::AreEqual("1.2.3", vcpkg::to_cmake_version("1.2.3a-1").c_str());
+          Assert::AreEqual("1.2.3.4", vcpkg::to_cmake_version("1.2.3.4.5").c_str());
+          Assert::AreEqual("1.2.3", vcpkg::to_cmake_version("1.2.3").c_str());
+          Assert::AreEqual("", vcpkg::to_port_version("").c_str());
+          Assert::AreEqual("", vcpkg::to_port_version("-1").c_str());
         }
     };
 }

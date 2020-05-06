@@ -1,0 +1,4 @@
+Source: mediainfolib
+Version: 19.04
+Description: Get most relevant technical and tag data from video and audio files
+Build-Depends: zenlib, curl, zlib

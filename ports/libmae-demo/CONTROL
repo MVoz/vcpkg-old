@@ -1,0 +1,4 @@
+Source: libmae-demo
+Version: 0.10.7
+Description: Analyze movements and provide events based on a described movements sequence (Labanotation)
+Build-Depends: sdl2, sdl2-image, sdl2-ttf, libmae

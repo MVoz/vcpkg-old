@@ -1,0 +1,4 @@
+Source: serf
+Version: 1.4.0
+Description: The Apache Serf library is a C-based HTTP client library built upon the Apache
+Build-Depends: apr, apr-util, openssl

@@ -1,0 +1,5 @@
+Source: bustache
+Version: 2019-06-03
+Build-Depends: boost-unordered, boost-utility
+Description: C++11 implementation of {{ mustache }}
+  Issues, PRs and changelogs can be found at https://github.com/jamboree/bustache

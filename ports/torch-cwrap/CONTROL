@@ -1,0 +1,4 @@
+Source: torch-cwrap
+Version: 1.0.0
+Description: The cwrap package helps you to automate the generation of Lua/C wrappers around existing C functions, such that these functions would be callable from Lua. 
+Build-Depends: luajit-rocks

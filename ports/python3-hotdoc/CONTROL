@@ -1,0 +1,4 @@
+Source: python3-hotdoc
+Version:
+Description: 
+Build-Depends: python3-setuptools

@@ -1,6 +1,6 @@
 include(vcpkg_common_functions)
 
-#vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
+vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 
 vcpkg_download_distfile(ARCHIVE
     URLS "https://gitlab.com/codelibre/ome/ome-common-cpp/-/archive/7622bbbef1fd85dc3d604bc23b8ae09dd275b731/ome-common-cpp-7622bbbef1fd85dc3d604bc23b8ae09dd275b731.tar.gz"

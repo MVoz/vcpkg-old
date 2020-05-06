@@ -1,10 +1,47 @@
+[global]
+verbose=1
+
 [build]
+## icl 64
+#compiler=intelem
+#compiler=mingw32
+compiler=msvc
+force=1
 debug=1
 
 [build_ext]
+## icl 64
+#compiler=intelem
+#compiler=mingw32
+compiler=msvc
 debug=1
-include-dirs=${CURRENT_INSTALLED_DIR}/python3/include;${CURRENT_INSTALLED_DIR}/include${VCPKG_PYTHON_INCLUDE_DIRS}
+include-dirs=${CURRENT_INSTALLED_DIR}/debug/python3/include;${CURRENT_INSTALLED_DIR}/debug/../include${VCPKG_PYTHON_INCLUDE_DIRS}
 library-dirs=${CURRENT_INSTALLED_DIR}/debug/python3/libs;${CURRENT_INSTALLED_DIR}/debug/lib${VCPKG_PYTHON_DEBUG_LIBS}
 
 [build_clib]
 debug=1
+## icl 64
+#compiler=intelem
+#compiler=mingw32
+compiler=msvc
+
+#[config]
+## icl 64
+#compiler=intelem
+#compiler=mingw32
+#compiler=msvc
+
+[Paths]
+#home_dir: /Users
+#my_dir: ${home_dir}/lumberjack
+#my_pictures: ${my_dir}/Pictures
+#lib = ${CURRENT_INSTALLED_DIR}/lib;${lib};${library_dirs}
+#include = ${CURRENT_INSTALLED_DIR}/include;${include};${include_dirs}
+#path = C:/Program Files (x86)/IntelSWTools/compilers_and_libraries/windows/redist/intel64_win/compiler;C:/Program Files (x86)/IntelSWTools/compilers_and_libraries/windows/bin/intel64;${path}
+
+[Common]
+#home_dir: /Users
+#library_dir: /Library
+#system_dir: /System
+#macports_dir: /opt/local
+

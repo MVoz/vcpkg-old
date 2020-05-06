@@ -1,50 +1,42 @@
 include(vcpkg_common_functions)
 
-set(VERSION 1.2.11)
-
-vcpkg_download_distfile(ARCHIVE_FILE
-    URLS "http://www.zlib.net/zlib-${VERSION}.tar.gz" "https://downloads.sourceforge.net/project/libpng/zlib/${VERSION}/zlib-${VERSION}.tar.gz"
-    FILENAME "zlib1211.tar.gz"
+vcpkg_download_distfile(ARCHIVE
+    URLS "http://zlib.net/fossils/zlib-1.2.11.tar.gz"
+    FILENAME "zlib-1.2.11.tar.gz"
     SHA512 73fd3fff4adeccd4894084c15ddac89890cd10ef105dd5e1835e1e9bbb6a49ff229713bd197d203edfa17c2727700fce65a2a235f07568212d820dca88b528ae
 )
 
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
-    ARCHIVE ${ARCHIVE_FILE}
-    REF ${VERSION}
-    PATCHES
-        "cmake_dont_build_more_than_needed.patch"
+    ARCHIVE ${ARCHIVE} 
 )
 
-# This is generated during the cmake build
-file(REMOVE ${SOURCE_PATH}/zconf.h)
-
-vcpkg_configure_cmake(
-    SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA
-    OPTIONS
-        -DSKIP_INSTALL_FILES=ON
-        -DSKIP_BUILD_EXAMPLES=ON
-    OPTIONS_DEBUG
-        -DSKIP_INSTALL_HEADERS=ON
-)
-
-vcpkg_install_cmake()
-
-# Both dynamic and static are built, so keep only the one needed
-if(VCPKG_LIBRARY_LINKAGE STREQUAL static)
-    if(EXISTS ${CURRENT_PACKAGES_DIR}/lib/zlibstatic.lib)
-        file(RENAME ${CURRENT_PACKAGES_DIR}/lib/zlibstatic.lib ${CURRENT_PACKAGES_DIR}/lib/zlib.lib)
-    endif()
-    if(EXISTS ${CURRENT_PACKAGES_DIR}/debug/lib/zlibstaticd.lib)
-        file(RENAME ${CURRENT_PACKAGES_DIR}/debug/lib/zlibstaticd.lib ${CURRENT_PACKAGES_DIR}/debug/lib/zlibd.lib)
-    endif()
+if(NOT EXISTS SOURCE_PATH)
+	file(DOWNLOAD https://raw.githubusercontent.com/mesonbuild/zlib/1.2.11/meson.build ${SOURCE_PATH}/meson.build
+		TIMEOUT 15
+		EXPECTED_HASH MD5=a98c9c44bd3b82fa4bdfe4a5040549ec
+		TLS_VERIFY ON
+	)
+	file(DOWNLOAD https://raw.githubusercontent.com/mesonbuild/zlib/1.2.11/meson_options.txt ${SOURCE_PATH}/meson_options.txt
+		TIMEOUT 15
+		EXPECTED_HASH MD5=3d936e5ad1add312c7cc6f78d44e8c10
+		TLS_VERIFY ON
+	)
 endif()
+ 
+# https://mesonbuild.com/Configuring-a-build-directory.html
+vcpkg_configure_meson(
+	SOURCE_PATH ${SOURCE_PATH}
+    OPTIONS
+		--backend=ninja
+)
 
-file(INSTALL ${CMAKE_CURRENT_LIST_DIR}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/zlib RENAME copyright)
+vcpkg_install_meson()
 
 vcpkg_copy_pdbs()
 
-file(COPY ${CMAKE_CURRENT_LIST_DIR}/usage DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT})
+# Handle copyright
+file(INSTALL ${SOURCE_PATH}/ChangeLog DESTINATION ${CURRENT_PACKAGES_DIR}/share/zlib RENAME copyright)
 
-vcpkg_test_cmake(PACKAGE_NAME ZLIB MODULE)
+# Post-build test for cmake libraries
+# vcpkg_test_cmake(PACKAGE_NAME zlib)

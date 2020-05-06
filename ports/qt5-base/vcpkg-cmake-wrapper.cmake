@@ -64,4 +64,3 @@ if("${_target_type}" STREQUAL "STATIC_LIBRARY")
     endif()
 
 endif()
-

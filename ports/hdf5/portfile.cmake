@@ -16,6 +16,11 @@ vcpkg_extract_source_archive_ex(
     PATCHES
         hdf5_config.patch
 )
+
+vcpkg_find_acquire_program(PERL)
+get_filename_component(PERL_DIR "${PERL}" DIRECTORY)
+set(ENV{PATH} "$ENV{PATH};${PERL_DIR}")
+
 set(SOURCE_PATH ${SOURCE_PATH}/hdf5-1.10.5)
 
 if ("parallel" IN_LIST FEATURES)
@@ -41,8 +46,8 @@ vcpkg_configure_cmake(
         -DBUILD_TESTING=OFF
         -DHDF5_BUILD_EXAMPLES=OFF
         -DHDF5_BUILD_TOOLS=OFF
-        -DHDF5_BUILD_CPP_LIB=${ENABLE_CPP}
-        -DHDF5_ENABLE_PARALLEL=${ENABLE_PARALLEL}
+        -DHDF5_BUILD_CPP_LIB=OFF
+        -DHDF5_ENABLE_PARALLEL=ON
         -DHDF5_ENABLE_Z_LIB_SUPPORT=ON
         -DHDF5_ENABLE_SZIP_SUPPORT=ON
         -DHDF5_ENABLE_SZIP_ENCODING=ON

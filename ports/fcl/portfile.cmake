@@ -2,11 +2,12 @@ include(vcpkg_common_functions)
 
 vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 
+#https://github.com/Omnirobotic/fcl/tree/Omnirobotic
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO flexible-collision-library/fcl
-    REF 54e9619bc2b084ee50e986ac3308160d663481c4
-    SHA512 11bfa3fdeeda6766769a34d2248ca32b6b13ecb32b412c068aa1c7aa3495d55b3f7a82a93621965904f9813c3fd0f128a84f796ae5731d2ff15b85935a0e1261
+    REPO Omnirobotic/fcl
+    REF 84232930ce2d0d23f47cbdc93e385a1007d969f5
+    SHA512 d2d5782912fecec34235a30ea33a74c9b4e7348bcd5f819daa634342ddf14f83fe999f34a02d561bb6e0f336a9f1448c236374d0e88b4dd9c51a0c46aab0849f
     HEAD_REF fcl-0.5
 )
 

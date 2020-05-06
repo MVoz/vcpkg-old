@@ -19,6 +19,5 @@ if(NOT EXISTS "${SOURCE_PATH}/.git")
 	)
 endif()
 
-
 include(${CURRENT_INSTALLED_DIR}/share/python3-setuptools/python-pip-install.cmake)
 python_pip_install(SOURCE_PATH ${SOURCE_PATH})

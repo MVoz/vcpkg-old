@@ -1,0 +1,41 @@
+--- a/adm/genproj.tcl	2017-08-30 21:27:56.000000000 +0800
++++ b/adm/genproj.tcl	2018-02-05 14:22:55.856580900 +0800
+@@ -1355,8 +1355,8 @@
+     set aLibsMap(CSF_d3d9)         "d3d9"
+ 
+     # the naming is different on Windows
+-    set aLibsMap(CSF_TclLibs)      "tcl86"
+-    set aLibsMap(CSF_TclTkLibs)    "tk86"
++    set aLibsMap(CSF_TclLibs)      "tcl86t"
++    set aLibsMap(CSF_TclTkLibs)    "tk86t"
+ 
+     set aLibsMap(CSF_QT)           "QtCore4 QtGui4"
+ 
+--- a/src/Draw/Draw.cxx	2017-08-30 21:28:11.000000000 +0800
++++ b/src/Draw/Draw.cxx	2018-02-05 15:08:44.489164400 +0800
+@@ -41,8 +41,8 @@
+ // two helper macros are needed to convert version number macro to string literal
+ #define STRINGIZE1(a) #a
+ #define STRINGIZE2(a) STRINGIZE1(a)
+-#pragma comment (lib, "tcl" STRINGIZE2(TCL_MAJOR_VERSION) STRINGIZE2(TCL_MINOR_VERSION) ".lib")
+-#pragma comment (lib, "tk"  STRINGIZE2(TCL_MAJOR_VERSION) STRINGIZE2(TCL_MINOR_VERSION) ".lib")
++// #pragma comment (lib, "tcl" STRINGIZE2(TCL_MAJOR_VERSION) STRINGIZE2(TCL_MINOR_VERSION) ".lib")
++// #pragma comment (lib, "tk"  STRINGIZE2(TCL_MAJOR_VERSION) STRINGIZE2(TCL_MINOR_VERSION) ".lib")
+ #undef STRINGIZE2
+ #undef STRINGIZE1
+ #endif
+--- a/CMakeLists.txt	2017-08-30 21:27:56.000000000 +0800
++++ b/CMakeLists.txt	2018-02-06 08:48:25.721210200 +0800
+@@ -64,9 +64,9 @@
+ 
+ # single-configuration generator
+ set (SINGLE_GENERATOR OFF)
+-if (CMAKE_BUILD_TYPE)
+-  set (SINGLE_GENERATOR ON)
+-endif()
++# if (CMAKE_BUILD_TYPE)
++#   set (SINGLE_GENERATOR ON)
++# endif()
+ 
+ # a single-configuration generator like the Makefile generator defines CMAKE_BUILD_TYPE variable
+ # check this variable and set if it's required

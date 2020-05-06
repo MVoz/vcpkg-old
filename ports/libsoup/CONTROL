@@ -1,4 +1,3 @@
 Source: libsoup
 Version: 2.66.1
-Build-Depends: libpsl
 Description: libsoup is an HTTP client/server library for GNOME.

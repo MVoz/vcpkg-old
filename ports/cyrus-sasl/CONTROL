@@ -1,0 +1,4 @@
+Source: cyrus-sasl
+Version: 2.1.27-0
+Description: This is the Cyrus SASL API implementation. It can be used on the client or server side to provide authentication and authorization services. See RFC 4422 for more information.
+Build-Depends: krb5 (!windows-static), openssl-windows (windows), lmdb

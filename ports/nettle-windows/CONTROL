@@ -1,0 +1,4 @@
+Source: nettle-windows
+Version: 3.4.1
+Build-Depends: gmp-windows
+Description: Nettle is a cryptographic library that is designed to fit easily in more or less any context. https://www.lysator.liu.se/~nisse/nettle/

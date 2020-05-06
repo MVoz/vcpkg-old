@@ -1,0 +1,6 @@
+Source: ign-math6
+Version: 
+#Homepage: 
+Description: 
+Build-Depends: ign-cmake2, eigen3
+#Feature: 

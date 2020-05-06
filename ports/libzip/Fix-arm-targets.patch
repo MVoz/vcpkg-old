@@ -1,0 +1,35 @@
+From b4c9eeb435d0375d0a18c987dff96effd170bf07 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Micha=C5=82=20Janiszewski?= <janisozaur@gmail.com>
+Date: Fri, 2 Mar 2018 23:45:02 +0100
+Subject: [PATCH] Fix arm targets
+
+---
+ CMakeLists.txt | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 69cdb8b..be76bb7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -133,10 +133,14 @@ ADD_DEFINITIONS("-D_CRT_SECURE_NO_WARNINGS")
+ ADD_DEFINITIONS("-D_CRT_NONSTDC_NO_DEPRECATE")
+ ENDIF(MSVC)
+ 
+-if(CMAKE_SYSTEM_NAME MATCHES WindowsPhone OR CMAKE_SYSTEM_NAME MATCHES WindowsStore)
+-  ADD_DEFINITIONS(-DMS_UWP)
+-  SET (OPTIONAL_LIBRARY "${OPTIONAL_LIBRARY}" bcrypt)
+-endif(CMAKE_SYSTEM_NAME MATCHES WindowsPhone OR CMAKE_SYSTEM_NAME MATCHES WindowsStore)
++if(WIN32)
++  if(CMAKE_SYSTEM_NAME MATCHES WindowsPhone OR CMAKE_SYSTEM_NAME MATCHES WindowsStore)
++    ADD_DEFINITIONS(-DMS_UWP)
++    SET (OPTIONAL_LIBRARY "${OPTIONAL_LIBRARY}" bcrypt)
++  else(CMAKE_SYSTEM_NAME MATCHES WindowsPhone OR CMAKE_SYSTEM_NAME MATCHES WindowsStore)
++    SET (OPTIONAL_LIBRARY "${OPTIONAL_LIBRARY}" advapi32)
++  endif(CMAKE_SYSTEM_NAME MATCHES WindowsPhone OR CMAKE_SYSTEM_NAME MATCHES WindowsStore)
++endif(WIN32)
+ 
+ ADD_DEFINITIONS("-DHAVE_CONFIG_H")
+ 
+-- 
+2.16.2
+

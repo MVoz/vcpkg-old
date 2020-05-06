@@ -1,0 +1,4 @@
+Source: yaracpp
+Version:  v1.0.1-1
+Description: C++ wrapper for YARA.
+Build-Depends: yara

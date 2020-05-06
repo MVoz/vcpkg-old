@@ -1,0 +1,4 @@
+Source: libbluray
+Version: 1.0.2
+Description: libbluray is an open-source library designed for Blu-Ray Discs playback for media players. http://www.videolan.org/developers
+Build-Depends: freetype, fontconfig, libxml2, libiconv

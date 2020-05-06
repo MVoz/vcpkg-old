@@ -1,0 +1,4 @@
+Source: zidl
+Version: 2.0.0
+Description: Zzub Interface Description Language
+Build-Depends: re2c, lemon

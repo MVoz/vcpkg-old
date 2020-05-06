@@ -2,5 +2,5 @@ Source: jancy
 Version: 
 #Homepage: 
 Description: 
-Build-Depends: axl, graco, luadoxyxml, llvm
+Build-Depends: axl, graco, luadoxyxml
 #Feature: 

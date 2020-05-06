@@ -1,0 +1,13 @@
+diff --git a/jbig2_symbol_dict.c b/jbig2_symbol_dict.c
+index 2c71a4c..236677f 100644
+--- a/jbig2_symbol_dict.c
++++ b/jbig2_symbol_dict.c
+@@ -26,7 +26,7 @@
+ 
+ #include <stddef.h>
+ #include <string.h>             /* memset() */
+-
++#include <stdint.h>
+ #include "jbig2.h"
+ #include "jbig2_priv.h"
+ #include "jbig2_arith.h"

@@ -37,11 +37,14 @@ vcpkg_configure_cmake(
       -DPythonQt_Wrap_Qtuitools:BOOL=ON
       -DPythonQt_Wrap_Qtxml:BOOL=ON
       -DPythonQt_Wrap_Qtxmlpatterns:BOOL=ON
+	OPTIONS_RELEASE
+	  -DPYTHON_LIBRARY=${CURRENT_INSTALLED_DIR}/lib/python37.lib
     OPTIONS_DEBUG
       -DPythonQt_DEBUG:BOOL=ON
+	  -DPYTHON_LIBRARY=${CURRENT_INSTALLED_DIR}/Debug/lib/python37_d.lib
 )
 
-vcpkg_install_cmake(DISABLE_PARALLEL)
+vcpkg_install_cmake()
 
 set(VCPKG_POLICY_EMPTY_PACKAGE enabled) # automatic templates
 vcpkg_copy_pdbs() # automatic templates

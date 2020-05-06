@@ -1,0 +1,9 @@
+Source: yelp-xsl
+Version: 
+#Homepage: 
+Description: 
+#Build-Depends: 
+#Feature: 
+#Program xmllint found: YES (E:/tools/vcpkg/installed/x64-windows/bin\xmllint.EXE)
+#Program xsltproc found: YES (E:/tools/vcpkg/installed/x64-windows/bin\xsltproc.EXE)
+#Program itstool found: NO

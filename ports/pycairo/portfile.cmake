@@ -11,10 +11,44 @@ vcpkg_extract_source_archive_ex(
     ARCHIVE ${ARCHIVE}
 )
 
+vcpkg_find_acquire_program(FLEX)
+vcpkg_find_acquire_program(BISON)
+vcpkg_find_acquire_program(DOXYGEN)
+
+#питон не находит зависимости, пришлось добавить все
+get_filename_component(FLEX_DIR "${FLEX}" DIRECTORY)
+get_filename_component(BISON_DIR "${BISON}" DIRECTORY)
+get_filename_component(DOXYGEN_DIR "${DOXYGEN}" DIRECTORY)
+
+#vcpkg_add_to_path("${PYTHON3_DIR};${FLEX_DIR};${BISON_DIR};${DOXYGEN_DIR}")
+set(ENV{PATH} ";$ENV{PATH};${FLEX_DIR};${BISON_DIR};${DOXYGEN_DIR}")
+#set(ENV{PYTHON_INSTALL_DIR} "${PYTHON3_DIR}")
+#set(ENV{PATH} ";$ENV{PATH};${CURRENT_INSTALLED_DIR}/bin")
+
+
+#set(ENV{PKG_CONFIG_PATH} ";$ENV{PKG_CONFIG_PATH};${CURRENT_INSTALLED_DIR}/lib/pkgconfig")
+#set(ENV{PKG_CONFIG} pkg-config)
+#include(FindPkgConfig)
+#pkg_search_module(GLIB2 REQUIRED glib-2.0)
+
+# for msgfmt and xgettext
+#set(ENV{PATH} "$ENV{PATH};${MSYS_ROOT}/usr/bin")
+
+
+#find_package(PkgConfig REQUIRED)
+
+#pkg_check_modules(json-glib REQUIRED gio-2.0>=0.1 gobject-2.0>=0.1)
+
+# fake pkg-config
+#configure_file(${CURRENT_PORT_DIR}/pkg-config.bat ${CURRENT_BUILDTREES_DIR}/pkg-config.bat @ONLY CRLF)
+#set(ENV{PKG_CONFIG} ${CURRENT_BUILDTREES_DIR}/pkg-config.bat)
+
 # https://mesonbuild.com/Configuring-a-build-directory.html
 vcpkg_configure_meson(
 	SOURCE_PATH ${SOURCE_PATH}
     OPTIONS
+#	OPTIONS_RELEASE
+#	OPTIONS_DEBUG
 		--backend=ninja
 		-Dpython=${PYTHON3}
 )

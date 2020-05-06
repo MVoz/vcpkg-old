@@ -1,0 +1,6 @@
+Source: audioscout
+Version: 
+#Homepage: 
+Description: 
+Build-Depends: log4cpp, zeromq
+#Feature: 

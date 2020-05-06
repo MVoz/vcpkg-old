@@ -1,0 +1,4 @@
+Source: makeshift
+Version: 1.1.0
+Description: What I miss in the STL.
+Build-Depends: cmakeshift, ms-gsl

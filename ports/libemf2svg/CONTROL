@@ -1,0 +1,4 @@
+Source: libemf2svg
+Version:
+#Dependencies    libiconv    libpng    libfontconfig    libfreetype
+Description:

@@ -1,37 +1,58 @@
-
 include(vcpkg_common_functions)
-set(GTK_VERSION 3.22.19)
-set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/gtk+-${GTK_VERSION})
+
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://ftp.gnome.org/pub/gnome/sources/gtk+/3.22/gtk+-${GTK_VERSION}.tar.xz"
-    FILENAME "gtk+-${GTK_VERSION}.tar.xz"
-    SHA512 c83198794433ee6eb29f8740d59bd7056cd36808b4bff1a99563ab1a1742e6635dab4f2a8be33317f74d3b336f0d1adc28dd91410da056b50a08c215f184dce2)
+    URLS "https://gitlab.gnome.org/GNOME/gtk/-/archive/wip/nirbheek/gtk-3-24-meson/gtk-wip-nirbheek-gtk-3-24-meson.tar.gz"
+    FILENAME "gtk-wip-nirbheek-gtk-3-24-meson.tar.gz"
+    SHA512 4de58a1b15ab7def8effc036095193ba4212730d203d28335ff13aae592597bdfe85c4e4b4bae8bebca50e7cc949ee8c702f678fb619cd53b2025ae2dd013f62
+)
 
-vcpkg_extract_source_archive(${ARCHIVE})
-file(COPY ${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt DESTINATION ${SOURCE_PATH})
-file(COPY ${CMAKE_CURRENT_LIST_DIR}/cmake DESTINATION ${SOURCE_PATH})
+vcpkg_extract_source_archive_ex(
+    OUT_SOURCE_PATH SOURCE_PATH
+    ARCHIVE ${ARCHIVE} 
 
-# generate sources using python script installed with glib
-if(NOT EXISTS ${SOURCE_PATH}/gtk/gtkdbusgenerated.h OR NOT EXISTS ${SOURCE_PATH}/gtk/gtkdbusgenerated.c)
-    vcpkg_find_acquire_program(PYTHON3)
-    set(GLIB_TOOL_DIR ${CURRENT_INSTALLED_DIR}/tools/glib)
+)
 
-    vcpkg_execute_required_process(
-        COMMAND ${PYTHON3} ${GLIB_TOOL_DIR}/gdbus-codegen --interface-prefix org.Gtk. --c-namespace _Gtk --generate-c-code gtkdbusgenerated ./gtkdbusinterfaces.xml
-        WORKING_DIRECTORY ${SOURCE_PATH}/gtk
-        LOGNAME source-gen)
-endif()
+vcpkg_find_acquire_program(FLEX)
+vcpkg_find_acquire_program(BISON)
+vcpkg_find_acquire_program(PYTHON3)
+vcpkg_find_acquire_program(DOXYGEN)
 
-vcpkg_configure_cmake(
-    SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA
+#питон не находит зависимости, пришлось добавить все
+get_filename_component(FLEX_DIR "${FLEX}" DIRECTORY)
+get_filename_component(BISON_DIR "${BISON}" DIRECTORY)
+get_filename_component(PYTHON3_DIR "${PYTHON3}" DIRECTORY)
+get_filename_component(DOXYGEN_DIR "${DOXYGEN}" DIRECTORY)
+
+#vcpkg_add_to_path("${PYTHON3_DIR};${FLEX_DIR};${BISON_DIR};${DOXYGEN_DIR}")
+set(ENV{PATH} ";$ENV{PATH};${FLEX_DIR};${BISON_DIR};${DOXYGEN_DIR};${PYTHON3}")
+#set(ENV{PYTHON_INSTALL_DIR} "${PYTHON3_DIR}")
+
+#set(ENV{PYTHON_CMD} "${PYTHON3}/python")
+#set(ENV{PYTHON_INCLUDES} ${PYTHON3_DIR}/include)
+
+# https://mesonbuild.com/Configuring-a-build-directory.html
+vcpkg_configure_meson(
+	SOURCE_PATH ${SOURCE_PATH}
     OPTIONS
-        -DGTK_VERSION=${GTK_VERSION}
-    OPTIONS_DEBUG
-        -DGTK_SKIP_HEADERS=ON)
+#	OPTIONS_RELEASE
+#	OPTIONS_DEBUG
+		--backend=ninja
 
-vcpkg_install_cmake()
+		-Dpython=${PYTHON3}
+		-Dwin32-backend=true
+		-Dgtk_doc=false
+		-Ddoctool=false
+#		-Dpython=python3
+		-Ddemos=false
+		-Dbuild-examples=false
+		-Dbuild-tests=false
+)
+vcpkg_install_meson()
+
 vcpkg_copy_pdbs()
 
-file(COPY ${SOURCE_PATH}/COPYING DESTINATION ${CURRENT_PACKAGES_DIR}/share/gtk)
-file(RENAME ${CURRENT_PACKAGES_DIR}/share/gtk/COPYING ${CURRENT_PACKAGES_DIR}/share/gtk/copyright)
+# Handle copyright
+file(INSTALL ${SOURCE_PATH}/COPYING DESTINATION ${CURRENT_PACKAGES_DIR}/share/gtk RENAME copyright)
+
+# Post-build test for cmake libraries
+# vcpkg_test_cmake(PACKAGE_NAME gtk)

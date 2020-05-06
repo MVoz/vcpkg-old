@@ -14,6 +14,8 @@ vcpkg_apply_patches(
         ${CMAKE_CURRENT_LIST_DIR}/0001-fix-uwp.patch
 )
 
+#NMake #https://github.com/fanc999/xiph.msvcbuild/tree/master/libtheora
+
 file(COPY ${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt DESTINATION ${SOURCE_PATH})
 file(COPY ${CMAKE_CURRENT_LIST_DIR}/libtheora.def DESTINATION ${SOURCE_PATH})
 file(COPY ${CMAKE_CURRENT_LIST_DIR}/FindOGG.cmake DESTINATION ${SOURCE_PATH})

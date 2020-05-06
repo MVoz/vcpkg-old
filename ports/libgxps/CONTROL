@@ -1,0 +1,5 @@
+Source: libgxps
+Version:
+Description:
+Build-Depends: fontconfig, glib, cairo, libarchive, freetype, libpng, lcms, libjpeg-turbo, tiff
+#, gtk

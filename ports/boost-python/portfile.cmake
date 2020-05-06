@@ -5,17 +5,22 @@ include(vcpkg_common_functions)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO boostorg/python
-    REF boost-1.70.0
-    SHA512 0e540f68713460c64f195f56af1cbd00ae4fa98adc91a83a0c1fdb7e60950cf282cab02b772f06e7c268c3cd294566d6abfa1d1aa545c687a256d6863870f72d
+    REF boost-1.71.0
+    SHA512 0b78db2d0fda09298092cfbe7580d67db015aac7d5fac44c363dcc025f61d043fe4a87446b3f8f1fa76ae685838a98b0ed68609ecd945328f5fc4b12a493ee6a
     HEAD_REF master
-    PATCHES unwind-type.patch
+    PATCHES unwind-type.patch # Fails to apply
 )
 
+vcpkg_find_acquire_program(PYTHON3)
+get_filename_component(PYTHON3_DIR "${PYTHON3}" DIRECTORY)
+set(ENV{PATH} ";$ENV{PATH};${PYTHON3_DIR}")
+
 # Find Python. Can't use find_package here, but we already know where everything is
-file(GLOB PYTHON_INCLUDE_PATH "${CURRENT_INSTALLED_DIR}/include/python[0-9.]*")
+#file(GLOB PYTHON_INCLUDE_PATH "${CURRENT_INSTALLED_DIR}/include/python[0-9.]*")
+set(PYTHON_INCLUDE_PATH "${CURRENT_INSTALLED_DIR}/include/Python37")
 set(PYTHONLIBS_RELEASE "${CURRENT_INSTALLED_DIR}/lib")
 set(PYTHONLIBS_DEBUG "${CURRENT_INSTALLED_DIR}/debug/lib")
-string(REGEX REPLACE ".*python([0-9\.]+)$" "\\1" PYTHON_VERSION "${PYTHON_INCLUDE_PATH}")
+#string(REGEX REPLACE ".*python([0-9\.]+)$" "\\1" PYTHON_VERSION "${PYTHON_INCLUDE_PATH}")
 include(${CURRENT_INSTALLED_DIR}/share/boost-build/boost-modular-build.cmake)
 boost_modular_build(SOURCE_PATH ${SOURCE_PATH})
 include(${CURRENT_INSTALLED_DIR}/share/boost-vcpkg-helpers/boost-modular-headers.cmake)

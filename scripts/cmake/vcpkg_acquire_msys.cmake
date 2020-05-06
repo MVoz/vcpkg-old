@@ -81,20 +81,28 @@ function(vcpkg_acquire_msys PATH_TO_ROOT_OUT)
 
     file(REMOVE_RECURSE ${TOOLPATH}/${TOOLSUBPATH})
     file(MAKE_DIRECTORY ${TOOLPATH})
-    execute_process(
+    _execute_process(
       COMMAND ${CMAKE_COMMAND} -E tar xzf ${ARCHIVE_PATH}
       WORKING_DIRECTORY ${TOOLPATH}
     )
-    execute_process(
+    _execute_process(
       COMMAND ${PATH_TO_ROOT}/usr/bin/bash.exe --noprofile --norc -c "PATH=/usr/bin;pacman-key --init;pacman-key --populate"
       WORKING_DIRECTORY ${TOOLPATH}
     )
-    execute_process(
+    _execute_process(
+#      COMMAND ${PATH_TO_ROOT}/usr/bin/bash.exe --noprofile --norc -c "PATH=/usr/bin;pacman -Syu --noconfirm --overwrite '*'"
       COMMAND ${PATH_TO_ROOT}/usr/bin/bash.exe --noprofile --norc -c "PATH=/usr/bin;pacman -Syyuu --noconfirm --overwrite '*'"
       WORKING_DIRECTORY ${TOOLPATH}
     )
     file(WRITE "${TOOLPATH}/${STAMP}" "0")
     message(STATUS "Acquiring MSYS2... OK")
+
+    # Remove database lock
+    SET(DB_LOCK_PATH ${PATH_TO_ROOT}/var/lib/pacman/db.lck)
+    if (EXISTS "${DB_LOCK_PATH}")
+      message(STATUS "${DB_LOCK_PATH} exists --- deleting it")
+      file(REMOVE "${DB_LOCK_PATH}")
+    endif()
   endif()
 
   if(_am_PACKAGES)
@@ -104,13 +112,25 @@ function(vcpkg_acquire_msys PATH_TO_ROOT_OUT)
     set(_ENV_ORIGINAL $ENV{PATH})
     set(ENV{PATH} ${PATH_TO_ROOT}/usr/bin)
     vcpkg_execute_required_process(
-      COMMAND ${PATH_TO_ROOT}/usr/bin/bash.exe --noprofile --norc -c "pacman -Su --noconfirm --needed --overwrite '*' `pacman -Ssq ${_am_PACKAGES}` "
+      ALLOW_IN_DOWNLOAD_MODE
+#      COMMAND ${PATH_TO_ROOT}/usr/bin/bash.exe --noprofile --norc -c "pacman -Su --noconfirm --needed --overwrite '*' `pacman -Ssq ${_am_PACKAGES}` "
+#      COMMAND ${PATH_TO_ROOT}/usr/bin/bash.exe --noprofile --norc -c "pacman -Syyuu --noconfirm --needed --overwrite '*' ${_am_PACKAGES} "
+      COMMAND ${PATH_TO_ROOT}/usr/bin/bash.exe --noprofile --norc -c "pacman -Sy --noconfirm --needed --overwrite '*' ${_am_PACKAGES} "
       WORKING_DIRECTORY ${TOOLPATH}
       LOGNAME msys-pacman-${TARGET_TRIPLET}
     )
     set(ENV{PATH} "${_ENV_ORIGINAL}")
 
     message(STATUS "Acquiring MSYS Packages... OK")
+  endif()
+
+  # Deal with a stale process created by MSYS
+  if (NOT VCPKG_CMAKE_SYSTEM_NAME OR VCPKG_CMAKE_SYSTEM_NAME STREQUAL "WindowsStore")
+      vcpkg_execute_required_process(
+          ALLOW_IN_DOWNLOAD_MODE
+          COMMAND TASKKILL /F /IM gpg-agent.exe /fi "memusage gt 2"
+          WORKING_DIRECTORY ${SOURCE_PATH}
+      )
   endif()
 
   set(${PATH_TO_ROOT_OUT} ${PATH_TO_ROOT} PARENT_SCOPE)

@@ -1,7 +1,4 @@
 Source: torch-th
-<<<<<<< HEAD
 Version: 2019-04-19-1
-=======
-Version: 2019-04-19
->>>>>>> [many ports] Updates 2019.04.19 (#6155)
+Homepage: https://github.com/torch/torch7
 Description: Torch's TH library

@@ -1,0 +1,32 @@
+--- a/qtbase/configure.json	2017-03-16 19:42:03.889199900 +0100
++++ b/qtbase/configure.json	2017-03-16 19:36:16.330039900 +0100
+@@ -148,7 +148,7 @@
+             "label": "zlib",
+             "test": "unix/zlib",
+             "sources": [
+-                { "libs": "-lzdll", "condition": "config.msvc" },
++                { "libs": "-lzlib", "condition": "config.msvc" },
+                 { "libs": "-lz", "condition": "!config.msvc" }
+             ]
+         },
+
+--- a/qtbase/src/gui/configure.json	2017-01-18 15:20:58.000000000 +0100
++++ a/qtbase/src/gui/configure.json	2017-03-16 19:37:00.015639900 +0100
+@@ -151,7 +151,7 @@
+             "label": "libjpeg",
+             "test": "unix/libjpeg",
+             "sources": [
+-                { "libs": "-llibjpeg", "condition": "config.msvc" },
++                { "libs": "-ljpeg", "condition": "config.msvc" },
+                 { "libs": "-ljpeg", "condition": "!config.msvc" }
+             ]
+         },
+@@ -160,7 +160,7 @@
+             "test": "unix/libpng",
+             "sources": [
+                 { "type": "pkgConfig", "args": "libpng" },
+-                { "libs": "-llibpng", "condition": "config.msvc" },
++                { "libs": "-llibpng16", "condition": "config.msvc" },
+                 { "libs": "-lpng", "condition": "!config.msvc" }
+             ]
+         },

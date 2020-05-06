@@ -32,7 +32,6 @@ vcpkg_install_msbuild(
 	USE_VCPKG_INTEGRATION
 )
 
-## https://github.com/Voskrese/vcpkg/blob/master/scripts/cmake/vcpkg_install_msbuild.cmake
 set(PREBUILT ${CURRENT_BUILDTREES_DIR}/${TARGET_TRIPLET}-rel)
 file(COPY ${PREBUILT}/msvc/include DESTINATION ${CURRENT_PACKAGES_DIR})
 

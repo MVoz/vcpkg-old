@@ -9,11 +9,7 @@ vcpkg_download_distfile(ARCHIVE
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
-#    PATCHES
-#        001_port_fixes.patch
-#        002_more_port_fixes.patch
 )
-
 
 include(${CURRENT_INSTALLED_DIR}/share/python3-setuptools/python-pip-install.cmake)
 python_pip_install(SOURCE_PATH ${SOURCE_PATH})

@@ -1,17 +1,16 @@
 include(vcpkg_common_functions)
 
-if(NOT VCPKG_CMAKE_SYSTEM_NAME OR VCPKG_CMAKE_SYSTEM_NAME STREQUAL "WindowsStore")
-    message(FATAL_ERROR "Intel gmmlib currently only supports Linux platforms")
-endif()
-
 vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 
-vcpkg_from_github(
+vcpkg_download_distfile(ARCHIVE
+    URLS "https://github.com/intel/gmmlib/archive/b20e484a5b4c002bfba40d7464bc9e67fbed5d28.zip"
+    FILENAME "gmmlib_v.zip"
+    SHA512 39d354d194aec757e949f9a0e189ca6e42eb60ca341a6ca7acbb91311e8ce1d6f81afb4d86ab8905cd07b7f00c662f363be90539289026ffc9c1a2bcaebbbf15
+)
+
+vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO intel/gmmlib
-    REF intel-gmmlib-18.3.pre2
-    SHA512 9831f6e6f001ba99d5b4860c68697dfc33535a20aa853716534a18b6e4df6c7b95039fff7ffe6f0303cfeb70db4c53ad26a6fa6a8fb6148fa4080e456bff3859
-    HEAD_REF master
+    ARCHIVE ${ARCHIVE}
 )
 
 vcpkg_configure_cmake(

@@ -1,0 +1,4 @@
+Source: cutorch
+Version: 1.0.0
+Description: A CUDA backend for Torch7
+Build-Depends: torch7, cuda

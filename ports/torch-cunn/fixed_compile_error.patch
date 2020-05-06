@@ -1,0 +1,72 @@
+diff -ruN a/lib/THCUNN/BCECriterion.cu b/lib/THCUNN/BCECriterion.cu
+--- a/lib/THCUNN/BCECriterion.cu	2017-09-07 14:41:45.000000000 +0800
++++ b/lib/THCUNN/BCECriterion.cu	2018-04-09 19:33:39.643667900 +0800
+@@ -27,7 +27,7 @@
+   {
+     Dtype input = thrust::get<0>(x);
+     Dtype t = thrust::get<1>(x);
+-    assert(input >= 0. && input <= 1.);
++    assert(input >= 0 && input <= 1);
+     return - (t * THCNumerics<Acctype>::log(input + eps<Acctype>()) + (Acctype(1)- t) * THCNumerics<Acctype>::log(Acctype(1) - input + eps<Acctype>()));
+   }
+ };
+@@ -42,7 +42,7 @@
+     Dtype input = thrust::get<0>(x);
+     Dtype t = thrust::get<1>(x);
+     Dtype w = thrust::get<2>(x);
+-    assert(input >= 0. && input <= 1.);
++    assert(input >= 0 && input <= 1);
+     return - w * (t * THCNumerics<Acctype>::log(input + eps<Acctype>()) + (Acctype(1) - t) * THCNumerics<Acctype>::log(Acctype(1) - input + eps<Acctype>()));
+   }
+ };
+diff -ruN a/lib/THCUNN/LogSigmoid.cu b/lib/THCUNN/LogSigmoid.cu
+--- a/lib/THCUNN/LogSigmoid.cu	2017-09-07 14:41:45.000000000 +0800
++++ b/lib/THCUNN/LogSigmoid.cu	2018-04-09 19:20:39.958578700 +0800
+@@ -7,7 +7,7 @@
+ struct logSigmoid_updateOutput_functor
+ {
+   __device__ void operator()(T *output, const T *input) const {
+-    const T max = fmaxType(0.f, - *input);
++    const T max = fmaxType(0.f, (float)- *input);
+     const T z = THCNumerics<T>::exp(-max) + THCNumerics<T>::exp(-*input -max);
+     *output = -(max + THCNumerics<T>::log(z));
+   }
+@@ -17,7 +17,7 @@
+ struct logSigmoid_updateGradInput_functor
+ {
+   __device__ void operator()(T *gradInput, const T *input, const T *gradOutput) const {
+-    const T max = fmaxType(0.f, -*input);
++    const T max = fmaxType(0.f, (float)-*input);
+     const T z = THCNumerics<T>::exp(-max) + THCNumerics<T>::exp(-*input -max);
+     T max_deriv = 0.f;
+     T sign = -1.f;
+diff -ruN a/lib/THCUNN/PReLU.cu b/lib/THCUNN/PReLU.cu
+--- a/lib/THCUNN/PReLU.cu	2017-09-07 14:41:45.000000000 +0800
++++ b/lib/THCUNN/PReLU.cu	2018-04-09 19:33:02.190000000 +0800
+@@ -68,7 +68,7 @@
+ {
+   __device__ __forceinline__ void operator()(T *gradInput, T  *input, T *gradOutput)
+   {
+-    *gradInput = (*input) * (*gradOutput) * (*input <= 0);
++    *gradInput = (*input) * (*gradOutput) * (int)(*input <= 0);
+   }
+ };
+ 
+@@ -83,7 +83,7 @@
+ 
+   __device__ __forceinline__ void operator()(T *gradInput, T *input, T *gradOutput)
+   {
+-    *gradInput = (*input) * (*gradOutput) * scale * (*input <= 0);
++    *gradInput = (*input) * (*gradOutput) * scale * (int)(*input <= 0);
+   }
+ };
+ 
+@@ -98,7 +98,7 @@
+ 
+   __device__ __forceinline__ void operator()(T *gradWeight, T *input, T *gradOutput)
+   {
+-    *gradWeight += (*input) * (*gradOutput) * scale * (*input <= 0);
++    *gradWeight += (*input) * (*gradOutput) * scale * (int)(*input <= 0);
+   }
+ };
+ 

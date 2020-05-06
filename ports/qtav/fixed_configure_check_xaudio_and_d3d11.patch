@@ -1,0 +1,23 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index ea97ad5a..f246bb74 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -322,7 +322,7 @@ if(HAVE_EGL)
+   endif()
+ endif()
+ if(WIN32 OR WindowsStore OR WindowsPhone)
+-  check_include_files(XAudio2.h HAVE_XAUDIO2_H)
++  check_include_file_cxx(XAudio2.h HAVE_XAUDIO2_H)
+   if(NOT HAVE_XAUDIO2_H)
+     list(APPEND EXTRA_INCLUDE ${CMAKE_SOURCE_DIR}/contrib/dxsdk)
+   endif()
+@@ -338,7 +338,8 @@ if(WIN32 OR WindowsStore OR WindowsPhone)
+   )
+   list(APPEND EXTRA_DEFS -DQTAV_HAVE_XAUDIO2=1)
+   set(OLD_REQUIRED_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES})
+-  set(CMAKE_REQUIRED_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES} avcodec) # TODO: lib dir
++  find_library(AVCODEC_PATH NAMES avcodec)
++  set(CMAKE_REQUIRED_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES} ${AVCODEC_PATH}) # TODO: lib dir
+   set(OLD_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES})
+   set(CMAKE_REQUIRED_INCLUDES ${EXTRA_INCLUDE} ${CMAKE_CURRENT_SOURCE_DIR})
+   check_cxx_source_compiles("

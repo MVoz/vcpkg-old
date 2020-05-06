@@ -1,0 +1,30 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c594567..8662498 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -19,7 +19,7 @@ INCLUDE_DIRECTORIES(
+ # Make the ttl library
+ 
+ FILE(GLOB_RECURSE ttl_SRCS src/*.C src/*.cpp include/*.h)
+-ADD_LIBRARY(ttl ${ttl_SRCS})
++ADD_LIBRARY(ttl STATIC ${ttl_SRCS})
+ SET_PROPERTY(TARGET ttl
+   PROPERTY FOLDER "ttl/Libs")
+ 
+@@ -35,6 +35,7 @@ ENDIF(WIN32)
+ 
+ # Apps, examples, tests, ...?
+ 
++IF(GoTools_COMPILE_APPS)
+ FILE(GLOB_RECURSE ttl_EXAMPLES examples/*.C examples/*.cpp)
+ FOREACH(example ${ttl_EXAMPLES})
+   GET_FILENAME_COMPONENT(examplename ${example} NAME_WE)
+@@ -43,7 +44,7 @@ FOREACH(example ${ttl_EXAMPLES})
+     SET_PROPERTY(TARGET ${examplename}
+       PROPERTY FOLDER "ttl/Examples")
+ ENDFOREACH(example)
+-
++ENDIF()
+ 
+ # 'install' target
+ 

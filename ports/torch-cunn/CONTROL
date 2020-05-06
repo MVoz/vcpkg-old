@@ -1,0 +1,4 @@
+Source: torch-cunn
+Version: 1.0.0
+Description: This package provides a CUDA implementation for many of the modules in the base nn package: nn
+Build-Depends: cutorch, torch-nn, torch7, cuda

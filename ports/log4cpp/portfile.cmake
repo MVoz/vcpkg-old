@@ -1,27 +1,36 @@
 include(vcpkg_common_functions)
 
-vcpkg_download_distfile(ARCHIVE
-    URLS "https://sourceforge.net/projects/log4cpp/files/log4cpp-1.1.x%20%28new%29/log4cpp-1.1/log4cpp-1.1.3.tar.gz/download"
-    FILENAME "log4cpp-1.1.3.tar.gz"
-    SHA512 88e5e10bce8d7d6421c3dcf14aa25385159c4ae52becdc1f3666ab86e1ad3f633786d82afe398c517d4faaa57b3e7b7c0b524361d81c6b9040dbded5cecc19de
-)
+if(VCPKG_CMAKE_SYSTEM_NAME MATCHES "WindowsStore")
+    message(FATAL_ERROR "${PORT} does not currently support UWP.")
+endif()
 
-vcpkg_extract_source_archive_ex(
+vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    ARCHIVE ${ARCHIVE}
+    REPO orocos-toolchain/log4cpp
+    REF v2.9.1
+    SHA512 5bd222c820a15c5d96587ac9fe864c3e2dc0fbce8389692be8dd41553ac0308002ad8d6f4ef3ef10af1d796f8ded410788d1a5d22f15505fac639da3f73e3518
+    HEAD_REF master
+    PATCHES
+        fix-install-targets.patch
 )
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA # Disable this option if project cannot be built with Ninja
-#    DISABLE_PARALLEL_CONFIGURE
-    OPTIONS_DEBUG # automatic templates
-        -DDISABLE_INSTALL_HEADERS=ON # automatic templates
+    PREFER_NINJA
 )
 
 vcpkg_install_cmake()
 
-set(VCPKG_POLICY_EMPTY_PACKAGE enabled) # automatic templates
-vcpkg_copy_pdbs() # automatic templates
-configure_file(${SOURCE_PATH}/COPYING ${CURRENT_PACKAGES_DIR}/share/${PORT}/copyright COPYONLY)
-###
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
+vcpkg_fixup_cmake_targets(CONFIG_PATH lib/pkgconfig TARGET_PATH share/${PORT})
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/share)
+
+if(VCPKG_LIBRARY_LINKAGE STREQUAL static)
+    file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/bin ${CURRENT_PACKAGES_DIR}/debug/bin)
+endif()
+
+vcpkg_copy_pdbs()
+
+# Handle copyright
+file(COPY ${SOURCE_PATH}/COPYING DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT})
+file(RENAME ${CURRENT_PACKAGES_DIR}/share/${PORT}/COPYING ${CURRENT_PACKAGES_DIR}/share/${PORT}/copyright)

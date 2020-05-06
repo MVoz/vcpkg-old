@@ -1,0 +1,4 @@
+Source: sword
+Version: 1.8.1
+Description: The core of The SWORD Project is a cross-platform library written in C++, providing access, search functions and other utilities to a growing collection of over 200 texts in over 50 languages
+Build-Depends: bzip2, zlib, libxml2, liblzma, curl, icu

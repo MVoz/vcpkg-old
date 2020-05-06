@@ -1,0 +1,56 @@
+diff --git a/src/pdf/qpdfbookmarkmodel.h b/src/pdf/qpdfbookmarkmodel.h
+index 166cd8c..882ff58 100644
+--- a/src/pdf/qpdfbookmarkmodel.h
++++ b/src/pdf/qpdfbookmarkmodel.h
+@@ -39,7 +39,7 @@
+ 
+ #include "qtpdfglobal.h"
+ 
+-#include <QAbstractItemModel>
++#include <QtCore/QAbstractItemModel>
+ 
+ QT_BEGIN_NAMESPACE
+ 
+diff --git a/src/pdf/qpdfdocument.h b/src/pdf/qpdfdocument.h
+index 63532b3..c9ca3bc 100644
+--- a/src/pdf/qpdfdocument.h
++++ b/src/pdf/qpdfdocument.h
+@@ -39,9 +39,9 @@
+ 
+ #include "qtpdfglobal.h"
+ 
+-#include <QImage>
+-#include <QObject>
+-#include <QPdfDocumentRenderOptions>
++#include <QtGui/QImage>
++#include <QtCore/QObject>
++#include <QtPdf/QPdfDocumentRenderOptions>
+ 
+ QT_BEGIN_NAMESPACE
+ 
+diff --git a/src/pdf/qpdfnamespace.h b/src/pdf/qpdfnamespace.h
+index a8e7dc0..5cc8051 100644
+--- a/src/pdf/qpdfnamespace.h
++++ b/src/pdf/qpdfnamespace.h
+@@ -37,7 +37,7 @@
+ #ifndef QPDFNAMESPACE_H
+ #define QPDFNAMESPACE_H
+ 
+-#include <QObject>
++#include <QtCore/QObject>
+ 
+ namespace QPdf {
+     Q_NAMESPACE
+diff --git a/src/pdf/qpdfpagenavigation.h b/src/pdf/qpdfpagenavigation.h
+index b3649fa..86bdd08 100644
+--- a/src/pdf/qpdfpagenavigation.h
++++ b/src/pdf/qpdfpagenavigation.h
+@@ -39,7 +39,7 @@
+ 
+ #include "qtpdfglobal.h"
+ 
+-#include <QObject>
++#include <QtCore/QObject>
+ 
+ QT_BEGIN_NAMESPACE
+ 

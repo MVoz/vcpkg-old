@@ -24,13 +24,14 @@ vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA
     OPTIONS
+        -DBUILD_SHARED_LIBS=ON # automatic templates
         -DCARES_STATIC=${CARES_STATIC}
         -DCARES_SHARED=${CARES_SHARED}
 )
 
 vcpkg_install_cmake()
 
-vcpkg_fixup_cmake_targets(CONFIG_PATH "lib/cmake/c-ares")
+vcpkg_fixup_cmake_targets(CONFIG_PATH lib/cmake/c-ares)
 
 if(VCPKG_LIBRARY_LINKAGE STREQUAL static)
     file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/bin)

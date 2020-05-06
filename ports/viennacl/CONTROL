@@ -1,0 +1,4 @@
+Source: viennacl
+Version: 1.7.1
+Description: ViennaCL provides high level C++ interfaces for linear algebra routines on CPUs and GPUs using CUDA, OpenCL, and OpenMP. The focus is on generic implementations of iterative solvers often used for large linear systems and simple integration into existing projects.
+

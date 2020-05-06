@@ -1,0 +1,7 @@
+diff --git a/src/lib/CMakeLists.txt b/src/lib/CMakeLists.txt
+index ad43505..ea61a36 100644
+--- a/src/lib/CMakeLists.txt
++++ b/src/lib/CMakeLists.txt
+@@ -1 +1 @@
+-add_library (${PROJECT_NAME} semantic_version_v1.cpp semantic_version_v2.cpp)
++add_library (${PROJECT_NAME} STATIC semantic_version_v1.cpp semantic_version_v2.cpp)

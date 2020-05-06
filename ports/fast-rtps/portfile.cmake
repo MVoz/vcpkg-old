@@ -1,5 +1,7 @@
 include(vcpkg_common_functions)
 
+vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
+
 find_program(GIT NAMES git git.cmd)
 set(GIT_URL "https://github.com/eProsima/Fast-RTPS")
 set(GIT_REV master)

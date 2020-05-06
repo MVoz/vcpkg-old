@@ -1,15 +1,3 @@
-# Common Ambient Variables:
-#   CURRENT_BUILDTREES_DIR    = ${VCPKG_ROOT_DIR}\buildtrees\${PORT}
-#   CURRENT_PACKAGES_DIR      = ${VCPKG_ROOT_DIR}\packages\${PORT}_${TARGET_TRIPLET}
-#   CURRENT_PORT_DIR          = ${VCPKG_ROOT_DIR}\ports\${PORT}
-#   PORT                      = current port name (zlib, etc)
-#   TARGET_TRIPLET            = current triplet (x86-windows, x64-windows-static, etc)
-#   VCPKG_CRT_LINKAGE         = C runtime linkage type (static, dynamic)
-#   VCPKG_LIBRARY_LINKAGE     = target library linkage type (static, dynamic)
-#   VCPKG_ROOT_DIR            = <C:\path\to\current\vcpkg>
-#   VCPKG_TARGET_ARCHITECTURE = target architecture (x64, x86, arm)
-#
-
 include(vcpkg_common_functions)
 
 vcpkg_download_distfile(ARCHIVE
@@ -22,6 +10,8 @@ vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE ${ARCHIVE}
     REF "1.8.4"
+    PATCHES
+        "support-unicode-on-windows.patch"
     # [NO_REMOVE_ONE_LEVEL]
     # [WORKING_DIRECTORY <${CURRENT_BUILDTREES_DIR}/src>]
     # [PATCHES <a.patch>...]
@@ -49,11 +39,10 @@ vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA # Disable this option if project cannot be built with Ninja
     OPTIONS 
-        -DIRR_SHARED_LIB=${SHARED_LIB} 
-        -DIRR_FAST_MATH=${FAST_MATH}
-        -DIRR_BUILD_TOOLS=${BUILD_TOOLS}
-    # OPTIONS_RELEASE -DOPTIMIZE=1
-    # OPTIONS_DEBUG -DDEBUGGABLE=1
+      -DIRR_SHARED_LIB=${SHARED_LIB} 
+      -DIRR_FAST_MATH=${FAST_MATH}
+      -DIRR_BUILD_TOOLS=${BUILD_TOOLS}
+#      -DIRR_DIRECTX_SDK:PATH=
 )
 
 vcpkg_install_cmake()
@@ -90,5 +79,8 @@ freely, subject to the following restrictions:
 
 vcpkg_copy_pdbs()
 
+if(VCPKG_LIBRARY_LINKAGE STREQUAL "static")
+    file(COPY ${CMAKE_CURRENT_LIST_DIR}/vcpkg-cmake-wrapper.cmake DESTINATION ${CURRENT_PACKAGES_DIR}/share/irrlicht)
+endif()
 # Post-build test for cmake libraries
 vcpkg_test_cmake(PACKAGE_NAME irrlicht)

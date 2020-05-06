@@ -1,0 +1,3 @@
+Source: gmp-windows
+Version: 6.1.2
+Description: GMP is a free library for arbitrary precision arithmetic, operating on signed integers, rational numbers, and floating-point numbers. https://gmplib.org/

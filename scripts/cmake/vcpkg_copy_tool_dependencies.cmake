@@ -21,7 +21,7 @@ function(vcpkg_copy_tool_dependencies TOOL_DIR)
         file(GLOB TOOLS ${TOOL_DIR}/*.exe ${TOOL_DIR}/*.dll)
         foreach(TOOL ${TOOLS})
             execute_process(COMMAND powershell -noprofile -executionpolicy Bypass -nologo
-                -file ${VCPKG_ROOT_DIR}/scripts/buildsystems/msbuild/applocal.ps1
+                -file ${SCRIPTS}/buildsystems/msbuild/applocal.ps1
                 -targetBinary ${TOOL}
                 -installedDir ${PATH_TO_SEARCH}
                 OUTPUT_VARIABLE OUT)
@@ -31,19 +31,10 @@ function(vcpkg_copy_tool_dependencies TOOL_DIR)
     search_for_dependencies(${CURRENT_INSTALLED_DIR}/bin)
 endfunction()
 
-# https://github.com/brechtsanders/pedeps
 function(vcpkg_copy_tool_deps TOOL_DIR)
     macro(search_for_deps PATH_TO_SEARCH)
-#        file(GLOB TOOLS ${TOOL_DIR}/*.exe ${TOOL_DIR}/*.dll)
-#        foreach(TOOL ${TOOLS})
-        foreach(TOOL ${TOOL_DIR})
-            execute_process(COMMAND copypedeps -r
-#            execute_process(COMMAND copypedeps
-                ${TOOL}
-                ${PATH_TO_SEARCH}
+            execute_process(COMMAND copypedeps -r -d
+                ${CURRENT_PACKAGES_DIR}/bin
                 OUTPUT_VARIABLE OUT)
-        endforeach()
     endmacro()
-    search_for_deps(${CURRENT_PACKAGES_DIR}/bin)
-    search_for_deps(${CURRENT_INSTALLED_DIR}/bin)
 endfunction()

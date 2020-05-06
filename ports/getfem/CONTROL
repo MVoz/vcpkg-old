@@ -1,0 +1,6 @@
+Source: getfem
+Version: 
+#Homepage: 
+Description: 
+Build-Depends: muparser, qhull
+#Feature: 

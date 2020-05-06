@@ -15,7 +15,6 @@ vcpkg_find_acquire_program(XGETTEXT)
 get_filename_component(GETTEXT_DIR "${XGETTEXT}" DIRECTORY)
 set(ENV{PATH} "$ENV{PATH};${GETTEXT_DIR}")
 
-
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA

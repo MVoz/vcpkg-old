@@ -13,23 +13,6 @@ if(MSVC)
   set(CMAKE_DEBUG_POSTFIX "d")
   add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
   add_definitions(-D_CRT_NONSTDC_NO_DEPRECATE)
-<<<<<<< HEAD
-=======
-endif()
-
-if(UNIX)
-  message(STATUS "Running ${SHELL_EXECUTABLE} ./configure --prefix=${CMAKE_CURRENT_SOURCE_DIR}/")
-  add_custom_target(
-    zziplib_autotools
-    ${SHELL_EXECUTABLE} ./configure --prefix=${CMAKE_CURRENT_SOURCE_DIR}/
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-  )
-  message(STATUS "Autotools should have finished their job")
-  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/x86_64-pc-linux-gnu/zzip)
-  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/x86_64-pc-linux-gnu)
-  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/x86_64-apple-darwin18.2.0/zzip)
-  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/x86_64-apple-darwin18.2.0)
->>>>>>> [ceres,jxrlib,zziplib] Fixes for non-windows (#6188)
 endif()
 
 if(UNIX)
@@ -70,13 +53,7 @@ set(HEADERS zzip/__debug.h
             zzip/zzip.h
 )
 if(UNIX)
-<<<<<<< HEAD
   file(GLOB OTHER_HEADERS ${ZZLIB_AUTOOLS_INCLUDE_DIRS}/zzip/*.h)
-=======
-  file(GLOB OTHER_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/x86_64-pc-linux-gnu/zzip/*.h)
-  list(APPEND HEADERS ${OTHER_HEADERS})
-  file(GLOB OTHER_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/x86_64-apple-darwin18.2.0/zzip/*.h)
->>>>>>> [ceres,jxrlib,zziplib] Fixes for non-windows (#6188)
   list(APPEND HEADERS ${OTHER_HEADERS})
 else()
   list(APPEND HEADERS zzip/_msvc.h)
@@ -94,9 +71,6 @@ set(SRCS zzip/dir.c
 )
 
 add_library(zziplib ${SRCS} ${HEADERS})
-if(UNIX)
-  add_dependencies(zziplib zziplib_autotools)
-endif()
 
 if(BUILD_SHARED_LIBS)
   target_compile_definitions(zziplib PRIVATE -DZZIPLIB_EXPORTS)

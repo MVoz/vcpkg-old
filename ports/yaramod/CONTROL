@@ -1,0 +1,4 @@
+Source: yaramod
+Version: v2.5.0
+Description: Parsing of YARA rules into AST and building new rulesets in C++.
+Build-Depends: pybind11, gtest

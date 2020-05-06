@@ -4,9 +4,6 @@ include(GNUInstallDirs)
 
 project(FreeImage C CXX)
 
-set(CMAKE_MODULE_PATH "${VCPKG_ROOT_DIR}/installed/${TARGET_TRIPLET}/share/JXR" ${CMAKE_MODULE_PATH})
-set(CMAKE_MODULE_PATH "${VCPKG_ROOT_DIR}/installed/${TARGET_TRIPLET}/share/OpenEXR" ${CMAKE_MODULE_PATH})
-
 if(MSVC)
   add_definitions("-D_CRT_SECURE_NO_WARNINGS")
   set(CMAKE_CXX_FLAGS "/wd4828 ${CMAKE_CXX_FLAGS}")
@@ -32,7 +29,7 @@ option(INSTALL_HEADERS "Install the development headers" ON)
 set(REAL_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Source)
 
 # Add a debug postfix
-#set(CMAKE_DEBUG_POSTFIX "d")
+set(CMAKE_DEBUG_POSTFIX "d")
 
 # List the public header files
 set(PUBLIC_HEADERS ${REAL_SOURCE_DIR}/FreeImage.h)

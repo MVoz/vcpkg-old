@@ -32,7 +32,17 @@ vcpkg_execute_required_process(
 )
 
 set(ENV{NO-DEV} True)
-set(ENV{NINJA_STATUS} "[%r processes, %f/%t @ %o/s : %es ]")
+set(CLICOLOR_FORCE 1)
+set(ENV{CLICOLOR_FORCE} "1")
+set(ENV{NINJA_STATUS} "[%u/%r processes, %s/%f/%t @ %o(%c)/s : %es ] (%e)")
+#set(ENV{NINJA_SUMMARIZE_BUILD} "1")
+#set(ENV{NINJA_STATUS} "%es [%p/%s/%t] ")
+#set(ENV{NINJA_STATUS} "[%p]")
+#os.environ['NINJA_STATUS'] = '[%f/%t][%p][%es] '
+set(ENV{CMAKE_RULE_MESSAGES} "OFF")
+set(CMAKE_RULE_MESSAGES "OFF")
+#NINJA_STATUS="[%f/%t][%e] "; %ninja_build -C %{_target_platform} ...
+#NINJAFLAGS="-j1" MAKEOPTS="-j1" emerge -av1 =webkit-gtk-2.16.1
 
 execute_process(
     COMMAND ${NINJA} -C out -d stats

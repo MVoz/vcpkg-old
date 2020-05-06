@@ -30,6 +30,13 @@ vcpkg_configure_cmake(
 
 vcpkg_install_cmake()
 
+file(REMOVE 
+  ${CURRENT_PACKAGES_DIR}/local_setup.bat
+  ${CURRENT_PACKAGES_DIR}/setup.bat
+  ${CURRENT_PACKAGES_DIR}/debug/local_setup.bat
+  ${CURRENT_PACKAGES_DIR}/debug/setup.bat
+)
+
 set(VCPKG_POLICY_EMPTY_PACKAGE enabled) # automatic templates
 vcpkg_copy_pdbs() # automatic templates
 configure_file(${SOURCE_PATH}/LICENSE ${CURRENT_PACKAGES_DIR}/share/${PORT}/copyright COPYONLY)

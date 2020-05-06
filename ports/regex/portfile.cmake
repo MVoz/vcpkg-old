@@ -1,5 +1,9 @@
 include(vcpkg_common_functions)
 
+vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
+
+#MSVC https://github.com/mwgoldsmith/regex/tree/master/projects/vs14
+
 vcpkg_download_distfile(ARCHIVE
     URLS "https://github.com/geoffmcl/regex/archive/5e78d01d96d50b255857a0b63cee675b248ffa8e.zip"
     FILENAME "5e78d01d96d50b255857a0b63cee675b248ffa8e.zip"
@@ -13,16 +17,11 @@ vcpkg_extract_source_archive_ex(
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA # Disable this option if project cannot be built with Ninja
-    # OPTIONS -DUSE_THIS_IN_ALL_BUILDS=1 -DUSE_THIS_TOO=2
-    # OPTIONS_RELEASE -DOPTIMIZE=1
-    # OPTIONS_DEBUG -DDEBUGGABLE=1
+    PREFER_NINJA
 )
 
 vcpkg_install_cmake()
 
 # Handle copyright
-file(INSTALL ${SOURCE_PATH}/COPYRIGHT DESTINATION ${CURRENT_PACKAGES_DIR}/share/regex RENAME copyright)
+configure_file(${SOURCE_PATH}/COPYRIGHT ${CURRENT_PACKAGES_DIR}/share/${PORT}/copyright COPYONLY)
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
-# Post-build test for cmake libraries
-# vcpkg_test_cmake(PACKAGE_NAME regex)

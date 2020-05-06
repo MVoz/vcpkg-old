@@ -1,0 +1,68 @@
+cmake_minimum_required(VERSION 3.12.0 FATAL_ERROR)
+project(sql VERSION 0.9.6 LANGUAGES C CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+if(WIN32)
+  add_definitions(-D_UNICODE -DUNICODE -DWIN32_LEAN_AND_MEAN -DWINVER=0x0A00 -D_WIN32_WINNT=0x0A00)
+  add_definitions(-D_CRT_SECURE_NO_DEPRECATE -D_CRT_SECURE_NO_WARNINGS -D_CRT_NONSTDC_NO_DEPRECATE)
+  add_definitions(-D_ATL_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_WARNINGS)
+endif()
+
+file(GLOB_RECURSE headers CONFIGURE_DEPENDS include/*.hpp)
+file(GLOB_RECURSE sources CONFIGURE_DEPENDS ${PROJECT_NAME}ite3ext.h ${PROJECT_NAME}ite3.h ${PROJECT_NAME}ite3.c src/*.hpp src/*.cpp)
+
+add_library(${PROJECT_NAME} ${headers} ${sources})
+target_include_directories(${PROJECT_NAME} PRIVATE src ${CMAKE_CURRENT_SOURCE_DIR} PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+
+target_compile_definitions(${PROJECT_NAME} PRIVATE
+  SQLITE_THREADSAFE=2
+  SQLITE_DEFAULT_MEMSTATUS=1
+  SQLITE_LIKE_DOESNT_MATCH_BLOBS
+  SQLITE_OMIT_DEPRECATED
+  SQLITE_OMIT_PROGRESS_CALLBACK
+  SQLITE_OMIT_SHARED_CACHE
+  SQLITE_OMIT_WAL
+  SQLITE_ENABLE_COLUMN_METADATA)
+
+if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+  target_link_libraries(${PROJECT_NAME} PUBLIC c++fs)
+endif()
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+  target_link_libraries(${PROJECT_NAME} PUBLIC dl)
+endif()
+
+find_package(Threads REQUIRED)
+target_link_libraries(${PROJECT_NAME} PUBLIC Threads::Threads)
+
+find_package(ice CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME} PUBLIC ice::ice)
+
+install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}
+  RUNTIME DESTINATION bin
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib)
+
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/ DESTINATION include FILES_MATCHING PATTERN "*.hpp")
+install(EXPORT ${PROJECT_NAME} FILE ${PROJECT_NAME}-targets.cmake NAMESPACE ${PROJECT_NAME}::
+  DESTINATION lib/cmake/${PROJECT_NAME})
+
+include(CMakePackageConfigHelpers)
+
+configure_package_config_file(res/config.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake
+  INSTALL_DESTINATION lib/cmake/${PROJECT_NAME})
+
+write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake
+  VERSION ${PROJECT_VERSION} COMPATIBILITY SameMajorVersion)
+
+install(FILES
+  ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake
+  DESTINATION lib/cmake/${PROJECT_NAME})
+
+add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})

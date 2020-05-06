@@ -1,0 +1,4 @@
+Source: effekseer-for-dxlib
+Version: 1.32-3.18e
+Description: The runtime library of Effekseer fo DXLibrary.
+Build-Depends: dxlib, effekseer

@@ -1,0 +1,4 @@
+Source: lua-intf
+Version: 2017.01.06
+Description: A binding between C++11 and Lua language.
+Build-Depends: lua

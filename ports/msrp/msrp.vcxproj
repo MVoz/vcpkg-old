@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EC3A6CE6-1C30-42AC-B832-EFACA29D3544}</ProjectGuid>
+    <RootNamespace>msrp</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)src/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)msrp.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)src/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)msrp.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)src/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)msrp.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)src/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)msrp.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="common\os\BaseException.cxx" />
+    <ClCompile Include="common\BranchParameter.cxx" />
+    <ClCompile Include="ByteRange.cpp" />
+    <ClCompile Include="common\os\Coders.cxx" />
+    <ClCompile Include="common\os\Condition.cxx" />
+    <ClCompile Include="common\Contents.cxx" />
+    <ClCompile Include="common\os\CountStream.cxx" />
+    <ClCompile Include="common\os\Data.cxx" />
+    <ClCompile Include="common\DataParameter.cxx" />
+    <ClCompile Include="common\os\DataStream.cxx" />
+    <ClCompile Include="common\os\DnsUtil.cxx" />
+    <ClCompile Include="common\Embedded.cxx" />
+    <ClCompile Include="common\ExistsParameter.cxx" />
+    <ClCompile Include="common\FloatParameter.cxx" />
+    <ClCompile Include="common\GenericContents.cxx" />
+    <ClCompile Include="common\HeaderFieldValue.cxx" />
+    <ClCompile Include="common\HeaderFieldValueList.cxx" />
+    <ClCompile Include="common\HeaderHash.cxx" />
+    <ClCompile Include="common\Headers.cxx" />
+    <ClCompile Include="common\HeaderTypes.cxx" />
+    <ClCompile Include="common\os\HeapInstanceCounter.cxx" />
+    <ClCompile Include="common\IntegerCategory.cxx" />
+    <ClCompile Include="common\IntegerParameter.cxx" />
+    <ClCompile Include="common\LazyParser.cxx" />
+    <ClCompile Include="common\os\Lock.cxx" />
+    <ClCompile Include="common\os\Log.cxx" />
+    <ClCompile Include="common\os\Logger.cxx" />
+    <ClCompile Include="common\os\MD5Stream.cxx" />
+    <ClCompile Include="common\Message.cxx" />
+    <ClCompile Include="common\Mime.cxx" />
+    <ClCompile Include="common\MsgHeaderScanner.cxx" />
+    <ClCompile Include="MsrpRoar.cpp" />
+    <ClCompile Include="MsrpRequestLine.cpp" />
+    <ClCompile Include="MsrpStatusLine.cpp" />
+    <ClCompile Include="MsrpUrl.cpp" />
+    <ClCompile Include="common\os\Mutex.cxx" />
+    <ClCompile Include="common\OctetContents.cxx" />
+    <ClCompile Include="common\Parameter.cxx" />
+    <ClCompile Include="common\ParameterHash.cxx" />
+    <ClCompile Include="common\ParameterTypes.cxx" />
+    <ClCompile Include="common\os\ParseBuffer.cxx" />
+    <ClCompile Include="common\ParserCategories.cxx" />
+    <ClCompile Include="common\ParserCategory.cxx" />
+    <ClCompile Include="Path.cpp" />
+    <ClCompile Include="common\PlainContents.cxx" />
+    <ClCompile Include="common\QopParameter.cxx" />
+    <ClCompile Include="common\QuotedDataParameter.cxx" />
+    <ClCompile Include="common\os\Random.cxx" />
+    <ClCompile Include="ReportFailure.cpp" />
+    <ClCompile Include="ReportSuccess.cpp" />
+    <ClCompile Include="common\RportParameter.cxx" />
+    <ClCompile Include="common\os\Socket.cxx" />
+    <ClCompile Include="Status.cpp" />
+    <ClCompile Include="common\StringCategory.cxx" />
+    <ClCompile Include="common\os\Subsystem.cxx" />
+    <ClCompile Include="common\Symbols.cxx" />
+    <ClCompile Include="common\os\SysLogBuf.cxx" />
+    <ClCompile Include="common\os\SysLogStream.cxx" />
+    <ClCompile Include="common\os\ThreadIf.cxx" />
+    <ClCompile Include="common\os\Timer.cxx" />
+    <ClCompile Include="common\Token.cxx" />
+    <ClCompile Include="common\UnknownHeaderType.cxx" />
+    <ClCompile Include="common\UnknownParameter.cxx" />
+    <ClCompile Include="common\UnknownParameterType.cxx" />
+    <ClCompile Include="common\os\vmd5.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common\os\BaseException.hxx" />
+    <ClInclude Include="common\BranchParameter.hxx" />
+    <ClInclude Include="ByteRange.h" />
+    <ClInclude Include="common\os\Coders.hxx" />
+    <ClInclude Include="common\os\compat.hxx" />
+    <ClInclude Include="common\os\Condition.hxx" />
+    <ClInclude Include="common\Contents.hxx" />
+    <ClInclude Include="common\os\CountStream.hxx" />
+    <ClInclude Include="common\os\Data.hxx" />
+    <ClInclude Include="common\DataParameter.hxx" />
+    <ClInclude Include="common\os\DataStream.hxx" />
+    <ClInclude Include="common\os\DnsUtil.hxx" />
+    <ClInclude Include="common\Embedded.hxx" />
+    <ClInclude Include="common\ExistsParameter.hxx" />
+    <ClInclude Include="common\FloatParameter.hxx" />
+    <ClInclude Include="common\GenericContents.hxx" />
+    <ClInclude Include="common\os\HashMap.hxx" />
+    <ClInclude Include="common\HeaderFieldValue.hxx" />
+    <ClInclude Include="common\HeaderFieldValueList.hxx" />
+    <ClInclude Include="common\HeaderHash.hxx" />
+    <ClInclude Include="common\Headers.hxx" />
+    <ClInclude Include="common\HeaderTypes.hxx" />
+    <ClInclude Include="common\os\HeapInstanceCounter.hxx" />
+    <ClInclude Include="common\IntegerCategory.hxx" />
+    <ClInclude Include="common\IntegerParameter.hxx" />
+    <ClInclude Include="common\LazyParser.hxx" />
+    <ClInclude Include="common\os\Lock.hxx" />
+    <ClInclude Include="common\os\Lockable.hxx" />
+    <ClInclude Include="common\os\Log.hxx" />
+    <ClInclude Include="common\os\Logger.hxx" />
+    <ClInclude Include="common\os\MD5Stream.hxx" />
+    <ClInclude Include="common\Message.hxx" />
+    <ClInclude Include="common\Mime.hxx" />
+    <ClInclude Include="common\MsgHeaderScanner.hxx" />
+    <ClInclude Include="MsrpRoar.h" />
+    <ClInclude Include="MsrpRequestLine.h" />
+    <ClInclude Include="MsrpStatusLine.h" />
+    <ClInclude Include="MsrpUrl.h" />
+    <ClInclude Include="common\os\Mutex.hxx" />
+    <ClInclude Include="common\OctetContents.hxx" />
+    <ClInclude Include="common\Parameter.hxx" />
+    <ClInclude Include="common\ParameterHash.hxx" />
+    <ClInclude Include="common\ParameterTypeEnums.hxx" />
+    <ClInclude Include="common\ParameterTypes.hxx" />
+    <ClInclude Include="common\os\ParseBuffer.hxx" />
+    <ClInclude Include="common\ParseException.hxx" />
+    <ClInclude Include="common\ParserCategories.hxx" />
+    <ClInclude Include="common\ParserCategory.hxx" />
+    <ClInclude Include="common\ParserContainer.hxx" />
+    <ClInclude Include="common\ParserContainerBase.hxx" />
+    <ClInclude Include="Path.h" />
+    <ClInclude Include="common\PlainContents.hxx" />
+    <ClInclude Include="common\QopParameter.hxx" />
+    <ClInclude Include="common\QuotedDataParameter.hxx" />
+    <ClInclude Include="common\os\Random.hxx" />
+    <ClInclude Include="ReportFailure.h" />
+    <ClInclude Include="ReportSuccess.h" />
+    <ClInclude Include="common\RportParameter.hxx" />
+    <ClInclude Include="common\os\Socket.hxx" />
+    <ClInclude Include="Status.h" />
+    <ClInclude Include="common\StringCategory.hxx" />
+    <ClInclude Include="common\os\Subsystem.hxx" />
+    <ClInclude Include="common\Symbols.hxx" />
+    <ClInclude Include="common\os\SysLogBuf.hxx" />
+    <ClInclude Include="common\os\SysLogStream.hxx" />
+    <ClInclude Include="common\os\ThreadIf.hxx" />
+    <ClInclude Include="common\os\Timer.hxx" />
+    <ClInclude Include="common\Token.hxx" />
+    <ClInclude Include="common\TransactionMessage.hxx" />
+    <ClInclude Include="common\UnknownHeaderType.hxx" />
+    <ClInclude Include="common\UnknownParameter.hxx" />
+    <ClInclude Include="common\UnknownParameterType.hxx" />
+    <ClInclude Include="common\os\vmd5.hxx" />
+    <ClInclude Include="common\os\WinLeakCheck.hxx" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

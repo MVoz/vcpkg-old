@@ -1,0 +1,7 @@
+The package librsvg provides CMake targets:
+
+    find_package(mae_demo 0.10.7 CONFIG)
+    //or: find_package(mae_demo CONFIG)
+
+    include_directories(${MAE_DEMO_INCLUDE_DIRS})
+    target_link_libraries(main PRIVATE ${MAE_DEMO_LIBRARY})

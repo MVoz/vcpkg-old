@@ -1,0 +1,4 @@
+Source: libdnet
+Version: 1.11.1
+Description: libdnet provides a simplified, portable interface to several low-level networking routines, including network address manipulation
+Build-Depends: winpcap

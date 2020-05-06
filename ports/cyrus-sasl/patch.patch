@@ -1,0 +1,66 @@
+diff --git a/win32/cyrus-sasl.props b/win32/cyrus-sasl.props
+index 340034a6..295d580e 100644
+--- a/win32/cyrus-sasl.props
++++ b/win32/cyrus-sasl.props
+@@ -17,14 +17,14 @@
+   <ItemDefinitionGroup>
+     <ClCompile>
+       <PreprocessorDefinitions>GCC_FALLTHROUGH=;LIBSASL_EXPORTS;WIN32;_CRT_SECURE_NO_WARNINGS;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <AdditionalIncludeDirectories>include;..\include;..\lib;..\plugins;..\sasldb;..\common;$(SaslDependencyRoot)\include</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>include;..\include;..\lib;..\plugins;..\sasldb;..\common;$(SaslDependencyRoot)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <Link>
+-      <AdditionalLibraryDirectories>$(SaslIntermediateLibDir)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(SaslIntermediateLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+       <AdditionalDependencies>Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+     <Lib>
+-      <AdditionalLibraryDirectories>$(SaslDependencyLibDir)</AdditionalLibraryDirectories>
++      <AdditionalLibraryDirectories>$(SaslDependencyLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+     </Lib>
+   </ItemDefinitionGroup>
+   <ItemGroup>
+diff --git a/win32/plugins.props b/win32/plugins.props
+index 395a967c..bcc32bba 100644
+--- a/win32/plugins.props
++++ b/win32/plugins.props
+@@ -14,11 +14,11 @@
+ )</Command>
+     </PostBuildEvent>
+     <ClCompile>
+-      <AdditionalIncludeDirectories>..\win32\include;..\include;..\lib;..\common;$(SaslDependencyRoot)\include</AdditionalIncludeDirectories>
++      <AdditionalIncludeDirectories>..\win32\include;..\include;..\lib;..\common;$(SaslDependencyRoot)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+     </ClCompile>
+     <PreBuildEvent>
+       <Command>powershell  -executionpolicy bypass -nologo -File makeinit.ps1</Command>
+     </PreBuildEvent>
+   </ItemDefinitionGroup>
+   <ItemGroup />
+-</Project>
+\ No newline at end of file
++</Project>
+diff --git a/win32/sasldb.props b/win32/sasldb.props
+index 84591c99..a61584eb 100644
+--- a/win32/sasldb.props
++++ b/win32/sasldb.props
+@@ -1,4 +1,4 @@
+-﻿<?xml version="1.0" encoding="utf-8"?>
++<?xml version="1.0" encoding="utf-8"?>
+ <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemDefinitionGroup>
+     <ClCompile>
+@@ -6,7 +6,10 @@
+     </ClCompile>
+     <Link>
+       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+-      <AdditionalDependencies>lmdb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+     </Link>
+-  </ItemDefinitionGroup>
+-</Project>
+\ No newline at end of file
++    <Link>
++	<AdditionalDependencies Condition="'$(Configuration)'=='Debug'">%(AdditionalDependencies);lmdbd.lib</AdditionalDependencies>
++	<AdditionalDependencies Condition="'$(Configuration)'=='Release'">%(AdditionalDependencies);lmdb.lib</AdditionalDependencies>
++    </Link>
++	</ItemDefinitionGroup>
++</Project>

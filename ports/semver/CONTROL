@@ -1,0 +1,3 @@
+Source: semver
+Version: 2.0.0
+Description: Semantic versioning in C++, testing with QuickCheck

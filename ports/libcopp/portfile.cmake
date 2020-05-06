@@ -1,31 +1,51 @@
 include(vcpkg_common_functions)
 
-vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
-
-vcpkg_from_github(
-    OUT_SOURCE_PATH SOURCE_PATH
-    REPO owt5008137/libcopp
-    REF 1.1.0
-    SHA512 27b444d158281786154830c6e216e701ba0301af1d7a08873b33e27ce3d2db6ddb4753239878633f4c2aed9f759b46f961408a2eb7b50b5d445c3531c1fa9546
-    HEAD_REF v2
+vcpkg_download_distfile(ARCHIVE
+    URLS "https://github.com/owt5008137/libcopp/archive/dfec57b5f5db2f213fc8dbc1a310212bfd03706f.zip"
+    FILENAME "dfec57b5f5db2f213fc8dbc1a310212bfd03706f.zip"
+    SHA512 834198e69cae9970e84984e77d54c5ce8e426bbe1f7b801b7514bfbd2a4d162e92c75c42f7ae6e22bc8cb5254954f09a803c264d4d14984b669d2a13a0d81e5f
 )
 
-# Use libcopp's own build process, skipping examples and tests
+vcpkg_extract_source_archive_ex(
+    OUT_SOURCE_PATH SOURCE_PATH
+    ARCHIVE ${ARCHIVE}
+)
+
+vcpkg_find_acquire_program(PYTHON3)
+vcpkg_find_acquire_program(NASM)
+get_filename_component(NASM_DIR "${NASM}" DIRECTORY)
+get_filename_component(PYTHON3_DIR "${PYTHON3}" DIRECTORY)
+set(ENV{PATH} "$ENV{PATH};${PYTHON3_DIR};${NASM_DIR}")
+
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
-    DISABLE_PARALLEL_CONFIGURE
-    # PREFER_NINJA # Disabled because Ninja does not invoke masm correctly for this project
+    PREFER_NINJA # Disable this option if project cannot be built with Ninja
+    NO_CHARSET_FLAG # automatic templates
+
+    OPTIONS 
+      -DBOOST_ROOT=${CURRENT_INSTALLED_DIR}
+      -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+      -DCOMPILER_OPTION_MSVC_ZC_CPP=ON
+      -DGTEST_ROOT=${CURRENT_INSTALLED_DIR}
+      -DLIBCOPP_ENABLE_SEGMENTED_STACKS=OFF #[default=NO] Enable split stack supported context.(it's only availabe in linux and gcc 4.7.0 or upper)
+      -DLIBCOPP_ENABLE_VALGRIND=OFF
+      -DLIBCOPP_TEST_ENABLE_BOOST_UNIT_TEST=OFF
+      -DLIBCOTASK_ENABLE=OFF #[default=YES] Enable build libcotask.
+      -DLOCK_DISABLE_MT=ON
+      -DPROJECT_DISABLE_MT=ON #[default=NO] Disable multi-thread support.
+      -DPROJECT_ENABLE_SAMPLE=OFF
+      -DPROJECT_ENABLE_UNITTEST=OFF
+      -DLIBCOPP_FCONTEXT_USE_TSX=OFF #|NO 	[default=NO] Enable Intel Transactional Synchronisation Extensions (TSX).
+	  -DLIBCOPP_FCONTEXT_ABI=MS
+	  -DLIBCOPP_FCONTEXT_BIN_FORMATION=PE
+	  -DLIBCOPP_FCONTEXT_AS_TOOL=MASM
+	  -DLIBCOPP_FCONTEXT_AS_ACTION=""
+	  -DLIBCOPP_FCONTEXT_OS_PLATFORM=x86_64
 )
+
 vcpkg_install_cmake()
 
-file(MAKE_DIRECTORY ${CURRENT_PACKAGES_DIR}/share/libcopp)
-file(COPY ${CMAKE_CURRENT_LIST_DIR}/usage DESTINATION ${CURRENT_PACKAGES_DIR}/share/libcopp)
-file(COPY ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/libcopp)
-file(COPY ${SOURCE_PATH}/BOOST_LICENSE_1_0.txt DESTINATION ${CURRENT_PACKAGES_DIR}/share/libcopp)
-file(COPY ${SOURCE_PATH}/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/libcopp/copyright)
-
-vcpkg_copy_pdbs()
-
-vcpkg_fixup_cmake_targets(CONFIG_PATH lib/cmake)
-
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
+set(VCPKG_POLICY_EMPTY_PACKAGE enabled) # automatic templates
+vcpkg_copy_pdbs() # automatic templates
+configure_file(${SOURCE_PATH}/LICENSE ${CURRENT_PACKAGES_DIR}/share/${PORT}/copyright COPYONLY)
+###

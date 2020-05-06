@@ -1,0 +1,4 @@
+Source: qtwinmigrate
+Version: 0.0.1
+Description: 
+Build-Depends: qt5

@@ -27,6 +27,10 @@ vcpkg_configure_cmake(
       -DAMENT_CMAKE_SYMLINK_INSTALL=OFF
       -DAMENT_CMAKE_UNINSTALL_TARGET=OFF
       -DBUILD_TESTING=OFF
+#	  -Dgtest_vendor_DIR:PATH=
+#	  -D_gtest_src_file:FILEPATH=
+#	  -Dament_copyright_BIN:FILEPATH= #install/bin/ament_copyright.exe
+#	  -Dament_cppcheck_BIN:FILEPATH= #install/bin/ament_cppcheck.exe
 )
 
 vcpkg_install_cmake()

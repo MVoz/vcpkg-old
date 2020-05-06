@@ -1,0 +1,37 @@
+diff -ruN a/lib/THC/generic/THCTensor.c b/lib/THC/generic/THCTensor.c
+--- a/lib/THC/generic/THCTensor.c	2017-09-12 05:54:47.000000000 +0800
++++ b/lib/THC/generic/THCTensor.c	2018-04-09 16:48:48.334000200 +0800
+@@ -334,8 +334,10 @@
+     THArgCheck(THCTensor_(nDimension)(state, ops[i]) > 0, i, "can't expand empty tensor %d", i);
+   }
+ 
+-  long *op_sizes[count];
+-  long op_dims[count];
++  // long *op_sizes[count];
++  // long op_dims[count];
++  long **op_sizes = malloc(sizeof(long *) * count);
++  long *op_dims = malloc(sizeof(long) * count);
+ 
+   for (int i = 0; i < count; ++i) {
+     op_sizes[i] = ops[i]->size;
+@@ -350,6 +352,8 @@
+                                      op_dims,
+                                      error_buffer,
+                                      1024);
++  free(op_sizes);
++  free(op_dims);
+ 
+   if(ret != 0) {
+     THLongStorage_free(sizes);
+diff -ruN a/lib/THC/THCReduce.cuh b/lib/THC/THCReduce.cuh
+--- a/lib/THC/THCReduce.cuh	2017-09-12 05:54:47.000000000 +0800
++++ b/lib/THC/THCReduce.cuh	2018-04-09 16:21:44.492000200 +0800
+@@ -321,7 +321,7 @@
+           block.y *= 2;
+           ydim /= 2;
+         }
+-        THC_getGridFromTiles(THCCeilDiv(outElements, (long)block.x), grid);
++        THC_getGridFromTiles(THCCeilDiv((long)outElements, (long)block.x), grid);
+ 
+     }
+   }

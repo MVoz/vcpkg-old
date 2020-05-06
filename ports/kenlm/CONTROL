@@ -1,0 +1,4 @@
+Source: kenlm
+Version:
+Description:
+Build-Depends: eigen3, boost-atomic, boost-chrono, boost-date-time, boost-program-options, boost-system, boost-thread, boost-units, bzip2, liblzma, zlib

@@ -1,0 +1,4 @@
+Source: torch-nn
+Version: 1.0.0
+Description: This package provides an easy and modular way to build and train simple or complex neural networks using Torch.
+Build-Depends: torch7, cuda

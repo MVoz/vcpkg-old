@@ -1,0 +1,30 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c86e31c..bda0ce1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -767,8 +767,10 @@ include(cmake/OpenCVFindLibsGUI.cmake)
+ include(cmake/OpenCVFindLibsVideo.cmake)
+ include(cmake/OpenCVFindLibsPerf.cmake)
+ include(cmake/OpenCVFindLAPACK.cmake)
+-include(cmake/OpenCVFindProtobuf.cmake)
+-
++find_package(protobuf)
++if(Protobuf_LIBRARIES)
++  set(HAVE_PROTOBUF TRUE)
++endif()
+ # ----------------------------------------------------------------------------
+ #  Detect other 3rd-party libraries/tools
+ # ----------------------------------------------------------------------------
+diff --git a/modules/dnn/CMakeLists.txt b/modules/dnn/CMakeLists.txt
+index 00554b2..17973f5 100644
+--- a/modules/dnn/CMakeLists.txt
++++ b/modules/dnn/CMakeLists.txt
+@@ -72,7 +72,7 @@ endif()
+ 
+ set(include_dirs ${fw_inc})
+ set(sources_options "")
+-set(libs libprotobuf ${LAPACK_LIBRARIES})
++set(libs ${Protobuf_LIBRARIES} ${LAPACK_LIBRARIES})
+ if(OPENCV_DNN_OPENCL AND HAVE_OPENCL)
+   list(APPEND include_dirs ${OPENCL_INCLUDE_DIRS})
+ else()

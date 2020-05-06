@@ -1,6 +1,6 @@
 include(vcpkg_common_functions)
 
-#vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
+vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 
 vcpkg_download_distfile(ARCHIVE
     URLS "https://gitlab.com/codelibre/ome/ome-model/-/archive/fbe551cb1ebe8c3c24a0ca19796f81e8fe421ab3/ome-model-fbe551cb1ebe8c3c24a0ca19796f81e8fe421ab3.tar.gz"

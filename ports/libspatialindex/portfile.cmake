@@ -1,28 +1,27 @@
 include(vcpkg_common_functions)
 
-vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/libspatialindex/libspatialindex/archive/0fb2125c8d82b64303334ac44748f78c377e4db4.zip"
-    FILENAME "0fb2125c8d82b64303334ac44748f78c377e4db4.zip"
-    SHA512 3521cf9807218f3161ab1c335d255075676908df8fd3d98662081cc550fda7bf80d498c05736ee78c678b14d959f8807585da3a8f4ac9e451744d32dfb8124ac
-)
-
-vcpkg_extract_source_archive_ex(
+vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    ARCHIVE ${ARCHIVE}
+    REPO libspatialindex/libspatialindex
+    REF 1.9.0
+    SHA512   368537e9bfe52db96486a1febfabe035f9f7714fd1cb50450e3ab89d51c5ffffb0e2ea219e08bee34f772ba9813a3a7f9e63d8b8946887ce83811ef68d17d1cc
+    HEAD_REF master
+	PATCHES
+        static.patch
 )
-
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA # Disable this option if project cannot be built with Ninja
+	OPTIONS -DCMAKE_DEBUG_POSTFIX=d -DSIDX_BUILD_TESTS:BOOL=OFF
 )
 
 vcpkg_install_cmake()
 
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
-
-configure_file(${SOURCE_PATH}/COPYING ${CURRENT_PACKAGES_DIR}/share/${PORT}/copyright COPYONLY)
-set(VCPKG_POLICY_EMPTY_PACKAGE enabled)
 vcpkg_copy_pdbs()
 
-###
+#Debug
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
+
+# Handle copyright
+file(COPY ${SOURCE_PATH}/COPYING DESTINATION ${CURRENT_PACKAGES_DIR}/share/libspatialindex)
+file(RENAME ${CURRENT_PACKAGES_DIR}/share/libspatialindex/COPYING ${CURRENT_PACKAGES_DIR}/share/libspatialindex/copyright)

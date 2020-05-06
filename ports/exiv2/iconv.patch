@@ -5,7 +5,7 @@
  
  if (EXIV2_ENABLE_NLS)
 -    find_package(Intl REQUIRED)
-+    find_package(unofficial-gettext CONFIG)
++    find_package(gettext CONFIG)
  endif( )
  
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
@@ -18,7 +18,7 @@ index 91469b6..4c51068 100644
  if( EXIV2_ENABLE_NLS )
 -    target_link_libraries(exiv2lib PRIVATE ${Intl_LIBRARIES})
 -    target_include_directories(exiv2lib PRIVATE ${Intl_INCLUDE_DIRS})
-+    target_link_libraries(exiv2lib PRIVATE unofficial::gettext::libintl)
++    target_link_libraries(exiv2lib PRIVATE gettext::libintl)
      # Definition needed for translations
      target_compile_definitions(exiv2lib PUBLIC EXV_LOCALEDIR="/../${CMAKE_INSTALL_LOCALEDIR}")
  endif()
@@ -26,10 +26,10 @@ index 91469b6..4c51068 100644
 -if( ICONV_FOUND )
 -    target_link_libraries( exiv2lib PRIVATE Iconv::Iconv )
 -endif()
-+if(NOT TARGET unofficial::iconv::libiconv)
-+    find_package(unofficial-iconv CONFIG)
++if(NOT TARGET iconv::libiconv)
++    find_package(iconv CONFIG)
 +endif()
-+target_link_libraries( exiv2lib PRIVATE unofficial::iconv::libiconv )
++target_link_libraries( exiv2lib PRIVATE iconv::libiconv )
  
  
 

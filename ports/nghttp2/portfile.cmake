@@ -23,6 +23,7 @@ vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
     PREFER_NINJA
     OPTIONS
+        -DBUILD_SHARED_LIBS=ON # automatic templates
         -DENABLE_LIB_ONLY=ON
         -DENABLE_ASIO_LIB=OFF
 )

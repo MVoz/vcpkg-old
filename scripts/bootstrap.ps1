@@ -1,10 +1,10 @@
 [CmdletBinding()]
 param(
     $badParam,
-    [Parameter(Mandatory=$False)][switch]$disableMetrics = $false,
-    [Parameter(Mandatory=$False)][switch]$win64 = $false,
+    [Parameter(Mandatory=$False)][switch]$disableMetrics = $true,
+    [Parameter(Mandatory=$False)][switch]$win64 = $true,
     [Parameter(Mandatory=$False)][string]$withVSPath = "",
-    [Parameter(Mandatory=$False)][string]$withWinSDK = ""
+    [Parameter(Mandatory=$False)][string]$withWinSDK = "10.0.17134.0"
 )
 Set-StrictMode -Version Latest
 # Powershell2-compatible way of forcing named-parameters
@@ -226,8 +226,9 @@ function getWindowsSDK( [Parameter(Mandatory=$False)][switch]$DisableWin10SDK = 
         $win10sdkVersions = @(Get-ChildItem $folder | Where-Object {$_.Name -match "^10"} | Sort-Object)
         [array]::Reverse($win10sdkVersions) # Newest SDK first
 
-        foreach ($win10sdkV in $win10sdkVersions)
+        foreach ($win10sdk in $win10sdkVersions)
         {
+            $win10sdkV = $win10sdk.Name
             $windowsheader = "$folder\$win10sdkV\um\windows.h"
             if (!(Test-Path $windowsheader))
             {
@@ -339,10 +340,16 @@ if ($disableMetrics)
 
 $platform = "x86"
 $vcpkgReleaseDir = "$vcpkgSourcesPath\msbuild.x86.release"
-
+if($PSVersionTable.PSVersion.Major -le 2)
+{ 
+    $architecture=(Get-WmiObject win32_operatingsystem | Select-Object osarchitecture).osarchitecture
+}
+else
+{
+    $architecture=(Get-CimInstance win32_operatingsystem | Select-Object osarchitecture).osarchitecture
+}
 if ($win64)
 {
-    $architecture=(Get-WmiObject win32_operatingsystem | Select-Object osarchitecture).osarchitecture
     if (-not $architecture -like "*64*")
     {
         throw "Cannot build 64-bit on non-64-bit system"
@@ -352,13 +359,26 @@ if ($win64)
     $vcpkgReleaseDir = "$vcpkgSourcesPath\msbuild.x64.release"
 }
 
+if ($architecture -like "*64*")
+{
+    $PreferredToolArchitecture = "x64"
+}
+else
+{
+    $PreferredToolArchitecture = "x86"
+}
+
 $arguments = (
 "`"/p:VCPKG_VERSION=-nohash`"",
-"`"/p:DISABLE_METRICS=$disableMetricsValue`"",
+"`"/p:DISABLE_METRICS=1`"",
 "/p:Configuration=Release",
 "/p:Platform=$platform",
-"/p:PlatformToolset=$platformToolset",
-"/p:TargetPlatformVersion=$windowsSDK",
+"/p:PlatformToolset=v141",
+"/p:TargetPlatformVersion=10.0.17134.0",
+
+## "/p:PlatformToolset=$platformToolset",
+## "/p:TargetPlatformVersion=$windowsSDK",
+
 "/p:PreferredToolArchitecture=x64",
 "/verbosity:minimal",
 "/m",

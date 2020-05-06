@@ -1,0 +1,62 @@
+diff --git a/config/gmakegen.py b/config/gmakegen.py
+index 0a4212a9e..2a76e3776 100755
+--- a/config/gmakegen.py
++++ b/config/gmakegen.py
+@@ -84,7 +84,10 @@ class Slepc(object):
+ 
+     def read_conf(self):
+         self.conf = dict()
+-        for line in open(self.petsc_path('include', 'petscconf.h')):
++        petscconf_h = self.petsc_path('include', 'petscconf.h')
++        if not os.path.exists(petscconf_h):
++            petscconf_h = self.petsc_path('..','include', 'petscconf.h')
++        for line in open(petscconf_h):
+             if line.startswith('#define '):
+                 define = line[len('#define '):]
+                 space = define.find(' ')
+diff --git a/config/packages/petsc.py b/config/packages/petsc.py
+index 195976c78..709609850 100644
+--- a/config/packages/petsc.py
++++ b/config/packages/petsc.py
+@@ -32,8 +32,11 @@ class PETSc(package.Package):
+         sys.exit('ERROR: PETSC_DIR enviroment variable is not set')
+ 
+   def LoadVersion(self):
++    petscversion_h = os.path.join(self.dir,'include','petscversion.h')
++    if not os.path.exists(petscversion_h):
++      petscversion_h = os.path.join(self.dir,'..','include','petscversion.h')
+     try:
+-      f = open(os.path.join(self.dir,'include','petscversion.h'))
++      f = open(petscversion_h)
+       for l in f.readlines():
+         l = l.split()
+         if len(l) == 3:
+@@ -62,6 +65,7 @@ class PETSc(package.Package):
+         (status, self.branch) = commands.getstatusoutput('cd '+self.dir+';git describe --contains --all HEAD')
+ 
+   def LoadConf(self):
++    is_vcpkg_debug = False
+     if 'PETSC_ARCH' in os.environ and os.environ['PETSC_ARCH']:
+       self.isinstall = False
+       self.arch = os.environ['PETSC_ARCH']
+@@ -73,6 +77,9 @@ class PETSc(package.Package):
+       self.isinstall = True
+       petscvariables = os.path.join(self.dir,'lib','petsc','conf','petscvariables')
+       petscconf_h = os.path.join(self.dir,'include','petscconf.h')
++      if not os.path.exists(petscconf_h):
++        petscconf_h = os.path.join(self.dir,'..','include','petscconf.h')
++        is_vcpkg_debug = True
+ 
+     self.buildsharedlib = False
+     self.build_using_cmake = 0
+@@ -164,3 +171,7 @@ class PETSc(package.Package):
+       else:
+         self.log.Exit('ERROR: cannot process file ' + petscconf_h)
+ 
++    if is_vcpkg_debug:
++      self.debug = True
++      self.arch = self.arch.replace("opt", 'debug')
++
+-- 
+2.18.0.windows.1
+

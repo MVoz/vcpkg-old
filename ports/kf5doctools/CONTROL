@@ -1,0 +1,6 @@
+Source: kf5doctools
+Version: 
+#Homepage: 
+Description: 
+Build-Depends: ecm, kf5i18n, kf5archive, libxslt
+#Feature: 

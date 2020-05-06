@@ -1,0 +1,4 @@
+Source: nettle
+Version: 3.4.1-1
+Description: Nettle is a cryptographic library that is designed to fit easily in more or less any context. http://www.lysator.liu.se/~nisse/nettle/
+Build-Depends: gmp

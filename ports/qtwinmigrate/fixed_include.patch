@@ -1,0 +1,48 @@
+diff --git a/qtwinmigrate/src/qmfcapp.h b/qtwinmigrate/src/qmfcapp.h
+index 76f7e23..02b0b86 100644
+--- a/qtwinmigrate/src/qmfcapp.h
++++ b/qtwinmigrate/src/qmfcapp.h
+@@ -44,7 +44,7 @@
+ #ifndef QMFCAPP_H
+ #define QMFCAPP_H
+ 
+-#include <QApplication>
++#include <QtWidgets/QApplication>
+ 
+ #if defined(_AFXDLL) && defined(_MSC_VER)
+ #define QTWINMIGRATE_WITHMFC
+@@ -68,7 +68,7 @@ class CWinApp;
+ #endif
+ 
+ #if QT_VERSION >= 0x050000
+-#include <QAbstractNativeEventFilter>
++#include <QtCore/QAbstractNativeEventFilter>
+ 
+ class QT_QTWINMIGRATE_EXPORT QMfcAppEventFilter : public QAbstractNativeEventFilter
+ {
+diff --git a/qtwinmigrate/src/qwinhost.h b/qtwinmigrate/src/qwinhost.h
+index 4b108b3..2d0dde7 100644
+--- a/qtwinmigrate/src/qwinhost.h
++++ b/qtwinmigrate/src/qwinhost.h
+@@ -44,7 +44,7 @@
+ #ifndef QWINHOST_H
+ #define QWINHOST_H
+ 
+-#include <QWidget>
++#include <QtWidgets/QWidget>
+ 
+ #if defined(Q_OS_WIN)
+ #  if !defined(QT_QTWINMIGRATE_EXPORT) && !defined(QT_QTWINMIGRATE_IMPORT)
+diff --git a/qtwinmigrate/src/qwinwidget.h b/qtwinmigrate/src/qwinwidget.h
+index f9148ca..9d5cf66 100644
+--- a/qtwinmigrate/src/qwinwidget.h
++++ b/qtwinmigrate/src/qwinwidget.h
+@@ -44,7 +44,7 @@
+ #ifndef QWINWIDGET_H
+ #define QWINWIDGET_H
+ 
+-#include <QWidget>
++#include <QtWidgets/QWidget>
+ #include "qmfcapp.h"
+ 
+ class CWnd;

@@ -2,7 +2,7 @@ include(vcpkg_common_functions)
 
 vcpkg_download_distfile(ARCHIVE
     URLS "https://github.com/ament/ament_lint/archive/6394b098b77173b3dd76bb6fd99ddc6979686331.zip"
-    FILENAME "6394b098b77173b3dd76bb6fd99ddc6979686331.zip"
+    FILENAME "ament_lint.zip"
     SHA512 3499c1e7da2c826661b53ca0f82c6b606d1e52093c8de56e4ff9cdf6b767d4e3abac0a1b1b53b941b7d491299995eace0a32c0f635d7b403e5e26042d52c9a81
 )
 

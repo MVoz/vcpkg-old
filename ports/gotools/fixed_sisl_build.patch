@@ -1,0 +1,30 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 70a9edc..73e611a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -17,7 +17,7 @@ INCLUDE_DIRECTORIES(
+ # Make the sisl library
+ 
+ FILE(GLOB sisl_SRCS src/*.c include/*.h)
+-ADD_LIBRARY(sisl ${sisl_SRCS})
++ADD_LIBRARY(sisl STATIC ${sisl_SRCS})
+ IF(CMAKE_COMPILER_IS_GNUCC)
+     TARGET_LINK_LIBRARIES(sisl m)
+ ENDIF(CMAKE_COMPILER_IS_GNUCC)
+@@ -43,6 +43,7 @@ ENDIF(WIN32)
+ 
+ # Apps, examples, tests, ...?
+ 
++IF(GoTools_COMPILE_APPS)
+ FILE(GLOB sisl_APPS app/*.C)
+ FOREACH(app ${sisl_APPS})
+   GET_FILENAME_COMPONENT(appname ${app} NAME_WE)
+@@ -51,7 +52,7 @@ FOREACH(app ${sisl_APPS})
+   SET_PROPERTY(TARGET ${appname}
+     PROPERTY FOLDER "sisl/Apps")
+ ENDFOREACH(app)
+-
++ENDIF()
+ 
+ 
+ # 'install' target

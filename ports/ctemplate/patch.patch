@@ -1,0 +1,13 @@
+diff --git a/src/htmlparser/generate_fsm.py b/src/htmlparser/generate_fsm.py
+index 6202c36..f53970e 100644
+--- a/src/htmlparser/generate_fsm.py
++++ b/src/htmlparser/generate_fsm.py
+@@ -39,6 +39,8 @@
+ __author__ = 'falmeida@google.com (Filipe Almeida)'
+ 
+ import sys
++reload(sys)
++sys.setdefaultencoding('utf-8')
+ 
+ from fsm_config import FSMConfig
+ 

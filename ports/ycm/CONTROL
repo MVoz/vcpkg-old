@@ -1,0 +1,4 @@
+Source: ycm
+Version: 0.10.4-1
+Description: Extra CMake Modules for YARP and friends.
+Homepage: http://robotology.github.io/ycm/

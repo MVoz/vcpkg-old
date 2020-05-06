@@ -26,12 +26,12 @@ namespace vcpkg::Commands::Env
         {OPTION_LIB, "Add installed lib/ to LIB"},
         {OPTION_DEBUG_LIB, "Add installed debug/lib/ to LIB"},
         {OPTION_TOOLS, "Add installed tools/*/ to PATH"},
-        {OPTION_PYTHON_2, "Add installed python2/ to PYTHONHOME and python2/Lib/site-packages to PYTHONPATH"},
-        {OPTION_PYTHON_3, "Add installed python3/ to PYTHONHOME and python3/Lib/site-packages to PYTHONPATH"},
-        {OPTION_PYTHON_DEBUG_2, "Add installed debug/python2/ to PYTHONHOME and debug/python2/Lib/site-packages to PYTHONPATH"},
-        {OPTION_PYTHON_DEBUG_3, "Add installed debug/python3/ to PYTHONHOME and debug/python3/Lib/site-packages to PYTHONPATH"},
+        {OPTION_PYTHON_2, "Add installed python3/ to PYTHONPATH"},
+        {OPTION_PYTHON_3, "Add installed python3/ to PYTHONPATH"},
+        {OPTION_PYTHON_DEBUG_2, "Add installed python3/ to PYTHONPATH"},
+        {OPTION_PYTHON_DEBUG_3, "Add installed python3/ to PYTHONPATH"},
     }};
-	
+
     const CommandStructure COMMAND_STRUCTURE = {
         Help::create_example_string("env <optional command> --include --debug-lib --debug-python3 --triplet x64-windows"),
         0,
@@ -61,7 +61,7 @@ namespace vcpkg::Commands::Env
         const bool add_python_3 = Util::Sets::contains(options.switches, OPTION_PYTHON_3);
         const bool add_python_debug_2 = Util::Sets::contains(options.switches, OPTION_PYTHON_DEBUG_2);
         const bool add_python_debug_3 = Util::Sets::contains(options.switches, OPTION_PYTHON_DEBUG_3);
-		
+
         std::vector<std::string> path_vars;
         if (add_bin) path_vars.push_back((paths.installed / triplet.to_string() / "bin").u8string());
         if (add_debug_bin) path_vars.push_back((paths.installed / triplet.to_string() / "debug" / "bin").u8string());
@@ -78,24 +78,23 @@ namespace vcpkg::Commands::Env
                 if (fs.is_directory(tool_dir)) path_vars.push_back(tool_dir.u8string());
             }
         }
-		
-		if (add_python_2) extra_env.emplace("PYTHONHOME", (paths.installed / triplet.to_string() / "python2").u8string());
-		if (add_python_2) extra_env.emplace("PYTHONPATH", (paths.installed / triplet.to_string() / "python2" / "Lib" / "site-packages").u8string());
-		
-		if (add_python_3) extra_env.emplace("PYTHONHOME", (paths.installed / triplet.to_string() / "python3").u8string());
-		if (add_python_3) extra_env.emplace("PYTHONPATH", (paths.installed / triplet.to_string() / "python3" / "Lib" / "site-packages").u8string());
-		
-		if (add_python_debug_2) extra_env.emplace("PYTHONHOME", (paths.installed / triplet.to_string()  / "debug" / "python2").u8string());
-		if (add_python_debug_2) extra_env.emplace("PYTHONPATH", (paths.installed / triplet.to_string() / "debug" / "python2" / "Lib" / "site-packages").u8string());
-		
-		if (add_python_debug_3) extra_env.emplace("PYTHONHOME", (paths.installed / triplet.to_string() / "debug" / "python3").u8string());
-		if (add_python_debug_3) extra_env.emplace("PYTHONPATH", (paths.installed / triplet.to_string() / "debug" / "python3" / "Lib" / "site-packages").u8string());
-		
-		if (add_python_2) path_vars.push_back((paths.installed / triplet.to_string() / "python2").u8string());
-		if (add_python_3) path_vars.push_back((paths.installed / triplet.to_string() / "python3").u8string());
-		if (add_python_debug_3) path_vars.push_back((paths.installed / triplet.to_string() / "debug" / "python3").u8string());
-		if (add_python_debug_2) path_vars.push_back((paths.installed / triplet.to_string() / "debug" / "python2").u8string());
-		
+        if (add_python_2) extra_env.emplace("PYTHONHOME", (paths.installed / triplet.to_string() / "python2").u8string());
+        if (add_python_2) extra_env.emplace("PYTHONPATH", (paths.installed / triplet.to_string() / "python2" / "Lib" / "site-packages").u8string());
+
+        if (add_python_3) extra_env.emplace("PYTHONHOME", (paths.installed / triplet.to_string() / "python3").u8string());
+        if (add_python_3) extra_env.emplace("PYTHONPATH", (paths.installed / triplet.to_string() / "python3" / "Lib" / "site-packages").u8string());
+
+        if (add_python_debug_2) extra_env.emplace("PYTHONHOME", (paths.installed / triplet.to_string()  / "debug" / "python2").u8string());
+        if (add_python_debug_2) extra_env.emplace("PYTHONPATH", (paths.installed / triplet.to_string() / "debug" / "python2" / "Lib" / "site-packages").u8string());
+
+        if (add_python_debug_3) extra_env.emplace("PYTHONHOME", (paths.installed / triplet.to_string() / "debug" / "python3").u8string());
+        if (add_python_debug_3) extra_env.emplace("PYTHONPATH", (paths.installed / triplet.to_string() / "debug" / "python3" / "Lib" / "site-packages").u8string());
+
+        if (add_python_2) path_vars.push_back((paths.installed / triplet.to_string() / "python2").u8string());
+        if (add_python_3) path_vars.push_back((paths.installed / triplet.to_string() / "python3").u8string());
+        if (add_python_debug_3) path_vars.push_back((paths.installed / triplet.to_string() / "debug" / "python3").u8string());
+        if (add_python_debug_2) path_vars.push_back((paths.installed / triplet.to_string() / "debug" / "python2").u8string());
+
         if (path_vars.size() > 0) extra_env.emplace("PATH", Strings::join(";", path_vars));
 
         std::string env_cmd_prefix = env_cmd.empty() ? "" : Strings::format("%s && ", env_cmd);

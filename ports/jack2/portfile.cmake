@@ -1,13 +1,16 @@
 include(vcpkg_common_functions)
 
-vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
+#vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 
-vcpkg_from_github(
+vcpkg_download_distfile(ARCHIVE
+    URLS "https://github.com/jackaudio/jack2/archive/dad4b5702782eef3bd66e3c3f4fefaaae3571208.zip"
+    FILENAME "jack2.zip"
+    SHA512 318fb2dbabf9e4adb68fe3074f11d29b43def96f05cba33e35961575455b20801ac3499baf796917aeeb31155ff4239633c4ea2aca8c90378601c7bdffb58ae5
+)
+
+vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO jackaudio/jack2
-    REF v1.9.12
-    SHA512 f0271dfc8f8e2f2489ca52f431ad4fa420665816d6c67a01a76da1d4b5ae91f6dad8c4e3309ec5e0c159c9d312ed56021ab323d74bce828ace26f1b8d477ddfa
-    HEAD_REF master
+    ARCHIVE ${ARCHIVE}
 )
 
 # Install headers and a statically built JackWeakAPI.c
@@ -23,4 +26,4 @@ vcpkg_install_cmake()
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
 
 # Handle copyright
-file(INSTALL ${SOURCE_PATH}/README DESTINATION ${CURRENT_PACKAGES_DIR}/share/jack2 RENAME copyright)
+file(INSTALL ${SOURCE_PATH}/AUTHORS.rst DESTINATION ${CURRENT_PACKAGES_DIR}/share/jack2 RENAME copyright)
